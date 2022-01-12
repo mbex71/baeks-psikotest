@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Choice {
+  id         Int       @id @default(autoincrement())
+  name       String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @default(now())
+  questionId Int?
+  Question   Question? @relation(fields: [questionId], references: [id])
+
+  @@index([questionId], map: "Choice_questionId_fkey")
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  typeId    Int?
+  Type      Type?    @relation(fields: [typeId], references: [id])
+  Choice    Choice[]
+
+  @@index([typeId], map: "Question_typeId_fkey")
+}
+
+model Test {
+  id                 Int          @id @default(autoincrement())
+  registrationNumber Int          @unique
+  testDate           DateTime
+  purpose            String
+  userId             Int
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @default(now())
+  User               User         @relation(fields: [userId], references: [id])
+  TypeOnTest         TypeOnTest[]
+
+  @@index([userId], map: "Test_userId_fkey")
+}
+
+model Type {
+  id         Int          @id @default(autoincrement())
+  name       String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @default(now())
+  Question   Question[]
+  TypeOnTest TypeOnTest[]
+}
+
+model TypeOnTest {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  typeId    Int?
+  testId    Int?
+  Test      Test?    @relation(fields: [testId], references: [id])
+  Type      Type?    @relation(fields: [typeId], references: [id])
+
+  @@index([testId], map: "TypeOnTest_testId_fkey")
+  @@index([typeId], map: "TypeOnTest_typeId_fkey")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  Test      Test[]
+}
