@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { PrismaClient } from '@prisma/client'
 
-const Home: NextPage = () => {
+const Home: NextPage = (data) => {
+  console.log(data)
   return (
     <div className='bg-white'>
       <Head>
@@ -65,6 +67,17 @@ const Home: NextPage = () => {
 
     </div>
   )
+}
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prisma = new PrismaClient()
+  const data = prisma.user.findMany()
+  return {
+    props: {
+      data: JSON.parse(JSON.stringify(data))
+    }
+  }
 }
 
 export default Home
