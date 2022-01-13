@@ -72,7 +72,7 @@ const Home: NextPage = (data) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const prisma = new PrismaClient()
-  const data = prisma.user.findMany()
+  const data = await prisma.user.findMany()
   return {
     props: {
       data: JSON.parse(JSON.stringify(data))
