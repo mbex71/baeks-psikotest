@@ -1,7 +1,7 @@
 import Countdown, { CountdownRenderProps, zeroPad } from "react-countdown"
 
 interface IProps {
-    handleCompleted: () => void
+    handleCompleted?: () => void
 }
 
 

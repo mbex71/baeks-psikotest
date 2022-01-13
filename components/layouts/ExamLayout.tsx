@@ -6,7 +6,7 @@ interface IProps {
 
 const ExamLayout: React.FC<IProps> = (props: IProps) => {
     return (
-        <div>
+        <div className="w-full p-12 min-h-screen bg-white">
             {props.children}
         </div>
     )

@@ -1,17 +1,18 @@
 import { NextPage } from "next";
-import Timer from "../../components/counters/timer";
+import Timer from "@components/counters/timer";
+import ExamLayout from "@components/layouts/ExamLayout";
+import AnswerBoard from "@components/counters/answerBoard";
+
 
 const ExamPage: NextPage = () => {
 
     return (
-        <div>
-            <div>
-                Hallo
-            </div>
-            <div>
+        <ExamLayout>
+            <div className="flex flex-row justify-between">
                 <Timer />
+                <AnswerBoard />
             </div>
-        </div>
+        </ExamLayout>
     )
 }
 
