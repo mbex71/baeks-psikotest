@@ -1,11 +1,13 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { PrismaClient } from '@prisma/client'
+import { useSession } from 'next-auth/react'
 
-const Home: NextPage = (data) => {
-  console.log(data)
+
+const Home: NextPage = () => {
+  const { data } = useSession()
+
+  console.log('DATA : ', data)
   return (
     <div className='bg-white'>
       <Head>
@@ -19,43 +21,22 @@ const Home: NextPage = (data) => {
         </div>
         <form className='flex flex-col justify-center items-center w-1/3 space-y-4 bg-purple-200 p-12'>
           <div className='flex flex-row justify-between w-full'>
-            <label htmlFor="no_registrasi" className='w-1/3 mr-2'>No</label>
+            <label htmlFor="username" className='w-1/3 mr-2'>Username</label>
             <input
               type="text"
-              name="no_registrasi"
-              id="no_registrasi"
-              placeholder='Registration number'
+              name="username"
+              id="username"
+              placeholder='Enter your username'
               className='border border-gray-400 p-2 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600 w-2/3'
             />
           </div>
           <div className='flex flex-row justify-between w-full'>
-            <label htmlFor="name" className='w-1/3 mr-2'>Nama</label>
+            <label htmlFor="password" className='w-1/3 mr-2'>Password</label>
             <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder='Nama Lengkap'
-              className='border border-gray-400 p-2 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600 w-2/3'
-            />
-          </div>
-          <div className='flex flex-row justify-between w-full'>
-            <label htmlFor="test_date" className='w-1/3 mr-2'>Tanggal Tes</label>
-            <input
-              type="date"
-              name="test_date"
-              id="test_date"
-              placeholder='tanggal tes'
-
-              className='border border-gray-400 p-2 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600 w-2/3'
-            />
-          </div>
-          <div className='flex flex-row justify-between w-full'>
-            <label htmlFor="purpose" className='w-1/3 mr-2'>Tujuan</label>
-            <input
-              type="text"
-              name="purpose"
-              id="purpose"
-              placeholder='Tujuan tes'
+              type="password"
+              name="password"
+              id="password"
+              placeholder='Please enter your password'
               className='border border-gray-400 p-2 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600 w-2/3'
             />
           </div>
@@ -70,14 +51,5 @@ const Home: NextPage = (data) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async () => {
-  const prisma = new PrismaClient()
-  const data = await prisma.user.findMany()
-  return {
-    props: {
-      data: JSON.parse(JSON.stringify(data))
-    }
-  }
-}
 
 export default Home
