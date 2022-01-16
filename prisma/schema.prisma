@@ -14,7 +14,10 @@ enum Role {
 
 model User {
   id        Int      @id @default(autoincrement())
-  name      String   @unique
+  name      String
+  username  String   @unique
+  password  String
+  tglLahir  DateTime
   type      Role     @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -23,13 +26,12 @@ model User {
 
 model Test {
   id        String     @id @default(uuid())
-  regNumber Int        @unique
-  name      String
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @default(now())
+  tujuan    String
   user      User       @relation(fields: [userId], references: [id])
   userId    Int        @unique
   testType  TestType[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now())
 }
 
 model TestType {

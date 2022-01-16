@@ -5,9 +5,7 @@ const main = async () => {
     
     const user = await prisma.user.createMany({
         data: [
-            {name:'John Doe'},
-            {name:'Jane Doe'},
-            {name:'Jack Doe'},
+            {name:'Admin',username:'Admin',password:'Rahasia123!',type:'ADMIN', tglLahir: new Date('1996-01-01')},
         ]
     })
 }
