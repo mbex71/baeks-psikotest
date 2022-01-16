@@ -1,10 +1,19 @@
-const setStorage = async (key: string, value: any) => {
-    await localStorage.setItem(key, JSON.stringify(value));
+const setStorage =  (key: string, value: any) => {
+    if(typeof window !== 'undefined'){
+
+        window.localStorage.setItem(key, JSON.stringify(value));
+    }
+    
 }
 
-const getStorage = async(key: string) => {
-    const item = await localStorage.getItem(key)
-    return item ? JSON.parse(item as string) : null;
+const getStorage = (key: string) => {
+    if(typeof window !== 'undefined'){
+
+        const item =  window.localStorage.getItem(key)
+        return item ? JSON.parse(item as string) : null;
+    }
+    
+    
 }
 
 export {
