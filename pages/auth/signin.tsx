@@ -3,7 +3,8 @@ import Head from "next/head";
 import AuthLayout from "@components/layouts/AuthLayout";
 import { useEffect } from "react";
 import { useForm } from 'react-hook-form'
-import { useSession, signIn } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 type TLogin = {
     username: string
@@ -11,23 +12,31 @@ type TLogin = {
 }
 
 const Signin: NextPage = () => {
-    const { data } = useSession()
+    const { data, status } = useSession()
+    const router = useRouter()
     const { handleSubmit, register } = useForm<TLogin>()
 
     const onSubmit = (data: TLogin) => {
-        console.log('DATA   ', data)
         signIn('credentials', {
             username: data.username,
             password: data.password,
-            redirect: true,
-            callbackUrl: '/exam'
+            redirect: false,
 
         })
     }
 
     useEffect(() => {
-        console.log('DATA: ', data)
-    }, [data])
+        if (status === 'authenticated') {
+            if (data?.user.type === 'ADMIN') {
+
+                router.push('/dashboard')
+            }
+            else {
+                router.push('/exam')
+            }
+        }
+    }, [status])
+
     return (
         <AuthLayout>
             <Head>
@@ -37,7 +46,7 @@ const Signin: NextPage = () => {
             </Head>
             <main className='flex flex-col justify-center items-center min-h-screen w-full'>
                 <div className='mb-12 w-2/6 text-center'>
-                    <h1 className='text-2xl font-bold tracking-wider'>Silahkan masukan username dan password untuk memulai</h1>
+                    <h1 className='text-2xl font-bold tracking-wider'>Masukan username dan password untuk memulai</h1>
                 </div>
                 <form className='flex flex-col justify-center items-center w-1/3 space-y-4 bg-gray-50 p-12 rounded border' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex flex-row justify-between items-center w-full'>
@@ -63,7 +72,11 @@ const Signin: NextPage = () => {
                     <div className='w-full'>
                         <button className='bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-sm'>Sign in</button>
                     </div>
+
                 </form>
+                <div>
+                    {status === 'authenticated' ? <button className='bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-sm' onClick={() => signOut()}>Sign out</button> : null}
+                </div>
             </main>
         </AuthLayout>
     )

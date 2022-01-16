@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import {PrismaClient} from '@prisma/client'
+import type {JWT} from 'next-auth/jwt'
 
 const prismaClient = new PrismaClient()
 
@@ -18,12 +19,13 @@ export default NextAuth({
             authorize: async (credentials, request) => {
                 // const user = { id: 1, name: "J Smith", email: "jsmith@example.com" }
                 const user = await prismaClient.user.findFirst({
-                    where:{name:credentials?.username, password:credentials?.password}
+                    where:{username: credentials?.username ,password: credentials?.password}
                 })
 
                 if (user) {
                     return user
                 } else {
+                    // throw '/auth/signin?'
                     return null
                 }
             
@@ -38,15 +40,36 @@ export default NextAuth({
     jwt:{
         secret:process.env.JWT_SECRET,
     },
+    
     pages:{
         signIn:'/auth/signin'
     },
 
     callbacks: {
-        redirect({baseUrl, url}) {
-            console.log('url ', url)
-            return baseUrl
+        signIn: async ({ session, user, request, response }) => {
+            
+            return true
+        },
+
+        jwt: async({ token, user, account, profile, isNewUser }) => {
+        
+            if(user){
+                token.name = user?.name
+                token.username = user?.username
+                token.type = user?.type
+            }
+         return token   
+        },
+        session: async ({ session,token, user}) => {
+            
+            if(token){
+                session.user.name = token.name
+                session.user.username = token.username
+                session.user.type = token.type
+            }
+            return session
         }
+        
     },
     logger:{
         debug(code, metaData){
