@@ -3,7 +3,7 @@ import Head from "next/head";
 import AuthLayout from "@components/layouts/AuthLayout";
 import { useEffect } from "react";
 import { useForm } from 'react-hook-form'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSession, signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 type TLogin = {
@@ -48,7 +48,7 @@ const Signin: NextPage = () => {
                 <div className='mb-12 w-2/6 text-center'>
                     <h1 className='text-2xl font-bold tracking-wider'>Masukan username dan password untuk memulai</h1>
                 </div>
-                <form className='flex flex-col justify-center items-center w-1/3 space-y-4 bg-gray-50 p-12 rounded border' onSubmit={handleSubmit(onSubmit)}>
+                <form className='flex flex-col justify-center items-center w-1/3 space-y-4 bg-gray-100 p-12 rounded-sm border border-gray-400' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex flex-row justify-between items-center w-full'>
                         <label htmlFor="username" className='w-1/3 mr-2 text-sm'>Username</label>
                         <input
@@ -74,9 +74,7 @@ const Signin: NextPage = () => {
                     </div>
 
                 </form>
-                <div>
-                    {status === 'authenticated' ? <button className='bg-gray-800 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-sm' onClick={() => signOut()}>Sign out</button> : null}
-                </div>
+                
             </main>
         </AuthLayout>
     )

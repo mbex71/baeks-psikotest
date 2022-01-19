@@ -3,8 +3,39 @@ import Timer from "@components/counters/timer";
 import ExamLayout from "@components/layouts/ExamLayout";
 import AnswerBoard from "@components/counters/answerBoard";
 
+import { ISheetUjian } from '@modules/entities/exam'
+import { useState } from "react";
+
 
 const ExamPage: NextPage = () => {
+
+    const [stateJwb, setStateJwb] = useState(0)
+    const [jawaban, setJawaban] = useState('')
+
+    const data: ISheetUjian = {
+        soal: {
+            id: 1,
+            pertanyaan: ['9', '2', '5', '3', '7'],
+            pilihan: ['A', 'B', 'C', 'D', 'E'],
+            time: 120,
+            totalQuestion: 50
+        },
+        options: [
+            {
+                soal: ['2', '5', '3', '7'],
+                pilihan: ['A', 'B', 'C', 'D', 'E'],
+            },
+            {
+                soal: ['9', '5', '3', '7'],
+                pilihan: ['A', 'B', 'C', 'D', 'E'],
+            }
+        ]
+    }
+
+    const handleAnswer = (jwb: string) => {
+        setStateJwb(prevState => prevState + 1)
+        setJawaban(jwb)
+    }
 
     return (
         <ExamLayout>
@@ -16,43 +47,51 @@ const ExamPage: NextPage = () => {
                 </div>
                 <AnswerBoard jumlahSoal={50} jumlahJawab={30} />
             </section>
-
             {/* Form Pertanyaan */}
             <section className="mt-12 flex flex-col justify-center items-center">
                 <div className="grid grid-cols-5 w-6/12 mt-12" >
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">9</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">7</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">2</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">6</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">4</div>
+                    {
+                        data.soal.pertanyaan.map((item, index) => (
+                            <div key={index} className="border flex justify-center items-center p-6 border-gray-400 font-bold">{item}</div>))
+                    }
                 </div>
                 <div className="grid grid-cols-5 w-6/12">
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">A</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">B</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">C</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">D</div>
-                    <div className="border flex justify-center items-center p-6 border-gray-400 font-bold">E</div>
+                    {
+                        data.soal.pilihan.map((item, index) => <div key={index} className="border flex justify-center items-center p-6 border-gray-400 font-bold">{item}</div>)
+                    }
                 </div>
             </section>
 
-
             <section className="mt-12 flex flex-col justify-center items-center">
-                {/* Form Question */}
-                <div className="grid grid-cols-4 w-6/12 mt-12" >
-                    <div className="flex justify-center items-center p-6 font-bold">9</div>
-                    <div className="flex justify-center items-center p-6 font-bold">7</div>
-                    <div className="flex justify-center items-center p-6 font-bold">2</div>
-                    <div className="flex justify-center items-center p-6 font-bold">6</div>
-                </div>
+                {
+                    data.options.map((item, index) => {
+                        if (index === stateJwb) {
+                            return (
+                                <>
+                                    <div className="grid grid-cols-4 w-6/12 mt-12" >
+                                        {
+                                            item.soal.map((soal, index) => <div key={index} className="flex justify-center items-center p-6 font-bold">{soal}</div>)
+                                        }
 
-                {/* Form Jawaban */}
-                <div className="grid grid-cols-5 w-6/12">
-                    <button className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">A</button>
-                    <button className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">B</button>
-                    <button className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">C</button>
-                    <button className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">D</button>
-                    <button className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">E</button>
-                </div>
+                                    </div>
+
+
+                                    {/* Form Jawaban */}
+                                    <div className="grid grid-cols-5 w-6/12">
+                                        {
+                                            item.pilihan.map((pilihan, index) => <button key={index} onClick={() => handleAnswer(pilihan)} className="border flex justify-center items-center p-6 border-gray-400 hover:font-bold">{pilihan}</button>)
+                                        }
+
+                                    </div>
+                                </>
+                            )
+                        }
+
+                        return null
+                    })
+                }
+
+
             </section>
         </ExamLayout>
     )
