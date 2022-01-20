@@ -18,6 +18,12 @@ enum SoalType {
   SYMBOL
 }
 
+enum StatusTest {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   name      String
@@ -27,17 +33,19 @@ model User {
   type      Role     @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  Test      Test?
+  Test      Test[]
 }
 
 model Test {
-  id        String   @id @default(uuid())
-  tujuan    String
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int      @unique
-  Sheet     Sheet[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id               String     @id @default(uuid())
+  tujuan           String
+  registrationDate DateTime   @default(now())
+  status           StatusTest @default(PENDING)
+  User             User?      @relation(fields: [userId], references: [id])
+  userId           Int?
+  Sheet            Sheet[]
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @default(now())
 }
 
 // Lembar pekerjaan

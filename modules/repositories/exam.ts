@@ -1,51 +1,19 @@
 import {IExam} from '@modules/entities/exam'
+import fetcher from '@configs/fetcher'
+import {getSession} from 'next-auth/react'
 
 const examList = async ():Promise<IExam[]> =>{
-    const data: IExam[] = [
-        {
-            id: 123123123,
-            namaPeserta: 'Firdaus',
-            status: "pending",
-            tglPendaftaran: new Date("2020-01-01"),
-            tujuan: "Pelatihan",
-            type: 'kecermatan',
-        },
-        {
-            id: 123123123,
-            namaPeserta: 'Firdaus',
-            status: "pending",
-            tglPendaftaran: new Date("2020-01-01"),
-            tujuan: "Pelatihan",
-            type: 'kecermatan',
-        },
-        {
-            id: 123123123,
-            namaPeserta: 'Firdaus',
-            status: "pending",
-            tglPendaftaran: new Date("2020-01-01"),
-            tujuan: "Pelatihan",
-            type: 'kecermatan',
-        },
-        {
-            id: 123123123,
-            namaPeserta: 'Firdaus',
-            status: "pending",
-            tglPendaftaran: new Date("2020-01-01"),
-            tujuan: "Pelatihan",
-            type: 'kecermatan',
-        },
-        {
-            id: 123123123,
-            namaPeserta: 'Firdaus',
-            status: "pending",
-            tglPendaftaran: new Date("2020-01-01"),
-            tujuan: "Pelatihan",
-            type: 'kecermatan',
-        },
+    
+  const res = await fetcher({
+      method:'GET',
+      url:'/exam',
+  })
 
-    ]
-    return await data
+  
+  return res.data
 }
+
+
 
 export{
     examList

@@ -52,8 +52,11 @@ export default NextAuth({
     callbacks: {
 
         jwt: async({ token, user, account, profile, isNewUser }) => {
+            
         
             if(user){
+                token.access_token = account?.access_token
+                token.id = user?.id
                 token.name = user?.name
                 token.username = user?.username
                 token.type = user?.type
@@ -63,6 +66,8 @@ export default NextAuth({
         session: async ({ session,token, user}) => {
             
             if(token){
+                session.accessToken = token.access_token
+                session.user.id = token.id
                 session.user.name = token.name
                 session.user.username = token.username
                 session.user.type = token.type

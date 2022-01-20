@@ -1,15 +1,11 @@
-type StatusTest = 'passed' | 'failed' | 'pending';
+type StatusTest = 'PENDING' | 'SUCCESS' | 'FAILED';
 
 export interface IExam {
-    id: number
-    namaPeserta:string
-    type: string
-    tujuan: string
-    tglPendaftaran: Date
-    status: StatusTest
+    id:string        
+    tujuan:string    
+    registrationDate:Date
+    status:StatusTest 
 }
-
-
 export interface ISoal {
     id:number
     pertanyaan: string[]

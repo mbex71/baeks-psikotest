@@ -1,8 +1,8 @@
-import { IExam } from '@modules/entities/exam'
+import { IUserExam } from '@modules/dto/exam'
 import { examList } from '@modules/repositories/exam'
 import {UseQueryResult, useQuery} from 'react-query'
 
-const useExamList = ():UseQueryResult<IExam[], Error> =>{
+const useExamList = ():UseQueryResult<IUserExam[], Error> =>{
     return useQuery('examList', () => examList())
 }
 

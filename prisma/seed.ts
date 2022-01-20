@@ -12,6 +12,18 @@ const main = async () => {
 
     })
 
+    const test = await prisma.test.createMany({
+        data:[
+            {
+                userId:2,
+                tujuan:'Tes PNS',
+                status:'PENDING'
+
+            }
+        ],
+        skipDuplicates:true
+    })
+
     const typeSoal = await prisma.typeSoal.createMany({
         data: [
             {
