@@ -12,6 +12,10 @@ enum Role {
   USER
 }
 
+enum SoalType {
+  MULTIPLE_CHOICE
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   name      String
@@ -44,6 +48,7 @@ model TestType {
   sheet     Sheet[]
 }
 
+// Lembar pekerjaan
 model Sheet {
   id         Int       @id @default(autoincrement())
   name       String
@@ -51,14 +56,40 @@ model Sheet {
   updatedAt  DateTime  @default(now())
   TestType   TestType? @relation(fields: [testTypeId], references: [id])
   testTypeId Int?
-  Soal       Soal[]
+
+  SoalOnSheet SoalOnSheet[]
 }
 
-model Soal {
+//Soal di lembar pekerjaan
+model SoalOnSheet {
   id        Int      @id @default(autoincrement())
-  question  String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   Sheet     Sheet?   @relation(fields: [sheetId], references: [id])
   sheetId   Int?
+  Soal      Soal?    @relation(fields: [soalId], references: [id])
+  soalId    Int?
+}
+
+// Soal dan Jawaban
+model Soal {
+  id            Int           @id @default(autoincrement())
+  question      String
+  choise        String
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @default(now())
+  correctAnswer String
+  wrongAnswer   String
+  SoalOnSheet   SoalOnSheet[]
+  TypeSoal      TypeSoal[]
+}
+
+//Type Soal
+model TypeSoal {
+  id         Int      @id @default(autoincrement())
+  name       SoalType @default(MULTIPLE_CHOICE)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+  Soal       Soal?    @relation(fields: [typeSoalId], references: [id])
+  typeSoalId Int?
 }

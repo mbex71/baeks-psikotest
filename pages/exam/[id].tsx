@@ -13,13 +13,12 @@ const ExamPage: NextPage = () => {
     const [jawaban, setJawaban] = useState('')
 
     const data: ISheetUjian = {
-        soal: {
-            id: 1,
-            pertanyaan: ['9', '2', '5', '3', '7'],
-            pilihan: ['A', 'B', 'C', 'D', 'E'],
-            time: 120,
-            totalQuestion: 50
-        },
+
+        id: 1,
+        pertanyaan: ['9', '2', '5', '3', '7'],
+        pilihan: ['A', 'B', 'C', 'D', 'E'],
+        time: 120,
+        totalQuestion: 50,
         options: [
             {
                 soal: ['2', '5', '3', '7'],
@@ -51,13 +50,13 @@ const ExamPage: NextPage = () => {
             <section className="mt-12 flex flex-col justify-center items-center">
                 <div className="grid grid-cols-5 w-6/12 mt-12" >
                     {
-                        data.soal.pertanyaan.map((item, index) => (
+                        data.pertanyaan.map((item, index) => (
                             <div key={index} className="border flex justify-center items-center p-6 border-gray-400 font-bold">{item}</div>))
                     }
                 </div>
                 <div className="grid grid-cols-5 w-6/12">
                     {
-                        data.soal.pilihan.map((item, index) => <div key={index} className="border flex justify-center items-center p-6 border-gray-400 font-bold">{item}</div>)
+                        data.pilihan.map((item, index) => <div key={index} className="border flex justify-center items-center p-6 border-gray-400 font-bold">{item}</div>)
                     }
                 </div>
             </section>

@@ -22,18 +22,20 @@ export default NextAuth({
                     where:{username: credentials?.username ,password: credentials?.password}
                 })
 
-                if (user) {
+                if(user){
                     return user
-                } else {
-                    // throw '/auth/signin?'
-                    return null
                 }
+                else{
+                    return Promise.reject(new Error('Invalid Credentials'))
+                }
+
             
             }
         })
     ],
     secret: process.env.JWT_SECRET,
     session:{
+
         strategy:'jwt',
         
     },
@@ -42,14 +44,12 @@ export default NextAuth({
     },
     
     pages:{
-        signIn:'/auth/signin'
+        signIn:'/auth/signin',
+        error:'/auth/signin',
+
     },
 
     callbacks: {
-        signIn: async ({ session, user, request, response }) => {
-            
-            return true
-        },
 
         jwt: async({ token, user, account, profile, isNewUser }) => {
         
@@ -82,5 +82,6 @@ export default NextAuth({
             console.log('WARN: ', code)
         }
        
-    }
+    },
+    
 })

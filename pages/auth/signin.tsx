@@ -4,6 +4,7 @@ import AuthLayout from "@components/layouts/AuthLayout";
 import { useEffect } from "react";
 import { useForm } from 'react-hook-form'
 import { useSession, signIn } from 'next-auth/react'
+import type { SignInResponse } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 type TLogin = {
@@ -14,18 +15,27 @@ type TLogin = {
 const Signin: NextPage = () => {
     const { data, status } = useSession()
     const router = useRouter()
-    const { handleSubmit, register } = useForm<TLogin>()
+    const { handleSubmit, register, setError, clearErrors, formState: { errors } } = useForm<TLogin>()
 
-    const onSubmit = (data: TLogin) => {
+    const onSubmit = (data: TLogin): void => {
+        clearErrors('username')
         signIn('credentials', {
             username: data.username,
             password: data.password,
-            redirect: false,
+            redirect: false
 
+        }).then((resp: SignInResponse | undefined) => {
+
+            if (resp?.error) {
+                setError('username', { message: resp?.error })
+            }
         })
+
+
     }
 
     useEffect(() => {
+
         if (status === 'authenticated') {
             if (data?.user.type === 'ADMIN') {
 
@@ -36,6 +46,8 @@ const Signin: NextPage = () => {
             }
         }
     }, [status])
+
+
 
     return (
         <AuthLayout>
@@ -48,7 +60,13 @@ const Signin: NextPage = () => {
                 <div className='mb-12 w-2/6 text-center'>
                     <h1 className='text-2xl font-bold tracking-wider'>Masukan username dan password untuk memulai</h1>
                 </div>
+
+
+
                 <form className='flex flex-col justify-center items-center w-1/3 space-y-4 bg-gray-100 p-12 rounded-sm border border-gray-400' onSubmit={handleSubmit(onSubmit)}>
+                    {
+                        errors?.username?.message && <div className='mb-12 w-4/6 text-center text-sm text-red-500'>{errors?.username.message}</div>
+                    }
                     <div className='flex flex-row justify-between items-center w-full'>
                         <label htmlFor="username" className='w-1/3 mr-2 text-sm'>Username</label>
                         <input
@@ -74,7 +92,7 @@ const Signin: NextPage = () => {
                     </div>
 
                 </form>
-                
+
             </main>
         </AuthLayout>
     )

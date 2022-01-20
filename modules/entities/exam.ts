@@ -24,7 +24,7 @@ export interface IPilihan {
 }
 
 
-export interface ISheetUjian{
-    soal:ISoal
+export interface ISheetUjian extends ISoal{
+    
     options: IPilihan[]
 }

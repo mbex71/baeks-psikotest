@@ -10,6 +10,8 @@ const main = async () => {
         ],
         skipDuplicates: true
     })
+
+    
 }
 
 
