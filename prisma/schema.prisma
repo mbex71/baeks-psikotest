@@ -19,9 +19,15 @@ enum SoalType {
 }
 
 enum StatusTest {
-  PENDING
+  ACTIVE
+  ONGOING
   SUCCESS
   FAILED
+}
+
+enum SheetStatus {
+  ACTIVE
+  INACTIVE
 }
 
 model User {
@@ -37,61 +43,51 @@ model User {
 }
 
 model Test {
-  id               String     @id @default(uuid())
+  id               String       @id @default(uuid())
   tujuan           String
-  registrationDate DateTime   @default(now())
-  status           StatusTest @default(PENDING)
-  User             User?      @relation(fields: [userId], references: [id])
+  registrationDate DateTime     @default(now())
+  status           StatusTest   @default(ACTIVE)
+  User             User?        @relation(fields: [userId], references: [id])
   userId           Int?
-  Sheet            Sheet[]
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @default(now())
+  soalOnTest       SoalOnTest[]
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @default(now())
 }
 
-// Lembar pekerjaan
-model Sheet {
-  id          Int           @id @default(autoincrement())
-  name        String
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @default(now())
-  SoalOnSheet SoalOnSheet[]
-  Test        Test?         @relation(fields: [testId], references: [id])
-  testId      String?
-}
-
-//Soal di lembar pekerjaan
-model SoalOnSheet {
+//Soal di lembar Test
+model SoalOnTest {
   id        Int       @id @default(autoincrement())
+  time      Int       @default(60)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now())
-  Sheet     Sheet?    @relation(fields: [sheetId], references: [id])
-  sheetId   Int?
   Soal      Soal?     @relation(fields: [soalId], references: [id])
   soalId    Int?
+  Test      Test?     @relation(fields: [testId], references: [id])
+  testId    String?
   Jawaban   Jawaban[]
 }
 
 //Jawaban di lembar pekerjaan
 model Jawaban {
-  id            Int          @id @default(autoincrement())
-  answers       String
-  status        Boolean
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @default(now())
-  SoalOnSheet   SoalOnSheet? @relation(fields: [soalOnSheetId], references: [id])
-  soalOnSheetId Int?
+  id           Int         @id @default(autoincrement())
+  answers      String
+  status       Boolean
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @default(now())
+  SoalOnTest   SoalOnTest? @relation(fields: [soalOnTestId], references: [id])
+  soalOnTestId Int?
 }
 
 // Soal dan Jawaban
 model Soal {
-  id           Int           @id @default(autoincrement())
+  id           Int          @id @default(autoincrement())
   question     String
   listOfChoise String
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @default(now())
-  SoalOnSheet  SoalOnSheet[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @default(now())
+  SoalOnTest   SoalOnTest[]
   Options      Options[]
-  TypeSoal     TypeSoal?     @relation(fields: [typeSoalId], references: [id])
+  TypeSoal     TypeSoal?    @relation(fields: [typeSoalId], references: [id])
   typeSoalId   Int?
 }
 

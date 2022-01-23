@@ -1,5 +1,4 @@
-import {PrismaClient} from '@prisma/client'
-const prisma = new PrismaClient()
+import prisma from '@configs/prisma'
 
 const main = async () => {
     
@@ -17,7 +16,7 @@ const main = async () => {
             {
                 userId:2,
                 tujuan:'Tes PNS',
-                status:'PENDING'
+                status:'ACTIVE'
 
             }
         ],

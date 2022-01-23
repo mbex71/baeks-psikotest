@@ -1,5 +1,5 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
-import {listUserExams } from '@models/exam'
+import {listUserExams, userExam } from '@models/exam'
 import {getSession} from 'next-auth/react'
 import { StatusTest } from '@prisma/client'
 
@@ -12,8 +12,13 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse){
 
     if(req.method === 'GET'){
         const userId = session?.user?.id as string
-        const status = req.query.status as StatusTest
-        return res.status(200).json(await listUserExams(parseInt(userId),status))
+        const testId = req?.query.exam[0] 
+        const soalId = req?.query.exam[1] 
+        
+        const data = await userExam(parseInt(userId),testId, parseInt(soalId))
+
+        res.status(200).json(data)
+        
     }
 
     

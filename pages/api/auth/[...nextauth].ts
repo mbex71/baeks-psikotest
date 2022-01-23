@@ -1,9 +1,6 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
-import {PrismaClient} from '@prisma/client'
-import type {JWT} from 'next-auth/jwt'
-
-const prismaClient = new PrismaClient()
+import prisma from '@configs/prisma'
 
 export default NextAuth({
     
@@ -18,7 +15,8 @@ export default NextAuth({
             },
             authorize: async (credentials, request) => {
                 // const user = { id: 1, name: "J Smith", email: "jsmith@example.com" }
-                const user = await prismaClient.user.findFirst({
+                
+                const user = await prisma.user.findFirst({
                     where:{username: credentials?.username ,password: credentials?.password}
                 })
 

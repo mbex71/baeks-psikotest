@@ -1,26 +1,13 @@
-type StatusTest = 'PENDING' | 'SUCCESS' | 'FAILED';
+export type StatusTest = 'ACTIVE' |'ONGOING'|'SUCCESS'|'FAILED'
 
-export interface IExam {
-    id:string        
-    tujuan:string    
-    registrationDate:Date
-    status:StatusTest 
-}
-export interface ISoal {
-    id:number
-    pertanyaan: string[]
-    pilihan:string[]
-    time:number
-    totalQuestion:number
-}
 
-export interface IPilihan {
-    soal:string[]
-    pilihan:string[]
+export interface ITest {
+    id: string
+    tujuan: string
+    registrationDate: Date
+    status: string
+    createdAt: Date
+    updatedAt: Date
 }
 
 
-export interface ISheetUjian extends ISoal{
-    
-    options: IPilihan[]
-}

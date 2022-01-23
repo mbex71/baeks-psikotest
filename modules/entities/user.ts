@@ -1,9 +1,6 @@
-import {IExam} from '@modules/entities/exam'
-
 type Role = 'USER' |'ADMIN'
-
 export interface IUser {
-    id:number
+  id:number
   name:      string
   username:  string
   password:  string
@@ -11,5 +8,4 @@ export interface IUser {
   type:Role
   createdAt: Date
   updatedAt: Date
-  Test?:      IExam[]
 }

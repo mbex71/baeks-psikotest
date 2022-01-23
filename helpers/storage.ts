@@ -16,7 +16,16 @@ const getStorage = (key: string) => {
     
 }
 
+const removeStorage = (key: string) => {
+    if(typeof window !== 'undefined'){
+
+        window.localStorage.removeItem(key);
+    }
+    
+}
+
 export {
     setStorage,
-    getStorage
+    getStorage,
+    removeStorage
 }

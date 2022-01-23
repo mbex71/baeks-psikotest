@@ -1,5 +1,6 @@
 import Countdown, { CountdownRenderProps, zeroPad } from "react-countdown"
-import { getStorage, setStorage } from "@helpers/storage"
+import { getStorage, removeStorage, setStorage, } from "@helpers/storage"
+import { memo } from 'react'
 
 interface IProps {
     handleCompleted?: () => void
@@ -13,6 +14,7 @@ type TTimer = {
 
 const renderer = ({ minutes, seconds, completed, }: CountdownRenderProps) => {
     if (completed) {
+        removeStorage('timer')
         return <div className="text-2xl font-bold border-2 border-gray-400 rounded w-1/6 flex justify-center items-center p-4">Finish</div>
     }
     else {
@@ -33,6 +35,7 @@ const Timer: React.FC<IProps> = ({ handleCompleted, timer }: IProps) => {
         else {
             return timer
         }
+        return timer
     }
     return <Countdown
         date={Date.now() + checkTimer()}
@@ -42,4 +45,4 @@ const Timer: React.FC<IProps> = ({ handleCompleted, timer }: IProps) => {
     />
 }
 
-export default Timer
+export default memo(Timer)
