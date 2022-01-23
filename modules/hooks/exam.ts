@@ -23,7 +23,9 @@ type TParamExam = {
     soalId:number
 }
 const useUserExam = (params:TParamExam):UseQueryResult<IUserExam, Error> =>{
-    return useQuery(['examUser', params], ()=>fetchUserExam(params))
+    return useQuery(['examUser', params], ()=>fetchUserExam(params),{
+        enabled:!!params.soalId && !!params.testId
+    })
 }
 
 export{

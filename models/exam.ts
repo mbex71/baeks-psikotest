@@ -54,7 +54,9 @@ const userExam = async (userId:number,testId:string, soalId:number) =>{
                             },
                             Options:{
                                 select:{
+                                    id:true,
                                     question:true,
+                                    // correctAnswer:true,
                                     wrongAnswer:true,
                                 }
                             }

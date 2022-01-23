@@ -8,6 +8,7 @@ interface ISoalExam extends ISoal {
 }
 
 interface ISoalExamOnTest {
+    time:number
     Soal:ISoalExam
 }
 export interface IUserExam extends ITest{

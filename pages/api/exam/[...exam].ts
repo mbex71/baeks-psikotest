@@ -11,11 +11,11 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse){
     }
 
     if(req.method === 'GET'){
-        const userId = session?.user?.id as string
+        const userId = parseInt(session?.user?.id as string)
         const testId = req?.query.exam[0] 
-        const soalId = req?.query.exam[1] 
+        const soalId = parseInt(req?.query.exam[1] )
         
-        const data = await userExam(parseInt(userId),testId, parseInt(soalId))
+        const data = await userExam(userId,testId, soalId)
 
         res.status(200).json(data)
         

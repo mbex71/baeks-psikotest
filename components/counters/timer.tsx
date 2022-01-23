@@ -15,10 +15,10 @@ type TTimer = {
 const renderer = ({ minutes, seconds, completed, }: CountdownRenderProps) => {
     if (completed) {
         removeStorage('timer')
-        return <div className="text-2xl font-bold border-2 border-gray-400 rounded w-1/6 flex justify-center items-center p-4">Finish</div>
+        return <div className="text-2xl font-bold border-2 bg-white rounded w-1/6 flex justify-center items-center p-4">Finish</div>
     }
     else {
-        return <div className="text-2xl font-bold border-2 border-gray-400 rounded w-1/6 flex justify-center items-center p-4">{zeroPad(minutes)} : {zeroPad(seconds)}</div>
+        return <div className="text-2xl font-bold border-2 bg-white rounded w-1/6 flex justify-center items-center p-4">{zeroPad(minutes)} : {zeroPad(seconds)}</div>
     }
 }
 
@@ -32,9 +32,6 @@ const Timer: React.FC<IProps> = ({ handleCompleted, timer }: IProps) => {
         if (clock) {
             return parseInt(clock)
         }
-        else {
-            return timer
-        }
         return timer
     }
     return <Countdown
@@ -42,6 +39,7 @@ const Timer: React.FC<IProps> = ({ handleCompleted, timer }: IProps) => {
         renderer={renderer}
         onComplete={handleCompleted}
         onTick={handleSaveTimer}
+
     />
 }
 
