@@ -8,8 +8,7 @@ declare module "next-auth"{
             name?:string | null
             username?:string | unknown
             type?: 'ADMIN' | 'USER' | unknown
-        },
-        accessToken?: string | null
+        }
     }
 }
 
@@ -19,6 +18,6 @@ declare module "next-auth/jwt"{
         name?:string | null
         username?:string | unknown
         type?: 'ADMIN' | 'USER' | unknown
-        access_token?: string | null
+        
     }
 }

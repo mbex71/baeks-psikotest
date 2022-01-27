@@ -4,11 +4,11 @@ import prisma from '@configs/prisma'
 const listUserExams = async (userId: number | undefined, status:StatusTest ) => {
     const data = await prisma.test.findMany({
         where: {
-            userId: userId,
+            accountId: userId,
             status:status
         },
         include:{
-            User:true,
+            Account:true,
             
         }
     })
@@ -20,7 +20,7 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
 const userExam = async (userId:number,testId:string, soalId:number) =>{
     const data = await prisma.test.findFirst({
         where: {
-            userId: userId,
+            accountId: userId,
             id:testId
         },
         select:{
@@ -70,10 +70,52 @@ const userExam = async (userId:number,testId:string, soalId:number) =>{
     return data
 }
 
+const createTest = async (userId:number) =>{
+    const idSoal = await prisma.soal.findMany({
+        select:{
+            id:true
+        }
+    })
+
+    const timer = await prisma.timer.findFirst({
+        select:{
+            value:true
+        }
+    })
+
+    const test = await prisma.test.create({
+        
+        data:{
+            testCode:Math.random().toString(36).substring(2, 15),
+            registrationDate:new Date(),
+            tujuan:'Tes Test',
+            accountId:userId,
+            soalOnTest:{
+                create:idSoal.map(item=>{
+                    return{
+                        soalId:item.id,
+                        time:timer?.value   
+                    }
+                }),
+                
+            }  
+
+        },
+        include:{
+            soalOnTest:true,
+            Account:true
+        }
+    })
+
+    console.log('TEST Create REsult: ', test)
+
+    return test
+}
 
 
 export {
     listUserExams,
-    userExam
+    userExam,
+    createTest
      
 }

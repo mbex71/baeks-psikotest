@@ -66,7 +66,7 @@ const ExamPage: NextPage = () => {
             <section className="flex flex-row justify-between">
                 {/* <Timer timer={dataUjian?.soalOnTest?.[0].time as number} /> */}
                 {
-                    dataUjian?.soalOnTest?.[0]?.time ? <Timer timer={dataUjian?.soalOnTest?.[0]?.time as number * 1000} handleCompleted={handleTimerFinish} /> : <div className="text-2xl font-bold border-2 bg-white rounded w-1/6 flex justify-center items-center p-4">00 : 00</div>
+                    dataUjian?.soalOnTest?.[0]?.time ? <Timer timer={dataUjian?.soalOnTest?.[0]?.time as number} handleCompleted={handleTimerFinish} /> : <div className="text-2xl font-bold border-2 bg-white rounded w-1/6 flex justify-center items-center p-4">00 : 00</div>
                 }
 
                 <div className="border rounded w-3/6 text-center p-4 space-y-2 bg-white">

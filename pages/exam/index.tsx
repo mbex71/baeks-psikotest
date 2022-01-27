@@ -60,8 +60,8 @@ const Exam: NextPage = () => {
                                 <div className="flex flex-col justify-center items-start text-sm w-3/4">
                                     <div className="text-xs text-black opacity-25 mb-4">{format(new Date(item?.registrationDate), 'dd MMMM yyyy')}</div>
                                     <div className="font-bold text-sm tracking-widest text-yellow-400 flex flex-row items-center"> <BsFillExclamationCircleFill className="mr-2" />{item?.status}</div>
-                                    <div className="font-bold text-lg tracking-widest font-sans">{item?.id}</div>
-                                    <div className="text-sm mb-4 tracking-wide text-black opacity-50 font-bold">{item?.User.name}</div>
+                                    <div className="font-bold text-lg tracking-widest font-sans">{item?.testCode}</div>
+                                    <div className="text-sm mb-4 tracking-wide text-black opacity-50 font-bold">{item?.Account.name}</div>
                                     <div className="text-xs text-black opacity-50">Tujuan: {item?.tujuan}</div>
                                 </div>
                                 <div className="w-1/4 flex justify-center items-center h-full">

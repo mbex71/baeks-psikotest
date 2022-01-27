@@ -21,7 +21,7 @@
       "@helpers/*": ["./helpers/*"],
       "@modules/*": ["./modules/*"],
       "@configs/*": ["./configs/*"],
-      "@models/*": ["./models/*"],
+      "@services/*": ["services/*"],
       
     }
   },

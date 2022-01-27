@@ -1,5 +1,5 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
-import {listUserExams, userExam } from '@models/exam'
+import {listUserExams, userExam } from 'services/exam'
 import {getSession} from 'next-auth/react'
 import { StatusTest } from '@prisma/client'
 

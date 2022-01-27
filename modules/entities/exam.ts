@@ -2,12 +2,13 @@ export type StatusTest = 'ACTIVE' |'ONGOING'|'SUCCESS'|'FAILED'
 
 
 export interface ITest {
-    id: string
+    id: number,
+    testCode:string
     tujuan: string
-    registrationDate: Date
+    registrationDate: string
     status: string
-    createdAt: Date
-    updatedAt: Date
+    
+    
 }
 
 

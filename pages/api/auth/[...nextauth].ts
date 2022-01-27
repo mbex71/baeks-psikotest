@@ -16,7 +16,7 @@ export default NextAuth({
             authorize: async (credentials, request) => {
                 // const user = { id: 1, name: "J Smith", email: "jsmith@example.com" }
                 
-                const user = await prisma.user.findFirst({
+                const user = await prisma.account.findFirst({
                     where:{username: credentials?.username ,password: credentials?.password}
                 })
 
@@ -49,22 +49,25 @@ export default NextAuth({
 
     callbacks: {
 
-        jwt: async({ token, user, account, profile, isNewUser }) => {
+        // jwt: async({ token, user, account, profile, isNewUser }) => {
+            jwt: async(param) => {
             
-        
-            if(user){
-                token.access_token = account?.access_token
-                token.id = user?.id
-                token.name = user?.name
-                token.username = user?.username
-                token.type = user?.type
+                // console.log('PARAM TOKEN: ',param)
+            if(param.user){
+                
+                param.token.id = param.user?.id
+                param.token.name = param.user?.name
+                param.token.username = param.user?.username
+                param.token.type = param.user?.type
             }
-         return token   
+
+            // console.log('TOKEN SAya: ',token)
+         return param.token   
         },
         session: async ({ session,token, user}) => {
             
             if(token){
-                session.accessToken = token.access_token
+                
                 session.user.id = token.id
                 session.user.name = token.name
                 session.user.username = token.username

@@ -1,27 +1,34 @@
-import prisma from '@configs/prisma'
+import { PrismaClient} from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 const main = async () => {
     
-    const user = await prisma.user.createMany({
-        data: [
-            {name:'Admin',username:'Admin',password:'Rahasia123!',type:'ADMIN', tglLahir: new Date('1996-01-01')},
-            {name:'Firdaus',username:'firdaus71',password:'Rahasia123!',type:'USER', tglLahir: new Date('1996-01-01')},
-        ],
-        skipDuplicates: true,
+   const user = await prisma.account.createMany({
+       data: [
+        {
+            name:'Admin',
+            username:'Admin',
+            password:'Rahasia123!',
+            type:'ADMIN', 
+            tglLahir: new Date('1996-01-01'),
+        },
+        {
+            name:'Firdaus',
+            username:'firdaus71',
+            password:'Rahasia123!',
+            type:'USER', 
+            tglLahir: new Date('1996-01-01')
+        }
+       ]
+   })
 
-    })
+   const timer = await prisma.timer.create({
+       data:{
+           value: 120000
+       }
+   })
 
-    const test = await prisma.test.createMany({
-        data:[
-            {
-                userId:2,
-                tujuan:'Tes PNS',
-                status:'ACTIVE'
-
-            }
-        ],
-        skipDuplicates:true
-    })
 
     const typeSoal = await prisma.typeSoal.createMany({
         data: [
@@ -50,7 +57,48 @@ const main = async () => {
                 question:'3,0,5,8,1',
                 listOfChoise:'a,b,c,d,e',
                 typeSoalId:1
-            }
+            },
+            {
+                question:'2,7,5,1,4',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'6,2,0,3,8',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'1,4,9,7,3',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'9,7,2,6,4',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'3,0,5,8,1',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'2,7,5,1,4',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'6,2,0,3,8',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+            {
+                question:'1,4,9,7,3',
+                listOfChoise:'a,b,c,d,e',
+                typeSoalId:1
+            },
+           
         ],
         skipDuplicates:true
     })
@@ -120,6 +168,8 @@ const main = async () => {
         ],
         skipDuplicates: true
     })
+
+    
 }
 
 

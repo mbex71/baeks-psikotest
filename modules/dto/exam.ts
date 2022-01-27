@@ -12,6 +12,6 @@ interface ISoalExamOnTest {
     Soal:ISoalExam
 }
 export interface IUserExam extends ITest{
-    User: IUser
+    Account: IUser
     soalOnTest?:ISoalExamOnTest[]
 }

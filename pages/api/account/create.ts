@@ -2,12 +2,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import {getSession} from 'next-auth/react'
 
-import {createTest} from 'services/exam'
+import {createUserAccount} from 'services/account'
 import { getToken } from "next-auth/jwt";
 
-type postData = {
-    testId: string
-}
+import {TCreateUserAccount} from '@modules/dto/account'
 
 export default async function name(req:NextApiRequest, res:NextApiResponse) {
     const session = await getSession({req})
@@ -20,13 +18,23 @@ export default async function name(req:NextApiRequest, res:NextApiResponse) {
     }
 
      if(req.method === 'POST'){
-         const data = req.body as postData
+         const data = req.body as TCreateUserAccount
         //  const userId: number = parseInt(session?.user?.id as string)
-        const userId: number = parseInt(token?.id as string)
+        const accountType: string = token?.type as string
+
+        if(accountType !== 'ADMIN'){
+
+            
+            return res.status(401).json({message:'Unauthorized'})
+        }
+        
+            const userTest = await createUserAccount(data)
+            console.log(userTest)
+            return res.status(200).json(userTest)
+
+            // return res.status(200).json(data)
          
-         const userTest = await createTest(userId)
-         return res.status(200).json(userTest)
-     }
+        }
 
      else{
          return res.status(500).json({message:'Method not allowed'})

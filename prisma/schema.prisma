@@ -30,7 +30,7 @@ enum SheetStatus {
   INACTIVE
 }
 
-model User {
+model Account {
   id        Int      @id @default(autoincrement())
   name      String
   username  String   @unique
@@ -43,28 +43,36 @@ model User {
 }
 
 model Test {
-  id               String       @id @default(uuid())
+  id               Int          @id @default(autoincrement())
+  testCode         String
   tujuan           String
   registrationDate DateTime     @default(now())
   status           StatusTest   @default(ACTIVE)
-  User             User?        @relation(fields: [userId], references: [id])
-  userId           Int?
   soalOnTest       SoalOnTest[]
   createdAt        DateTime     @default(now())
   updatedAt        DateTime     @default(now())
+  Account          Account?     @relation(fields: [accountId], references: [id])
+  accountId        Int?
 }
 
 //Soal di lembar Test
 model SoalOnTest {
   id        Int       @id @default(autoincrement())
-  time      Int       @default(60)
+  time      Int       @default(60000)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now())
   Soal      Soal?     @relation(fields: [soalId], references: [id])
   soalId    Int?
   Test      Test?     @relation(fields: [testId], references: [id])
-  testId    String?
+  testId    Int?
   Jawaban   Jawaban[]
+}
+
+model Timer {
+  id        Int      @id @default(autoincrement())
+  value     Int      @default(60000)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
 
 //Jawaban di lembar pekerjaan
