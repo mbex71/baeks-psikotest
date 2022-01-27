@@ -17,27 +17,29 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
     return data
 }
 
-const userExam = async (userId:number,testId:string, soalId:number) =>{
+const userExam = async (userId:number,testCode:string, soalId:number) =>{
     const data = await prisma.test.findFirst({
         where: {
             accountId: userId,
-            id:testId
+            testCode: testCode
+            
         },
         select:{
             status:true,
             tujuan:true,
             registrationDate:true,
-            User:{
+            Account:{
                 select:{
                     name:true,
                     tglLahir:true,
                     username:true
                 }
             },
-            soalOnTest:{
-                
+            soalOnTest:{                
                 where:{
-                    testId:testId,
+                    Test:{
+                        testCode:testCode
+                    },
                     soalId:soalId
                 },
                 select:{
@@ -71,12 +73,15 @@ const userExam = async (userId:number,testId:string, soalId:number) =>{
 }
 
 const createTest = async (userId:number) =>{
+    
+    // Get All Soal ID
     const idSoal = await prisma.soal.findMany({
         select:{
             id:true
         }
     })
-
+    
+    // Get Timer Value
     const timer = await prisma.timer.findFirst({
         select:{
             value:true
@@ -106,8 +111,6 @@ const createTest = async (userId:number) =>{
             Account:true
         }
     })
-
-    console.log('TEST Create REsult: ', test)
 
     return test
 }

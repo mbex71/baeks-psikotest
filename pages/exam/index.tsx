@@ -28,14 +28,14 @@ const Exam: NextPage = () => {
     const { data, isLoading } = useExamList(params)
     const createExam = useCreateExam()
 
-    const handleStartExam = (testId: string, status: string | StatusTest) => {
-        createExam.mutate(testId, {
+    const handleStartExam = (testCode: string, status: string | StatusTest) => {
+        createExam.mutate(testCode, {
             onSuccess: (data) => {
                 console.log('DATA: ', data)
                 if (!getStorage('soalId')) {
-                    router.push(`/exam/${testId}/1`)
+                    router.push(`/exam/${testCode}/1`)
                 } else {
-                    router.push(`/exam/${testId}/${getStorage('soalId')}`)
+                    router.push(`/exam/${testCode}/${getStorage('soalId')}`)
                 }
             },
             onError: (error) => {
@@ -67,7 +67,7 @@ const Exam: NextPage = () => {
                                 <div className="w-1/4 flex justify-center items-center h-full">
 
                                     <button
-                                        onClick={() => handleStartExam(item?.id, item.status)}
+                                        onClick={() => handleStartExam(item.testCode, item.status)}
                                         className="w-full bg-blue-400 p-4 text-white rounded font-bold tracking-wider hover:bg-blue-500 text-sm">
                                         START
                                     </button>

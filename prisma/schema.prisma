@@ -44,7 +44,7 @@ model Account {
 
 model Test {
   id               Int          @id @default(autoincrement())
-  testCode         String
+  testCode         String       @unique
   tujuan           String
   registrationDate DateTime     @default(now())
   status           StatusTest   @default(ACTIVE)
