@@ -24,7 +24,7 @@ export default NextAuth({
                     return user
                 }
                 else{
-                    return Promise.reject(new Error('Invalid Credentials'))
+                    return Promise.reject(new Error('Account tidak ditemukan!'))
                 }
 
             

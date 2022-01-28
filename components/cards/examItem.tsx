@@ -5,7 +5,7 @@ interface IProps {
 
 const ExamItem: React.FC = (props) => {
     return (
-        <div className="bg-white p-8 text-gray-800 w-1/2 rounded shadow-sm">
+        <div className="bg-slate-700 text-white p-8 w-1/2 rounded">
             {props.children}
         </div>
     )

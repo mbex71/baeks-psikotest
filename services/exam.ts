@@ -5,7 +5,7 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
     const data = await prisma.test.findMany({
         where: {
             accountId: userId,
-            status:status
+            // status:status
         },
         include:{
             Account:true,
@@ -17,13 +17,15 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
     return data
 }
 
-const userExam = async (userId:number,testCode:string, soalId:number) =>{
+const userExam = async (accountId:number,testCode:string, soalId:number) =>{
+
     const data = await prisma.test.findFirst({
         where: {
-            accountId: userId,
+            accountId: accountId,
             testCode: testCode
             
         },
+        
         select:{
             status:true,
             tujuan:true,

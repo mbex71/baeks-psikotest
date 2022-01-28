@@ -29,19 +29,21 @@ const Exam: NextPage = () => {
     const createExam = useCreateExam()
 
     const handleStartExam = (testCode: string, status: string | StatusTest) => {
-        createExam.mutate(testCode, {
-            onSuccess: (data) => {
-                console.log('DATA: ', data)
-                if (!getStorage('soalId')) {
-                    router.push(`/exam/${testCode}/1`)
-                } else {
-                    router.push(`/exam/${testCode}/${getStorage('soalId')}`)
-                }
-            },
-            onError: (error) => {
-                console.log('ERROR: ', error)
-            }
-        })
+        // createExam.mutate(testCode, {
+        //     onSuccess: (data) => {
+
+
+        //     },
+        //     onError: (error) => {
+        //         console.log('ERROR: ', error)
+        //     }
+        // })
+
+        if (!getStorage('soalId')) {
+            router.push(`/exam/${testCode}/1`)
+        } else {
+            router.push(`/exam/${testCode}/${getStorage('soalId')}`)
+        }
     }
 
     return (
@@ -52,23 +54,23 @@ const Exam: NextPage = () => {
                         isLoading ? <div className="flex h-full w-full justify-center items-center"><RiLoader5Line className="animate-spin text-4xl" /></div> : null
                     }
 
-                    {data?.length === 0 && <div className="flex h-full w-full justify-center items-center font-bold">Data not found!</div>}
+                    {data?.length === 0 && <div className="flex h-full w-full justify-center items-center font-light text-white text-2xl">Data tidak ditemukan!</div>}
 
                     {data?.map((item, index) => (
                         <ExamItem key={index}>
                             <div className="flex flex-row w-full h-full">
                                 <div className="flex flex-col justify-center items-start text-sm w-3/4">
-                                    <div className="text-xs text-black opacity-25 mb-4">{format(new Date(item?.registrationDate), 'dd MMMM yyyy')}</div>
+                                    <div className="text-xs text-white opacity-50 mb-4">{format(new Date(item?.registrationDate), 'dd MMMM yyyy')}</div>
                                     <div className="font-bold text-sm tracking-widest text-yellow-400 flex flex-row items-center"> <BsFillExclamationCircleFill className="mr-2" />{item?.status}</div>
-                                    <div className="font-bold text-lg tracking-widest font-sans">{item?.testCode}</div>
-                                    <div className="text-sm mb-4 tracking-wide text-black opacity-50 font-bold">{item?.Account.name}</div>
-                                    <div className="text-xs text-black opacity-50">Tujuan: {item?.tujuan}</div>
+                                    <div className="font-extrabold text-4xl tracking-widest font-mono text-white">{item?.testCode}</div>
+                                    <div className="text-sm mb-4 tracking-wide text-white opacity-80">{item?.Account.name}</div>
+                                    <div className="text-xs text-white opacity-50">Tujuan: {item?.tujuan}</div>
                                 </div>
                                 <div className="w-1/4 flex justify-center items-center h-full">
 
                                     <button
                                         onClick={() => handleStartExam(item.testCode, item.status)}
-                                        className="w-full bg-blue-400 p-4 text-white rounded font-bold tracking-wider hover:bg-blue-500 text-sm">
+                                        className="w-full bg-emerald-400 p-4 text-white rounded font-bold tracking-wider hover:bg-emerald-500 text-sm">
                                         START
                                     </button>
 

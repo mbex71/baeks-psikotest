@@ -1,6 +1,26 @@
 import prisma from "@configs/prisma";
 import {TCreateUserAccount} from '@modules/dto/account'
 
+
+
+const selectAllUserAccount = async () => {
+    
+    const data = await prisma.account.findMany({
+        
+        select:{
+            name:true,
+            password:true,
+            type:true,
+            tglLahir:true,
+            username:true,
+            id:true
+        },
+        
+    })
+
+    return data
+}
+
 const createUserAccount = async (data: TCreateUserAccount) => {
 
     const account = await prisma.account.create({
@@ -29,5 +49,6 @@ const createUserAccount = async (data: TCreateUserAccount) => {
 
 
 export{
-    createUserAccount
+    createUserAccount,
+    selectAllUserAccount
 }
