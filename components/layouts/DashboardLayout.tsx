@@ -32,7 +32,7 @@ const DashboardLayout: React.FC<IProps> = (props: IProps) => {
 
                         <Link href="/dashboard/accounts">
                             <a className='text-sm'>
-                                Exams
+                                Exams & Results
                             </a>
                         </Link>
                         <Link href="/dashboard/accounts">
@@ -47,7 +47,7 @@ const DashboardLayout: React.FC<IProps> = (props: IProps) => {
                     </div>
 
                 </div>
-                <div className='w-10/12 p-12 bg-slate-800 text-white h-full min-h-screen overflow-y-auto right-0 absolute origin-top-right'>
+                <div className='w-10/12 p-12 bg-slate-800 text-white min-h-screen overflow-y-auto right-0 absolute origin-top-right'>
                     {props.children}
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import prisma from "@configs/prisma";
 import {TCreateUserAccount} from '@modules/dto/account'
+import {IUser} from '@modules/entities/user'
 
 
 
@@ -21,7 +22,7 @@ const selectAllUserAccount = async () => {
     return data
 }
 
-const createUserAccount = async (data: TCreateUserAccount) => {
+const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
 
     const account = await prisma.account.create({
         data: {
@@ -35,13 +36,19 @@ const createUserAccount = async (data: TCreateUserAccount) => {
                     tujuan: data.tujuan,
                     testCode: Math.random().toString(36).substring(2),
                     status:'ACTIVE',
-                    registrationDate: new Date(data.registrationDate),
+                    registrationDate: new Date(Date.now()),
                 },
             }
         },
-        include:{
-            Test:true
+        select:{
+            username:true,
+            name:true,
+            password:true,
+            tglLahir:true,
+            id :true,
+            type:true,
         }
+       
     })
 
     return account

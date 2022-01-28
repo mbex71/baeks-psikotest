@@ -4,7 +4,7 @@ export interface IUser {
   name:      string
   username:  string
   password:  string
-  tglLahir: string
+  tglLahir: string | Date
   type:Role
   
 }

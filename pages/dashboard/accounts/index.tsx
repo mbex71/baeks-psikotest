@@ -96,6 +96,7 @@ const Accounts: NextPage = () => {
                     <DashboardTables columns={columns} data={data as IUser[]} search={search} />
                 }
 
+
             </div>
 
         </DashboardLayout>
