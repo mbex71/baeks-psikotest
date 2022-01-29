@@ -58,7 +58,7 @@ model Test {
 //Soal di lembar Test
 model SoalOnTest {
   id        Int       @id @default(autoincrement())
-  time      Int       @default(60000)
+  timer     Int       @default(60000)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now())
   Soal      Soal?     @relation(fields: [soalId], references: [id])
@@ -68,22 +68,24 @@ model SoalOnTest {
   Jawaban   Jawaban[]
 }
 
+//Jawaban di lembar pekerjaan
+model Jawaban {
+  id           Int         @id @default(autoincrement())
+  answers      String?
+  status       Boolean?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @default(now())
+  SoalOnTest   SoalOnTest? @relation(fields: [soalOnTestId], references: [id])
+  soalOnTestId Int?
+  Options      Options?    @relation(fields: [optionsId], references: [id])
+  optionsId    Int?        @unique
+}
+
 model Timer {
   id        Int      @id @default(autoincrement())
   value     Int      @default(60000)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-}
-
-//Jawaban di lembar pekerjaan
-model Jawaban {
-  id           Int         @id @default(autoincrement())
-  answers      String
-  status       Boolean
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @default(now())
-  SoalOnTest   SoalOnTest? @relation(fields: [soalOnTestId], references: [id])
-  soalOnTestId Int?
 }
 
 // Soal dan Jawaban
@@ -109,6 +111,7 @@ model Options {
   updatedAt     DateTime @default(now())
   Soal          Soal?    @relation(fields: [soalId], references: [id])
   soalId        Int?
+  Jawaban       Jawaban?
 }
 
 //Type Soal

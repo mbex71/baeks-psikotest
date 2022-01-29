@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `SoalOnTest` ADD COLUMN `time` INTEGER NOT NULL DEFAULT 60;

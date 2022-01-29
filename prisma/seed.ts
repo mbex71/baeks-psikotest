@@ -112,7 +112,7 @@ const main = async () => {
                 soalId:1
             },
             {
-                question:'3,0,5,8',
+                question:'4,9,7,6',
                 correctAnswer:'c',
                 wrongAnswer:'a,b,d,e',
                 soalId:1
@@ -164,6 +164,18 @@ const main = async () => {
                 correctAnswer:'a',
                 wrongAnswer:'b,c,d,e',
                 soalId:1
+            },
+            {
+                question:'0,8,1,3',
+                correctAnswer:'c',
+                wrongAnswer:'a,b,d,e',
+                soalId:2
+            },
+            {
+                question:'3,0,1,5',
+                correctAnswer:'d',
+                wrongAnswer:'a,b,c,e',
+                soalId:2
             }
         ],
         skipDuplicates: true

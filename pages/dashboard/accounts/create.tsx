@@ -5,7 +5,6 @@ import { DashboardLayout } from '@components/layouts'
 import { useForm } from 'react-hook-form'
 import { useCreateAccount } from '@modules/hooks/dashboard/accounts'
 
-
 type TFormData = {
     name: string,
     tglLahir: string,
@@ -18,7 +17,6 @@ const Accounts: NextPage = () => {
     const router = useRouter()
 
     const onSubmit = (value: TFormData) => {
-        console.log('Value: ', value)
         mutate(value, {
             onSuccess: () => {
                 router.push('/dashboard/accounts')

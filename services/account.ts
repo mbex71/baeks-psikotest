@@ -24,6 +24,18 @@ const selectAllUserAccount = async () => {
 
 const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
 
+    const listSoal = await prisma.soal.findMany({
+        select:{
+            id:true,
+        }
+    })
+
+    const timer = await prisma.timer.findFirst({
+        select:{
+            value:true
+        }
+    })
+
     const account = await prisma.account.create({
         data: {
             username:Math.random().toString(36).substring(7),
@@ -37,7 +49,15 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
                     testCode: Math.random().toString(36).substring(2),
                     status:'ACTIVE',
                     registrationDate: new Date(Date.now()),
+                    soalOnTest:{
+                        createMany:{
+                            data:listSoal.map(soal => ({soalId: soal.id, timer: timer?.value}))
+                        },  
+                        
+                    },
+                    
                 },
+                
             }
         },
         select:{
@@ -47,9 +67,46 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
             tglLahir:true,
             id :true,
             type:true,
+            Test:{
+                where:{
+                    status:'ACTIVE'
+                },
+                select:{
+                    accountId:true,
+                    status:true,
+                    soalOnTest:{
+                        select:{
+                            id:true,
+                            Soal:{
+                                select:{
+                                    Options:{
+                                        select:{
+                                            id:true,
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
        
     })
+
+
+    const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
+    select sot.id , o.id
+    from Account a 
+    join Test t on t.accountId = a.id
+    join SoalOnTest sot on sot.testId = t.id 
+    join Soal s on s.id = sot.soalId 
+    join Options o on o.soalId = s.id
+    left JOIN  Jawaban j on j.optionsId = o.id 
+    where a.id = ${account.id};`
+    
+    
 
     return account
 }
