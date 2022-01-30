@@ -9,7 +9,7 @@ export type TPostSubmitJawaban = {
     testCode:string,
     soaldId:number,
     optionId:number,
-    answer
+    answer:string
 }
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){
@@ -21,13 +21,8 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse){
     }
 
     if(req.method === 'POST'){
-        const accountId = parseInt(session?.user?.id as string)
         const params= req?.body as TPostSubmitJawaban
-        // const soalId = parseInt(req?.query.exam[1] )
-        
         const data = await submitJawaban(params)
-
-        
         res.status(200).json(data)
         
     }

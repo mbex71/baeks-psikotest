@@ -8,12 +8,14 @@ interface ISoalExam extends ISoal {
 }
 
 interface ISoalExamOnTest {
-    time:number
+    timer:number
     Soal:ISoalExam
 }
 export interface IUserExam extends ITest{
     Account: IUser
-    soalOnTest?:ISoalExamOnTest[]
+    soalOnTest?:ISoalExamOnTest[],
+    testLength?:number
+    optionsLength?:number
 }
 
 export type TPostSubmitJawaban = {

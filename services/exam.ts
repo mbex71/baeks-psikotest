@@ -19,18 +19,16 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
 }
 
 const userExam = async (accountId:number,testCode:string, soalId:number) =>{
-
     const data = await prisma.test.findFirst({
         where: {
             accountId: accountId,
             testCode: testCode
-            
         },
-        
         select:{
             status:true,
             tujuan:true,
             registrationDate:true,
+            testCode:true,
             Account:{
                 select:{
                     name:true,
@@ -39,7 +37,6 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 }
             },
             soalOnTest:{                
-                
                 where:{
                     Test:{
                         testCode:testCode
@@ -47,9 +44,12 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                     soalId:soalId
                 },
                 select:{
+                    
                     timer:true,
                     Soal:{
+                        
                         select:{
+                            
                             id:true,
                             question:true,
                             listOfChoise:true,
@@ -73,7 +73,24 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
         }
     })
 
-    return data
+    const soalOnTestLength = await prisma.soalOnTest.count({
+        where:{
+            Test:{
+                testCode:testCode
+            }
+        }
+    })
+
+    const optionsLength = await prisma.options.count({
+        where:{
+            soalId:soalId
+        }
+    })
+    
+
+    
+
+    return {...data, testLength : soalOnTestLength, optionsLength:optionsLength}
 }
 
 const createTest = async (userId:number) =>{
