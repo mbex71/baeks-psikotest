@@ -27,7 +27,7 @@ const createAccount = async (data: TCreateUserAccount):Promise<IUser> =>{
     return res.data?.data
 }
 
-const detailAccount = async (id:string):Promise<IUser> =>{
+const detailAccount = async (id:string):Promise<any> =>{
     const res = await fetcher({
         method:'GET',
         url:`/dashboard/accounts/${id}`,
@@ -39,6 +39,7 @@ const detailAccount = async (id:string):Promise<IUser> =>{
 
 export{
     accountList,
-    createAccount
+    createAccount,
+    detailAccount
     
 }

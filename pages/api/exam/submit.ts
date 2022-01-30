@@ -14,10 +14,10 @@ export type TPostSubmitJawaban = {
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){
     const secret = process.env.JWT_SECRET
-    const session = await getToken({req, secret})
+    const token = await getToken({req, secret: secret as string})
 
-    if(!session){
-        return res.status(401).json({status: 401,error: 'Unauthorized woi'})
+    if(!token){
+        return res.status(401).json({status: 401,error: 'Unauthorized'})
     }
 
     if(req.method === 'POST'){

@@ -11,7 +11,7 @@ const DetailResult: NextPage = () => {
 
     const testCode = router.query.testCode as string
 
-    const { data, loading } = useExamResultDetails({ testCode })
+    const { data, isLoading } = useExamResultDetails({ testCode })
 
     useEffect(() => {
         console.log(data)
@@ -33,7 +33,7 @@ const DetailResult: NextPage = () => {
                 </div>
             </div>
             {
-                loading && <div>Loading . . .</div>
+                isLoading && <div>Loading . . .</div>
             }
             {
                 data && <LineChart dataCorrect={data.correctPerColumn} dataWrong={data.wrongPerColumn} />

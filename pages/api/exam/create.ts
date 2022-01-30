@@ -12,7 +12,7 @@ type postData = {
 export default async function name(req:NextApiRequest, res:NextApiResponse) {
     const session = await getSession({req})
     const secret = process.env.JWT_SECRET
-    const token = await getToken({req, secret})
+    const token = await getToken({req, secret:secret as string})
 
     
     if(!token) {

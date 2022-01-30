@@ -1,13 +1,10 @@
 import { ExamLayout } from "@components/layouts/";
 import { NextPage } from "next";
-import { IExam } from '@modules/entities/exam'
 import { ExamItem } from '@components/cards'
 import { format } from 'date-fns'
 import { useExamList } from '@modules/hooks/exam'
-import { useEffect, useState } from "react";
-import { IUserExam } from '@modules/dto/exam'
+import { useState } from "react";
 import { StatusTest } from '@modules/entities/exam'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { RiLoader5Line } from 'react-icons/ri'
@@ -26,18 +23,9 @@ const Exam: NextPage = () => {
         status: 'ACTIVE'
     })
     const { data, isLoading } = useExamList(params)
-    const createExam = useCreateExam()
+
 
     const handleStartExam = (testCode: string, status: string | StatusTest) => {
-        // createExam.mutate(testCode, {
-        //     onSuccess: (data) => {
-
-
-        //     },
-        //     onError: (error) => {
-        //         console.log('ERROR: ', error)
-        //     }
-        // })
 
         if (!getStorage('soalId')) {
             router.push(`/exam/${testCode}/1`)

@@ -9,7 +9,7 @@ type TParamsResult = {
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){
     const secret = process.env.JWT_SECRET
-    const session = await getToken({req , secret})
+    const session = await getToken({req , secret: secret as string})
     const params = req.query as TParamsResult
 
     
