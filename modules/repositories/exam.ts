@@ -1,6 +1,7 @@
 import {StatusTest} from '@modules/entities/exam'
-import {IUserExam, TPostSubmitJawaban} from '@modules/dto/exam'
+import {IUserExam, TPostSubmitJawaban, } from '@modules/dto/exam'
 import fetcher from '@configs/fetcher'
+import {TResults} from '@modules/entities/results'
 
 
 type TParam = {
@@ -58,10 +59,26 @@ const submitJawaban = async (data:TPostSubmitJawaban):Promise<IUserExam> =>{
   return res.data
 }
 
+type TParamsResult = {
+  testCode:string
+}
+
+const examResultDetails = async (params:TParamsResult):Promise<TResults> =>{
+  const res = await fetcher({
+    method:'GET',
+    url:`/results/${params.testCode}`,
+    
+  })
+
+  return res.data
+}
+
+
 
 export{
     examList,
     createExam,
     fetchUserExam,
-     submitJawaban
+     submitJawaban,
+     examResultDetails
 }

@@ -1,43 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-import {getSession} from 'next-auth/react'
-import prisma from '@configs/prisma'
+import prisma from "@configs/prisma";
+import {TCorrectPerColumn, TResults,TWrongPerColumn,TParam } from '@modules/entities/results'
 
-type TCorrectPerColumn = {
-    soal?: number,
-    totalJawaban?: number,
-}
-
-type TWrongPerColumn = {
-    soal?: number,
-    totalJawaban?: number,
-}
-
-type TResults = {
-  sumCorrect:number
-  sumWrong:number
-  correctPerColumn:TCorrectPerColumn[]
-  wrongPerColumn:TWrongPerColumn[]
-  totalDikerjakan:number
-  diver:number
-}
-
-type TData = {
-    data:TResults,
-    message:string
-}
-
-type TParam = {
-    testCode:string
-}
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<TData>
-) {
-
-    const params = req.query as TParam
-
+const resultExam = async (params:TParam):Promise<TResults> =>{
     const getJawabanBenar = await prisma.test.findUnique({
         where:{
             testCode: params.testCode,
@@ -129,18 +93,23 @@ export default async function handler(
     })
 
     const jumlahDikerjakan = getTotalDikerjakan?.soalOnTest.map(item =>item.Jawaban.length)
-  
-  res.status(200).json({
-      data:{
-          sumCorrect:jumlahBenar?.reduce((a,b)=>a+b)as number,
-          sumWrong:jumlahSalah?.reduce((a,b)=>a+b)as number,
-          correctPerColumn:jumlahBenarPerColumn as TCorrectPerColumn[],
-          wrongPerColumn:jumlahSalahPerColumn as TWrongPerColumn[],
-          totalDikerjakan:jumlahDikerjakan?.reduce((a,b)=>a+b)as number,
-          diver:0
-      },
-      message:'sukses'
-  })
 
-// res.status(200).json(totalDikerjakan)
+    
+    const data ={
+        sumCorrect:jumlahBenar?.reduce((a,b)=>a+b)as number,
+        sumWrong:jumlahSalah?.reduce((a,b)=>a+b)as number,
+        correctPerColumn:jumlahBenarPerColumn as TCorrectPerColumn[],
+        wrongPerColumn:jumlahSalahPerColumn as TWrongPerColumn[],
+        totalDikerjakan:jumlahDikerjakan?.reduce((a,b)=>a+b)as number,
+        diver:0
+    }
+     
+
+    return data
+}
+
+
+
+export{
+    resultExam
 }

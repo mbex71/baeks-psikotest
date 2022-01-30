@@ -20,7 +20,8 @@
     "react-hook-form": "^7.23.0",
     "react-icons": "^4.3.1",
     "react-query": "^3.34.8",
-    "react-table": "^7.7.0"
+    "react-table": "^7.7.0",
+    "victory": "^36.2.1"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"

@@ -2,6 +2,7 @@ import { removeStorage } from '@helpers/storage'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect } from 'react'
 import Head from "next/head";
+import Link from 'next/link';
 interface IProps {
     children: React.ReactNode;
 }
@@ -30,7 +31,10 @@ const ExamLayout: React.FC<IProps> = (props: IProps) => {
                 <div className='flex flex-row justify-end items-center space-x-0 fixed w-full text-sm bg-slate-600  shadow z-10 h-16 px-12'>
                     <div className='flex flex-row space-x-12 justify-between items-center w-1/3'>
                         <div className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>Exam</div>
-                        <div className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>History Test</div>
+
+                        <Link href="/exam/results">
+                            <a className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>Results</a>
+                        </Link>
                         {status !== 'loading' && status === 'authenticated' ? <button onClick={handleLogout} className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center'>Logout</button> : null}
                     </div>
 
