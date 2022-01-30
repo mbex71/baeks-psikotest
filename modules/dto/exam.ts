@@ -15,3 +15,10 @@ export interface IUserExam extends ITest{
     Account: IUser
     soalOnTest?:ISoalExamOnTest[]
 }
+
+export type TPostSubmitJawaban = {
+    testCode:string,
+    soaldId:number,
+    optionId:number,
+    answer:string
+}

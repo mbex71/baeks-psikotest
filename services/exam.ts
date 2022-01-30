@@ -1,5 +1,6 @@
 import {StatusTest} from '@modules/entities/exam'
 import prisma from '@configs/prisma'
+import {TPostSubmitJawaban} from '@modules/dto/exam'
 
 const listUserExams = async (userId: number | undefined, status:StatusTest ) => {
     const data = await prisma.test.findMany({
@@ -38,6 +39,7 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 }
             },
             soalOnTest:{                
+                
                 where:{
                     Test:{
                         testCode:testCode
@@ -45,7 +47,7 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                     soalId:soalId
                 },
                 select:{
-                    time:true,
+                    timer:true,
                     Soal:{
                         select:{
                             id:true,
@@ -118,9 +120,102 @@ const createTest = async (userId:number) =>{
 }
 
 
+const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
+
+   const soalOnTest = await prisma.soalOnTest.findFirst({
+        where:{
+            Test:{
+                testCode: params.testCode
+            },
+            soalId:params.soaldId,
+            
+            
+        },
+        include:{
+            Soal:{
+                include:{
+                    Options:{
+                        where:{
+                            id:params.optionId
+                        }
+                    }
+                }
+            },
+            Jawaban:{
+                where:{
+                    optionsId:params.optionId
+                },
+                
+            }
+        }
+   })
+
+
+   const submitJawaban = await prisma.test.update({
+       where:{
+           testCode: params.testCode
+       },
+       data:{
+           soalOnTest:{
+               update:{
+                   where:{
+                       id:soalOnTest?.id
+                   },
+                   data:{
+                       Jawaban:{
+                            update:{
+                                where:{
+                                    id:soalOnTest?.Jawaban?.[0].id
+                                },
+                                data:{
+                                    answers:params.answer,
+                                    status: soalOnTest?.Soal?.Options.find(item => item.id === params.optionId)?.correctAnswer === params.answer ? true : false
+                                }
+                            }
+                       }
+                   }
+               }
+           }
+       }
+   })
+
+   const checkData = await prisma.soalOnTest.findFirst({
+    where:{
+        Test:{
+            testCode: params.testCode
+        },
+        soalId:params.soaldId,
+        
+        
+    },
+    include:{
+        Soal:{
+            include:{
+                Options:{
+                    where:{
+                        id:params.optionId
+                    }
+                }
+            }
+        },
+        Jawaban:{
+            where:{
+                optionsId:params.optionId
+            },
+            
+        }
+    }
+})
+
+  
+
+    return checkData
+}
+
 export {
     listUserExams,
     userExam,
-    createTest
+    createTest,
+    submitJawaban
      
 }
