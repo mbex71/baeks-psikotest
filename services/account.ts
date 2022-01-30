@@ -22,7 +22,7 @@ const selectAllUserAccount = async () => {
     return data
 }
 
-const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
+const createUserAccount = async (data: TCreateUserAccount):Promise<any> => {
 
     const listSoal = await prisma.soal.findMany({
         select:{
@@ -82,11 +82,13 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
                                     Options:{
                                         select:{
                                             id:true,
-                                            
+                                            question:true,
+                                            correctAnswer:true,
                                         }
                                     }
                                 }
-                            }
+                            },
+                            Jawaban:true
                         }
                     }
                 }
@@ -107,12 +109,57 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<IUser> => {
     where a.id = ${account.id};`
     
     
+    const test = await prisma.account.findUnique({
+        where:{
+            id: account.id
+        },
+        include:{
+            Test:{
+                include:{
+                    soalOnTest:{
+                        include:{
+                            Soal:{
+                                include:{
+                                    Options:true
+                                }
+                            },
+                            Jawaban:true
+                        },
+                        
+                    }
+                }
+            }
+        }
+    })
 
-    return account
+    return test
 }
 
 
+type TParamDetail = {
+    id:number
+}
+
+const accountDetail = async (data:TParamDetail) =>{
+
+    const detail = await prisma.account.findUnique({
+        where:{
+            id: data.id,
+        },
+        select:{
+            name:true,
+            tglLahir:true,
+            username:true,
+            type:true,
+            password:true
+        }
+    })
+
+    return detail
+}
+
 export{
     createUserAccount,
-    selectAllUserAccount
+    selectAllUserAccount,
+    accountDetail
 }

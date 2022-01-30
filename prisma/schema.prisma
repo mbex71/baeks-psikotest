@@ -78,7 +78,7 @@ model Jawaban {
   SoalOnTest   SoalOnTest? @relation(fields: [soalOnTestId], references: [id])
   soalOnTestId Int?
   Options      Options?    @relation(fields: [optionsId], references: [id])
-  optionsId    Int?        @unique
+  optionsId    Int?
 }
 
 model Timer {
@@ -103,15 +103,15 @@ model Soal {
 
 // Pilihan Jawaban
 model Options {
-  id            Int      @id @default(autoincrement())
+  id            Int       @id @default(autoincrement())
   question      String
   correctAnswer String
   wrongAnswer   String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @default(now())
-  Soal          Soal?    @relation(fields: [soalId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now())
+  Soal          Soal?     @relation(fields: [soalId], references: [id])
   soalId        Int?
-  Jawaban       Jawaban?
+  Jawaban       Jawaban[]
 }
 
 //Type Soal

@@ -27,6 +27,15 @@ const createAccount = async (data: TCreateUserAccount):Promise<IUser> =>{
     return res.data?.data
 }
 
+const detailAccount = async (id:string):Promise<IUser> =>{
+    const res = await fetcher({
+        method:'GET',
+        url:`/dashboard/accounts/${id}`,
+    })
+
+    return res
+}
+
 
 export{
     accountList,

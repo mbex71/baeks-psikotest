@@ -1,4 +1,4 @@
-type Role = 'USER' |'ADMIN'
+export type Role = 'USER' |'ADMIN'
 export interface IUser {
   id:number
   name:      string
