@@ -1,181 +1,102 @@
-import { PrismaClient} from '@prisma/client'
+import { PrismaClient, Prisma} from '@prisma/client'
+import {seedUser , seedTypeSoal, seedTimer, seedSoal} from '../databases/seeders/dev'
 
 const prisma = new PrismaClient()
 
 const main = async () => {
-    
    const user = await prisma.account.createMany({
-       data: [
-        {
-            name:'Admin',
-            username:'Admin',
-            password:'Rahasia123!',
-            type:'ADMIN', 
-            tglLahir: new Date('1996-01-01'),
-        },
-        {
-            name:'Firdaus',
-            username:'firdaus71',
-            password:'Rahasia123!',
-            type:'USER', 
-            tglLahir: new Date('1996-01-01')
-        }
-       ]
+       data:seedUser as Prisma.Enumerable<Prisma.AccountCreateManyInput>,
    })
 
    const timer = await prisma.timer.create({
-       data:{
-           value: 120000
-       }
+       data:seedTimer as Prisma.TimerCreateInput,
    })
 
 
     const typeSoal = await prisma.typeSoal.createMany({
-        data: [
-            {
-                name:'ANGKA'
-            },
-            {
-                name:'HURUF'
-            },
-            {
-                name:'SYMBOL'
-            }
-        ],
+        data: seedTypeSoal as Prisma.Enumerable<Prisma.TypeSoalCreateManyInput>,
         skipDuplicates: true,
 
     })
 
     const soal = await prisma.soal.createMany({
-        data:[
-            {
-                question:'9,7,2,6,4',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'3,0,5,8,1',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'2,7,5,1,4',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'6,2,0,3,8',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'1,4,9,7,3',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'9,7,2,6,4',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'3,0,5,8,1',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'2,7,5,1,4',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'6,2,0,3,8',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-            {
-                question:'1,4,9,7,3',
-                listOfChoise:'a,b,c,d,e',
-                typeSoalId:1
-            },
-           
-        ],
+        data:seedSoal as Prisma.Enumerable<Prisma.SoalCreateManyInput>,
         skipDuplicates:true
     })
 
     const options = await prisma.options.createMany({
         data:[
             {
-                question:'9,2,6,7',
+                question:'9267',
                 correctAnswer:'e',
-                wrongAnswer:'a,b,c,d',
+                wrongAnswer:'abcd',
                 soalId:1
             },
             {
-                question:'4,9,7,6',
+                question:'4976',
                 correctAnswer:'c',
-                wrongAnswer:'a,b,d,e',
-                soalId:1
+                wrongAnswer:'abde',
+                soalId:1,
             },
             {
-                question:'9,2,6,7',
+                question:'9267',
                 correctAnswer:'e',
-                wrongAnswer:'a,b,c,d',
-                soalId:1
+                wrongAnswer:'abcd',
+                soalId:1,
             },
             {
-                question:'7,6,4,2',
+                question:'7642',
                 correctAnswer:'a',
-                wrongAnswer:'b,c,d,e',
-                soalId:1
+                wrongAnswer:'bcde',
+                soalId:1,
             },
             {
-                question:'4,7,9,6',
+                question:'4796',
                 correctAnswer:'c',
-                wrongAnswer:'a,b,d,e',
-                soalId:1
+                wrongAnswer:'abde',
+                soalId:1,
             },
             {
-                question:'4,9,2,6',
+                question:'4926',
                 correctAnswer:'b',
-                wrongAnswer:'a,c,d,e',
-                soalId:1
+                wrongAnswer:'acde',
+                soalId:1,
             },
             {
-                question:'2,7,6,9',
+                question:'2769',
                 correctAnswer:'e',
-                wrongAnswer:'a,b,c,d',
-                soalId:1
+                wrongAnswer:'abcd',
+                soalId:1,
             },
             {
-                question:'7,4,2,6',
+                question:'7426',
                 correctAnswer:'a',
-                wrongAnswer:'b,c,d,e',
-                soalId:1
+                wrongAnswer:'bcde',
+                soalId:1,
             },
             {
-                question:'2,7,9,4',
+                question:'2794',
                 correctAnswer:'d',
-                wrongAnswer:'a,b,c,e',
-                soalId:1
+                wrongAnswer:'abce',
+                soalId:1,
             },
             {
-                question:'4,2,7,6',
+                question:'4276',
                 correctAnswer:'a',
-                wrongAnswer:'b,c,d,e',
-                soalId:1
+                wrongAnswer:'bcde',
+                soalId:1,
             },
             {
-                question:'0,8,1,3',
+                question:'0813',
                 correctAnswer:'c',
-                wrongAnswer:'a,b,d,e',
-                soalId:2
+                wrongAnswer:'abde',
+                soalId:2,
             },
             {
-                question:'3,0,1,5',
+                question:'3015',
                 correctAnswer:'d',
-                wrongAnswer:'a,b,c,e',
-                soalId:2
+                wrongAnswer:'abce',
+                soalId:2,
             }
         ],
         skipDuplicates: true

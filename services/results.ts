@@ -52,14 +52,14 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
                                         join SoalOnTest sot on s.id =sot.id 
                                         join Test t on sot.testId = t.id 
                                         left join Jawaban j on j.soalOnTestId = sot.id and j.status = true
-                                        where t.testCode = 'q24hd1mlquf' 
+                                        where t.testCode = ${params.testCode}
                                         group by s.id;`;
 
     const jumlahSalahPerColumn = await prisma.$queryRaw`SELECT s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
                                 join SoalOnTest sot on s.id =sot.id 
                                 join Test t on sot.testId = t.id 
                                 left join Jawaban j on j.soalOnTestId = sot.id and j.status = false
-                                where t.testCode = 'q24hd1mlquf' 
+                                where t.testCode = ${params.testCode}
                                 group by s.id;`                                        
     
 
