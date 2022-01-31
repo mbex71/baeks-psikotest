@@ -1,5 +1,5 @@
 import { PrismaClient, Prisma} from '@prisma/client'
-import {seedUser , seedTypeSoal, seedTimer, seedSoal} from '../databases/seeders/dev'
+import {seedUser , seedTypeSoal, seedTimer, seedSoal, seedOptions} from '../databases/seeders/dev'
 
 const prisma = new PrismaClient()
 
@@ -25,80 +25,7 @@ const main = async () => {
     })
 
     const options = await prisma.options.createMany({
-        data:[
-            {
-                question:'9267',
-                correctAnswer:'e',
-                wrongAnswer:'abcd',
-                soalId:1
-            },
-            {
-                question:'4976',
-                correctAnswer:'c',
-                wrongAnswer:'abde',
-                soalId:1,
-            },
-            {
-                question:'9267',
-                correctAnswer:'e',
-                wrongAnswer:'abcd',
-                soalId:1,
-            },
-            {
-                question:'7642',
-                correctAnswer:'a',
-                wrongAnswer:'bcde',
-                soalId:1,
-            },
-            {
-                question:'4796',
-                correctAnswer:'c',
-                wrongAnswer:'abde',
-                soalId:1,
-            },
-            {
-                question:'4926',
-                correctAnswer:'b',
-                wrongAnswer:'acde',
-                soalId:1,
-            },
-            {
-                question:'2769',
-                correctAnswer:'e',
-                wrongAnswer:'abcd',
-                soalId:1,
-            },
-            {
-                question:'7426',
-                correctAnswer:'a',
-                wrongAnswer:'bcde',
-                soalId:1,
-            },
-            {
-                question:'2794',
-                correctAnswer:'d',
-                wrongAnswer:'abce',
-                soalId:1,
-            },
-            {
-                question:'4276',
-                correctAnswer:'a',
-                wrongAnswer:'bcde',
-                soalId:1,
-            },
-            {
-                question:'0813',
-                correctAnswer:'c',
-                wrongAnswer:'abde',
-                soalId:2,
-            },
-            {
-                question:'3015',
-                correctAnswer:'d',
-                wrongAnswer:'abce',
-                soalId:2,
-            }
-        ],
+        data:seedOptions as Prisma.Enumerable<Prisma.OptionsCreateManyInput>,
         skipDuplicates: true
     })
 

@@ -1,7 +1,6 @@
 import angka from "./angka";
 import huruf from './huruf'
 
-export {
-    angka,
-    huruf
-}
+const optoins = [ ...angka, ...huruf ]
+
+export default optoins

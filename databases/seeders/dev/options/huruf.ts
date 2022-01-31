@@ -1,62 +1,62 @@
 const data = [ 
     {
-        question:'B,N,T,H',
+        question:'BNTH',
         correctAnswer:'e',
-        wrongAnswer:'a,b,c,d',
+        wrongAnswer:'abcd',
         soalId:11
     },
     {
-        question:'Z,B,H,T',
+        question:'ZBHT',
         correctAnswer:'c',
-        wrongAnswer:'a,b,d,e',
+        wrongAnswer:'abde',
         soalId:11
     },
     {
-        question:'B,N,T,H',
+        question:'BNTH',
         correctAnswer:'e',
-        wrongAnswer:'a,b,c,d',
+        wrongAnswer:'abcd',
         soalId:11
     },
     {
-        question:'H,T,Z,N',
+        question:'HTZN',
         correctAnswer:'a',
-        wrongAnswer:'b,c,d,e',
+        wrongAnswer:'bcde',
         soalId:11
     },
     {
-        question:'Z,H,B,T',
+        question:'ZHBT',
         correctAnswer:'c',
-        wrongAnswer:'a,b,d,e',
+        wrongAnswer:'abde',
         soalId:11
     },
     {
-        question:'Z,B,N,T',
+        question:'ZBNT',
         correctAnswer:'b',
-        wrongAnswer:'a,c,d,e',
+        wrongAnswer:'acde',
         soalId:11
     },
     {
-        question:'N,H,T,B',
+        question:'NHTB',
         correctAnswer:'e',
-        wrongAnswer:'a,b,c,d',
+        wrongAnswer:'abcd',
         soalId:11
     },
     {
-        question:'H,Z,N,T',
+        question:'HZNT',
         correctAnswer:'a',
-        wrongAnswer:'b,c,d,e',
+        wrongAnswer:'bcde',
         soalId:11
     },
     {
-        question:'N,H,B,Z',
+        question:'NHBZ',
         correctAnswer:'d',
-        wrongAnswer:'a,b,c,e',
+        wrongAnswer:'abce',
         soalId:11
     },
     {
-        question:'Z,N,H,T',
+        question:'ZNHT',
         correctAnswer:'a',
-        wrongAnswer:'b,c,d,e',
+        wrongAnswer:'bcde',
         soalId:11
     }
 ]
