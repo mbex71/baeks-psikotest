@@ -1,3 +1,5 @@
+import { IUserExam } from "@modules/dto/exam";
+
 export type Role = 'USER' |'ADMIN'
 export interface IUser {
   id:number

@@ -4,6 +4,8 @@ import {getSession} from 'next-auth/react'
 
 import {createTest} from 'services/exam'
 import { getToken } from "next-auth/jwt";
+import { TParamDetailAccount } from "@modules/dto/account";
+import { TParamCreateTest } from "@modules/dto/exam";
 
 type postData = {
     testId: string
@@ -20,11 +22,11 @@ export default async function name(req:NextApiRequest, res:NextApiResponse) {
     }
 
      if(req.method === 'POST'){
-         const data = req.body as postData
+         const {username , tujuan} = req.body as TParamCreateTest
         //  const userId: number = parseInt(session?.user?.id as string)
         const userId: number = parseInt(token?.id as string)
          
-         const userTest = await createTest(userId)
+         const userTest = await createTest({username, tujuan})
          return res.status(200).json(userTest)
      }
 

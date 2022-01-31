@@ -1,0 +1,11 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@500&display=swap"); */
+@font-face {
+  font-family: mySymbol;
+  src: url("/assets/fonts/Alfabilder-MOjP.ttf");
+  /* src: url('Alfabilder-MOjP.ttf'); */
+}
+
+.symbol {
+  font-family: mySymbol;
+}

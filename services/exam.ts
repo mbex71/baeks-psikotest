@@ -1,6 +1,7 @@
 import {StatusTest} from '@modules/entities/exam'
 import prisma from '@configs/prisma'
-import {TPostSubmitJawaban} from '@modules/dto/exam'
+import {TParamCreateTest, TPostSubmitJawaban} from '@modules/dto/exam'
+import { TParamDetailAccount } from '@modules/dto/account'
 
 const listUserExams = async (userId: number | undefined, status:StatusTest ) => {
     const data = await prisma.test.findMany({
@@ -93,7 +94,8 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
     return {...data, testLength : soalOnTestLength, optionsLength:optionsLength}
 }
 
-const createTest = async (userId:number) =>{
+
+const createTest = async ({username, tujuan}:TParamCreateTest) =>{
     
     // Get All Soal ID
     const idSoal = await prisma.soal.findMany({
@@ -109,31 +111,65 @@ const createTest = async (userId:number) =>{
         }
     })
 
-    const test = await prisma.test.create({
-        
-        data:{
-            testCode:Math.random().toString(36).substring(2, 15),
-            registrationDate:new Date(),
-            tujuan:'Tes Test',
-            accountId:userId,
-            soalOnTest:{
-                create:idSoal.map(item=>{
-                    return{
-                        soalId:item.id,
-                        time:timer?.value   
-                    }
-                }),
-                
-            }  
-
+    const account = await prisma.account.findUnique({
+        where:{
+            username:username
         },
-        include:{
-            soalOnTest:true,
-            Account:true
+        select:{
+            id:true
         }
     })
 
-    return test
+    // const account = await prisma.account.update({
+    //     where:{
+    //         username:username
+    //     },
+    //     data:{
+    //         Test:{
+    //             create:{
+    //                 testCode:Math.random().toString(36).substring(2, 15),
+    //                 registrationDate:new Date(),
+    //                 tujuan:tujuan,
+    //                 soalOnTest:{
+    //                     create: idSoal.map(item =>({soalId: item.id, timer:timer?.value}))
+    //                 }
+    //             },
+                
+                
+    //         },
+            
+    //     }
+    // })
+
+    const createTest = await prisma.test.create({
+        data:{
+            testCode:Math.random().toString(36).substring(2, 15),
+            registrationDate:new Date(),
+            tujuan:tujuan,
+            soalOnTest:{
+                create: idSoal.map(item =>({soalId: item.id, timer:timer?.value}))
+            },
+            accountId: account?.id
+        },
+        
+    })
+
+   
+
+    console.log('Test: ', createTest)
+
+    const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
+    select sot.id , o.id
+    from Account a 
+    join Test t on t.accountId = a.id 
+    join SoalOnTest sot on sot.testId = t.id 
+    join Soal s on s.id = sot.soalId 
+    join Options o on o.soalId = s.id
+    left JOIN  Jawaban j on j.optionsId = o.id 
+    where a.id = ${account?.id} and sot.testId = ${createTest?.id};`
+
+
+    return createTest
 }
 
 

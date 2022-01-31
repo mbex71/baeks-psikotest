@@ -40,12 +40,15 @@ const Accounts: NextPage = () => {
 
             }, {
                 accessor: 'id',
-                Cell: (row: any) => (
-                    <div className='flex flex-row space-x-4 justify-center items-center'>
-                        <Link href={`/dashboard/accounts/${row.value}`}><a className='text-blue-500'>Detail</a></Link>
-                        <Link href={`/dashboard/accounts/edit/${row.value}`}><a className='text-blue-500'>Edit</a></Link>
-                    </div>
-                )
+                Cell: (row: any) => {
+
+                    return (
+                        <div className='flex flex-row space-x-4 justify-center items-center'>
+                            <Link href={`/dashboard/accounts/${row?.cell.row.values.username}`}><a className='text-blue-500'>Detail</a></Link>
+                            <Link href={`/dashboard/accounts/edit/${row.value}`}><a className='text-blue-500'>Edit</a></Link>
+                        </div>
+                    )
+                }
             }
 
         ],

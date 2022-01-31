@@ -1,11 +1,7 @@
 import prisma from "@configs/prisma";
 import {TCreateUserAccount} from '@modules/dto/account'
-import {IUser} from '@modules/entities/user'
-
-
 
 const selectAllUserAccount = async () => {
-    
     const data = await prisma.account.findMany({
         
         select:{
@@ -18,7 +14,6 @@ const selectAllUserAccount = async () => {
         },
         
     })
-
     return data
 }
 
@@ -137,21 +132,22 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<any> => {
 
 
 type TParamDetail = {
-    id:number
+    username:string
 }
 
 const accountDetail = async (data:TParamDetail) =>{
 
     const detail = await prisma.account.findUnique({
         where:{
-            id: data.id,
+            username: data.username
         },
         select:{
             name:true,
             tglLahir:true,
             username:true,
             type:true,
-            password:true
+            password:true,
+            Test:true
         }
     })
 

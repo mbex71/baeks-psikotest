@@ -4,22 +4,15 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import {accountDetail} from '@services/account'
 import { getToken } from 'next-auth/jwt'
 import { IUser, Role} from '@modules/entities/user'
+import {IAccount} from '@modules/dto/account'
 
 
-type TDetail = {
-    name: string;
-    tglLahir: Date;
-    username: string;
-    type: Role;
-    password: string;
-  }
 type Data = {
-  data?:TDetail | null,
   message?:string
-}
+}  | any
 
 type TParam = {
-    id:string
+    username:string
 }
 
 export default async function handler(
@@ -42,11 +35,9 @@ export default async function handler(
     })
   }
 
-  const { id } = req.query as TParam
+  const { username} = req.query as TParam
 
-  const detail = await accountDetail({id:parseInt(id)})
+  const detail = await accountDetail({username: username})
   
-  res.status(200).json({
-      data:detail
-  })
+  res.status(200).json(detail)
 }

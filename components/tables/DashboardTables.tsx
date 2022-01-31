@@ -46,9 +46,12 @@ const DashboardTables: React.FC<IProps> = (props: IProps) => {
         searchData()
     }, [props.search])
 
+    if (props.data.length === 0) {
+        return <div className='w-full justify-center items-center flex h-48 font-bold'>Data Not Found</div>
+    }
+
     return (
         <>
-
             <table {...getTableProps()} className='table-auto w-full mt-6'>
                 <thead className='bg-slate-600'>
                     {

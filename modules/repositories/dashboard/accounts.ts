@@ -2,7 +2,7 @@ import {StatusTest} from '@modules/entities/exam'
 import {IUserExam} from '@modules/dto/exam'
 import fetcher from '@configs/fetcher'
 import { IUser } from '@modules/entities/user'
-import { TCreateUserAccount } from '@modules/dto/account'
+import { IAccount, TCreateUserAccount, TParamDetailAccount } from '@modules/dto/account'
 
 
 const accountList = async ():Promise<IUser[]> =>{
@@ -27,13 +27,13 @@ const createAccount = async (data: TCreateUserAccount):Promise<IUser> =>{
     return res.data?.data
 }
 
-const detailAccount = async (id:string):Promise<any> =>{
+const detailAccount = async (params:TParamDetailAccount):Promise<IAccount> =>{
     const res = await fetcher({
         method:'GET',
-        url:`/dashboard/accounts/${id}`,
+        url:`/dashboard/accounts/${params.username}`,
     })
 
-    return res
+    return res.data
 }
 
 

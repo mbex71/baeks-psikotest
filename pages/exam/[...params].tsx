@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 
 import { stringToArray } from '@helpers/string'
 import { getStorage, removeStorage, setStorage } from "@helpers/storage";
+import style from '../../styles/exam.module.css'
 
 type TParamExam = {
     testId: string,
@@ -117,7 +118,7 @@ const ExamPage: NextPage = () => {
             <section className="flex flex-col justify-center items-center">
                 <div className="grid grid-cols-5 w-6/12 mt-12 bg-white">
                     {
-                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.question as string, ',')?.map((item, index) => <div key={index} className="border flex justify-center items-center p-2 font-bold text-xl">{item}</div>)
+                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.question as string, ',')?.map((item, index) => <div key={index} className={`border flex justify-center items-center p-2 font-bold text-xl ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
 
                     }
                 </div>
@@ -138,15 +139,15 @@ const ExamPage: NextPage = () => {
 
                                     <div className="grid grid-cols-4 w-12/12 mt-12 bg-white text-2xl">
                                         {
-                                            stringToArray(item?.question as string, ',')?.map((item, index) => <div key={index} className="flex justify-center items-center p-6 font-bold">{item}</div>)
+                                            stringToArray(item?.question as string, ',')?.map((item, index) => <div key={index} className={`flex justify-center items-center p-6 font-bold ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
                                         }
                                     </div>
                                     <div className="grid grid-cols-5 w-12/12 gap-2 mt-2">
-                                        <button onClick={() => handleAnswer('a', item.id)} className="bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold">A</button>
-                                        <button onClick={() => handleAnswer('b', item.id)} className="bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold">B</button>
-                                        <button onClick={() => handleAnswer('c', item.id)} className="bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold">C</button>
-                                        <button onClick={() => handleAnswer('d', item.id)} className="bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold">D</button>
-                                        <button onClick={() => handleAnswer('e', item.id)} className="bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold">E</button>
+                                        <button onClick={() => handleAnswer('a', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>A</button>
+                                        <button onClick={() => handleAnswer('b', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>B</button>
+                                        <button onClick={() => handleAnswer('c', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>C</button>
+                                        <button onClick={() => handleAnswer('d', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>D</button>
+                                        <button onClick={() => handleAnswer('e', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>E</button>
                                     </div>
 
                                 </div>
