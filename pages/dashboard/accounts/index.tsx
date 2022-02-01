@@ -44,8 +44,9 @@ const Accounts: NextPage = () => {
 
                     return (
                         <div className='flex flex-row space-x-4 justify-center items-center'>
-                            <Link href={`/dashboard/accounts/${row?.cell.row.values.username}`}><a className='text-blue-500'>Detail</a></Link>
-                            <Link href={`/dashboard/accounts/edit/${row.value}`}><a className='text-blue-500'>Edit</a></Link>
+                            {row.cell.row.values.type !== 'ADMIN' ? <Link href={`/dashboard/accounts/${row?.cell.row.values.username}`}><a className='text-blue-500'>Detail</a></Link> : null}
+
+                            {/* <Link href={`/dashboard/accounts/edit/${row.value}`}><a className='text-blue-500'>Edit</a></Link> */}
                         </div>
                     )
                 }

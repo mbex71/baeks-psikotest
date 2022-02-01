@@ -56,7 +56,9 @@ const Exam: NextPage = () => {
                     </div>
                     <div className="flex flex-row space-x-12 items-center justify-start w-full">
                         <div className="font-light text-sm w-1/4">Username</div>
-                        <div className="text-2xl font-bold">{user?.user.username}</div>
+
+                        <div className="text-2xl font-bold">{user?.user?.username as string}</div>
+
                     </div>
                 </div>
                 <div className="mt-12 mb-2 flex justify-start w-1/2">

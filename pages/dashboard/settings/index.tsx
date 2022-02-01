@@ -11,7 +11,7 @@ type TFormSettings = {
 }
 
 const Accounts: NextPage = () => {
-    const { register, handleSubmit, errors, setValue } = useForm<TFormSettings>()
+    const { register, handleSubmit, setValue } = useForm<TFormSettings>()
     const { data } = useGetTimer()
     const { mutateAsync } = useUpdateTimer()
 

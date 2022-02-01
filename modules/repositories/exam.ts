@@ -4,13 +4,16 @@ import fetcher from '@configs/fetcher'
 import {TResults} from '@modules/entities/results'
 import { TParamDetailAccount } from '@modules/dto/account'
 
+type TparamsList ={
+  status:StatusTest
+}
 
 type TParam = {
   status:StatusTest,
   testCode:string
 }
 
-const examList = async (params:TParam):Promise<IUserExam[]> =>{
+const examList = async (params:TparamsList):Promise<IUserExam[]> =>{
     
   const res = await fetcher({
       method:'GET',

@@ -4,12 +4,16 @@ import {StatusTest} from '@modules/entities/exam'
 import { examList , createExam, fetchUserExam, submitJawaban, startExam} from '@modules/repositories/exam'
 import {UseQueryResult, useQuery, UseMutationResult, useMutation} from 'react-query'
 
+
+type TparamsList= {
+    status:StatusTest
+}
 type TParams = {
     status:StatusTest
     testCode:string
   }
 
-const useExamList = (params:TParams):UseQueryResult<IUserExam[], Error> =>{
+const useExamList = (params:TparamsList):UseQueryResult<IUserExam[], Error> =>{
     return useQuery(['examList',params], () => examList(params),{
         enabled: !!params.status
     })
