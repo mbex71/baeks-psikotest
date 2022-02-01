@@ -5,375 +5,627 @@ const column1 = [
         question:'BNTH',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:11
+          soalId:11
     },
     {
         question:'ZBHT',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:11
+          soalId:11
     },
     {
         question:'BNTH',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:11
+          soalId:11
     },
     {
         question:'HTZN',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:11
+          soalId:11
     },
     {
         question:'ZHBT',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:11
+          soalId:11
     },
     {
         question:'ZBNT',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:11
+          soalId:11
     },
     {
         question:'NHTB',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:11
+          soalId:11
     },
     {
         question:'HZNT',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:11
+          soalId:11
     },
     {
         question:'NHBZ',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:11
+          soalId:11
     },
     {
         question:'ZNHT',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:11
-    }
-]
-
-const column2 = [
-    {
-        question:'0813',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'3015',
-        correctAnswer:'d',
-        wrongAnswer:getWrongAnswer('d'),
-        soalId:12
-    },
-    {
-        question:'1058',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'8130',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'1850',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'3185',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'1053',
-        correctAnswer:'d',
-        wrongAnswer:getWrongAnswer('d'),
-        soalId:12
-    },
-    {
-        question:'3805',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
-    },
-    {
-        question:'5180',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'3018',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
+          soalId:11
     },
 
     //10
 
     {
-        question:'8053',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
-    },
-    {
-        question:'1038',
+        question:'HBTZ',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'8053',
+        question:'NHTB',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'0581',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'8053',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
-    },
-    {
-        question:'1385',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'0351',
+        question:'BHNZ',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'5380',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
+        question:'NBHZ',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+         soalId:11
     },
     {
-        question:'8105',
+        question:'ZHNT',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'3058',
+        question:'ZTBH',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'TBNZ',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'BHTZ',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'HNTB',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:12
+         soalId:11
+    },
+    {
+        question:'NHTZ',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+         soalId:11
     },
 
     //20
 
     {
-        question:'8013',
+        question:'TBZH',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'5831',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'8013',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'3150',
-        correctAnswer:'d',
-        wrongAnswer:getWrongAnswer('d'),
-        soalId:12
-    },
-    {
-        question:'5381',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'5801',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'0318',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'3501',
-        correctAnswer:'d',
-        wrongAnswer:getWrongAnswer('d'),
-        soalId:12
-    },
-    {
-        question:'0385',
+        question:'HNTB',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'5031',
+        question:'BNZT',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HTBZ',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'TZHN',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+         soalId:11
+    },
+    {
+        question:'TBNZ',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HZBT',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'TBNZ',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HNZB',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:12
+         soalId:11
+    },
+    {
+        question:'HTNZ',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+         soalId:11
     },
 
-    //30
+    // 30
+
     {
-        question:'3815',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'0318',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'8305',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
-    },
-    {
-        question:'0835',
-        correctAnswer:'e',
-        wrongAnswer:getWrongAnswer('e'),
-        soalId:12
-    },
-    {
-        question:'5301',
+        question:'BNZH',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'5183',
+        question:'TNHB',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+         soalId:11
+    },
+    {
+        question:'BNZH',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+         soalId:11
+    },
+    {
+        question:'NZBT',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'1805',
+        question:'BNZH',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+         soalId:11
+    },
+    {
+        question:'THBZ',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'NHZT',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'8315',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'3018',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'0315',
+        question:'ZHBN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:12
+         soalId:11
+    },
+    {
+        question:'BTNZ',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HNZB',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+         soalId:11
     },
 
     //40
 
     {
-        question:'1853',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'3018',
-        correctAnswer:'c',
-        wrongAnswer:getWrongAnswer('c'),
-        soalId:12
-    },
-    {
-        question:'8051',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'3185',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'1530',
-        correctAnswer:'d',
-        wrongAnswer:getWrongAnswer('d'),
-        soalId:12
-    },
-    {
-        question:'1805',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'3581',
-        correctAnswer:'b',
-        wrongAnswer:getWrongAnswer('b'),
-        soalId:12
-    },
-    {
-        question:'1805',
-        correctAnswer:'a',
-        wrongAnswer:getWrongAnswer('a'),
-        soalId:12
-    },
-    {
-        question:'3058',
+        question:'NBTH',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:12
+         soalId:11
     },
     {
-        question:'3105',
+        question:'HNTZ',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+         soalId:11
+    },
+    {
+        question:'TNZB',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'BTHN',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+         soalId:11
+    },
+    {
+        question:'TBZN',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HTBZ',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+         soalId:11
+    },
+    {
+        question:'TNZH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+         soalId:11
+    },
+    {
+        question:'HBNZ',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:12
+         soalId:11
+    },
+    {
+        question:'ZTBN',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+         soalId:11
+    },
+    {
+        question:'HNTB',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+         soalId:11
+    }
+]
+
+const column2 = [
+    {
+        question:'JPVC',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'CJVH',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'VJHP',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'PVCJ',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'VPHJ',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CVPH',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'VJHC',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'CPJH',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'HVPJ',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CJVP',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+
+    //10
+
+    {
+        question:'PJHC',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'VJCP',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'PJHC',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'JHPV',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'PJHC',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'VCPH',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'JCHV',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'HCPJ',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'PVJH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CJHP',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+
+    //20
+
+    {
+        question:'PJVC',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'HPCV',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'PJVC',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'CVHJ',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'HCPV',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'HPJV',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'JCVP',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'CHJV',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'JCPH',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'HJCV',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+
+    //30
+    {
+        question:'CPVH',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'JCPV',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'PCJH',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'JPCH',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'HCJV',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'HVPC',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'VPJH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'PCVH',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'CJVP',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'JCVH',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+
+    //40
+
+    {
+        question:'VPHC',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'CJVP',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:12
+    },
+    {
+        question:'VJVH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CVPH',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'VHCJ',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
+    },
+    {
+        question:'VPJH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CHPV',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:12
+    },
+    {
+        question:'VPJH',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:12
+    },
+    {
+        question:'CJHP',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:12
+    },
+    {
+        question:'CVJH',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:12
     },
 
     //50
@@ -386,61 +638,61 @@ const column3 = [
         question:'5274',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4217',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2145',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4217',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5741',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2715',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1742',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4521',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7254',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4217',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
 
     //10
@@ -449,61 +701,61 @@ const column3 = [
         question:'7124',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4257',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2457',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7251',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5214',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4572',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5412',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7541',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5217',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7421',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
 
     //20
@@ -512,61 +764,61 @@ const column3 = [
         question:'1542',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1745',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1425',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2754',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7125',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2741',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1275',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7451',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2754',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4721',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
 
     //30
@@ -575,61 +827,61 @@ const column3 = [
         question:'2471',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7541',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5172',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5421',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7145',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5421',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7214',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7521',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1475',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4257',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
 
     //40
@@ -638,61 +890,61 @@ const column3 = [
         question:'7512',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1725',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'1547',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5421',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4751',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7254',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'2751',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:13
+         soalId:3
     },
     {
         question:'5417',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:13
+         soalId:3
     },
     {
         question:'7254',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:13
+         soalId:3
     },
     {
         question:'4215',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:13
+         soalId:3
     },
 
     //50
@@ -703,61 +955,61 @@ const column4 = [
         question:'3628',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2386',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2603',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6082',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0362',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3860',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8362',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6023',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3860',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0826',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
 
     //10
@@ -765,61 +1017,61 @@ const column4 = [
         question:'8032',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3602',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6238',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6082',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3206',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6082',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3820',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3682',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2036',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0863',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
 
     //20
@@ -828,61 +1080,61 @@ const column4 = [
         question:'6830',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0823',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8206',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0823',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6302',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8326',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2308',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0682',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3860',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0823',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
 
     //30
@@ -891,61 +1143,61 @@ const column4 = [
         question:'3820',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0863',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8063',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3862',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6820',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0638',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6028',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3602',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'6823',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3082',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
 
     //40
@@ -954,61 +1206,61 @@ const column4 = [
         question:'2608',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2306',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2086',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8360',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3286',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8302',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
     {
         question:'2836',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:14
+         soalId:4
     },
     {
         question:'3062',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:14
+         soalId:4
     },
     {
         question:'8360',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:14
+         soalId:4
     },
     {
         question:'0382',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:14
+         soalId:4
     },
 
     //50
@@ -1019,61 +1271,61 @@ const column5 = [
         question:'9471',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9374',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9714',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1347',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3914',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1379',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9134',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3749',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1347',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7319',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
 
     //10
@@ -1082,61 +1334,61 @@ const column5 = [
         question:'3197',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7143',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1743',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3149',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4197',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7431',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4791',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3479',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4193',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3719',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
 
     //20
@@ -1145,61 +1397,61 @@ const column5 = [
         question:'3491',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9314',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9473',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4719',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7349',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3147',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1349',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4793',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3147',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7194',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
 
     //30
@@ -1208,61 +1460,61 @@ const column5 = [
         question:'1739',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3479',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4931',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4719',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3974',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4719',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3197',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3419',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9734',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7143',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
 
     //40
@@ -1271,61 +1523,61 @@ const column5 = [
         question:'4137',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7193',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1974',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7193',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'4379',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:15
+         soalId:5
     },
     {
         question:'1394',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:15
+         soalId:5
     },
     {
         question:'9371',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7419',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:15
+         soalId:5
     },
     {
         question:'3147',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:15
+         soalId:5
     },
     {
         question:'7193',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:15
+         soalId:5
     },
 
     //50
@@ -1336,61 +1588,61 @@ const column6 = [
         question:'9672',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2974',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7946',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6729',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7649',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2764',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7942',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2694',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4769',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2976',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
 
     //10
@@ -1399,61 +1651,61 @@ const column6 = [
         question:'6942',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7926',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6942',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9467',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6942',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7264',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9247',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4269',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6794',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2946',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
 
     //20
@@ -1462,61 +1714,61 @@ const column6 = [
         question:'6972',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4627',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6972',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2749',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4267',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4697',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9278',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2497',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9264',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4927',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
 
     //30
@@ -1525,61 +1777,61 @@ const column6 = [
         question:'2674',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9276',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6294',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9624',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4297',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'4762',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7694',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6274',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2976',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'9274',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
 
     //40
@@ -1588,70 +1840,1333 @@ const column6 = [
         question:'7642',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2976',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
-        soalId:16
+         soalId:6
     },
     {
         question:'6947',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2764',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7429',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7694',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2467',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
-        soalId:16
+         soalId:6
     },
     {
         question:'7694',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2946',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
-        soalId:16
+         soalId:6
     },
     {
         question:'2794',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
-        soalId:16
+         soalId:6
     },
 
     //50
 ]
 
-const column7 = [{}]
-const column8 = [{}]
-const column9 = [{}]
-const column10 = [{}]
+const column7 = [
+    {
+        question:'3058',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'8130',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'0153',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8305',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'3581',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'3015',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8503',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'3015',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8150',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'8315',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+
+    //10
+
+    {
+        question:'8035',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'1830',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'0815',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'1085',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'5813',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'5308',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'3015',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'0835',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'8130',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'1835',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+
+    //20
+
+    {
+        question:'1038',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'8135',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'3150',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'0381',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'3051',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8305',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'3158',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'8015',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'5301',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8130',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+
+    //30
+
+    {
+        question:'0158',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'3180',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'0158',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'1503',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'0158',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'3805',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'1853',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'5801',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'0315',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'8150',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+
+    //40
+
+    {
+        question:'0138',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'5083',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'0138',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'8351',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'5803',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:7
+    },
+    {
+        question:'5013',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:7
+    },
+    {
+        question:'1830',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:7
+    },
+    {
+        question:'8513',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+    {
+        question:'1805',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:7
+    },
+    {
+        question:'5183',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:7
+    },
+
+    //50
+]
+
+const column8 = [
+    {
+        question:'2751',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'5217',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'5742',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'7415',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'4275',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'2174',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'1275',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'7452',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'2174',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'4157',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+
+    //10
+
+    {
+        question:'1425',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'2745',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'7521',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'7415',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'2547',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'7415',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'2154',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'2715',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'5427',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'4172',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+
+    //20
+
+    {
+        question:'7124',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'4152',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'1547',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'4152',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'7245',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'1257',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'5241',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'4715',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'2174',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'2152',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+
+    //30
+
+    {
+        question:'2154',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'4172',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'1472',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'2175',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'7154',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'4721',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'7451',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'2745',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'7152',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'2415',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+
+    //40
+
+    {
+        question:'5741',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'5247',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'5417',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:8
+    },
+    {
+        question:'1274',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'2517',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'1245',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+    {
+        question:'5127',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:8
+    },
+    {
+        question:'2475',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:8
+    },
+    {
+        question:'1274',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:8
+    },
+    {
+        question:'4215',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:8
+    },
+
+    //50
+]
+
+const column9 = [
+    {
+        question:'6203',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'6802',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'6032',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'3820',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'8632',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'3806',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'6382',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'8026',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'3820',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'0836',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+
+    //10
+
+    {
+        question:'8360',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'0328',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'3028',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'8326',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'2360',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'0283',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'2063',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'8206',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'2368',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'8036',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+
+    //20
+
+    {
+        question:'8263',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'6832',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'6208',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'2036',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'0826',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'8320',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'3826',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'2068',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'8320',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'0362',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+
+    //30
+
+    {
+        question:'3086',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'8206',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'2683',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'2036',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'8602',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'2036',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'8360',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'8236',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'6082',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'0328',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+
+    //40
+
+    {
+        question:'2380',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'0368',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'3602',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'0368',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'2806',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+        soalId:9
+    },
+    {
+        question:'3862',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+        soalId:9
+    },
+    {
+        question:'6803',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+    {
+        question:'0236',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+        soalId:9
+    },
+    {
+        question:'8320',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+        soalId:9
+    },
+    {
+        question:'0368',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+        soalId:9
+    },
+
+    //50
+]
+
+const column10 = [
+    {
+        question:'1497',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'7439',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'4371',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'7439',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'1973',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'4931',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'3974',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'7143',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'9417',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'7439',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+
+    //10
+
+    {
+        question:'4793',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'9173',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'1394',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'1743',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'9371',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'1743',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'9437',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'9143',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'3791',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'7419',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+
+    //20
+
+    {
+        question:'3174',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'3971',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'3741',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'4917',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'9341',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'4973',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'3491',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'9713',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'4917',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'7943',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+
+    //30
+
+    {
+        question:'9437',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+    {
+        question:'7419',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'4719',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'9413',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'1437',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'7194',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'1734',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'9173',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'1439',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'9743',
+        correctAnswer:'a',
+        wrongAnswer:getWrongAnswer('a'),
+          soalId:0
+    },
+
+    //40
+
+    {
+        question:'9134',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'3941',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'3179',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'1743',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+    {
+        question:'7913',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'9417',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'4913',
+        correctAnswer:'d',
+        wrongAnswer:getWrongAnswer('d'),
+          soalId:0
+    },
+    {
+        question:'1739',
+        correctAnswer:'b',
+        wrongAnswer:getWrongAnswer('b'),
+          soalId:0
+    },
+    {
+        question:'9417',
+        correctAnswer:'e',
+        wrongAnswer:getWrongAnswer('e'),
+          soalId:0
+    },
+    {
+        question:'7431',
+        correctAnswer:'c',
+        wrongAnswer:getWrongAnswer('c'),
+          soalId:0
+    },
+
+    //50
+]
 
 const huruf = [
     ...column1,
