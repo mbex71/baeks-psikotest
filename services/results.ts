@@ -48,14 +48,14 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
 
     })
 
-    const jumlahBenarPerColumn = await prisma.$queryRaw`SELECT s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
+    const jumlahBenarPerColumn = await prisma.$queryRaw`SELECT s.id,s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
                                         join SoalOnTest sot on s.id =sot.id 
                                         join Test t on sot.testId = t.id 
                                         left join Jawaban j on j.soalOnTestId = sot.id and j.status = true
                                         where t.testCode = ${params.testCode}
                                         group by s.id;`;
 
-    const jumlahSalahPerColumn = await prisma.$queryRaw`SELECT s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
+    const jumlahSalahPerColumn = await prisma.$queryRaw`SELECT s.id,s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
                                 join SoalOnTest sot on s.id =sot.id 
                                 join Test t on sot.testId = t.id 
                                 left join Jawaban j on j.soalOnTestId = sot.id and j.status = false

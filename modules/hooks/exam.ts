@@ -1,17 +1,22 @@
 import { TParamDetailAccount } from '@modules/dto/account'
 import { IUserExam, TParamCreateTest, TPostSubmitJawaban } from '@modules/dto/exam'
 import {StatusTest} from '@modules/entities/exam'
-import { examList , createExam, fetchUserExam, submitJawaban} from '@modules/repositories/exam'
+import { examList , createExam, fetchUserExam, submitJawaban, startExam} from '@modules/repositories/exam'
 import {UseQueryResult, useQuery, UseMutationResult, useMutation} from 'react-query'
 
 type TParams = {
     status:StatusTest
+    testCode:string
   }
 
 const useExamList = (params:TParams):UseQueryResult<IUserExam[], Error> =>{
     return useQuery(['examList',params], () => examList(params),{
         enabled: !!params.status
     })
+}
+
+const useStartExam = ():UseMutationResult<unknown,Error,TParams, unknown> =>{
+    return useMutation((params:TParams) => startExam(params))
 }
 
 
@@ -37,5 +42,6 @@ export{
     useExamList,
     useCreateExam,
     useUserExam,
-    useSubmitJawaban
+    useSubmitJawaban,
+    useStartExam
 }

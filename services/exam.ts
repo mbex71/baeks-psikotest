@@ -7,7 +7,7 @@ const listUserExams = async (userId: number | undefined, status:StatusTest ) => 
     const data = await prisma.test.findMany({
         where: {
             accountId: userId,
-            // status:status
+            status:status
         },
         include:{
             Account:true,
@@ -265,10 +265,30 @@ const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
     return checkData
 }
 
+
+    type TParam = {
+    status:StatusTest,
+    testCode:string
+  }
+
+  const changeExamStatus = async (params:TParam) =>{
+    const updateExamStatus = await prisma.test.update({
+        where:{
+            testCode:params.testCode
+        },
+        data:{
+            status:params.status
+        }
+    })
+
+    return updateExamStatus
+  }
+
 export {
     listUserExams,
     userExam,
     createTest,
-    submitJawaban
+    submitJawaban,
+    changeExamStatus
      
 }

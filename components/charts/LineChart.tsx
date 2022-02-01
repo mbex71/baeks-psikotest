@@ -8,15 +8,15 @@ interface IProps {
 
 
 const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong }: IProps) => {
-    console.log(dataWrong)
+
     return (
         <VictoryChart
             theme={VictoryTheme.material}
-            width={800}
+            width={1200}
             height={300}
         >
             <VictoryGroup
-                offset={10}
+                // offset={10}
                 style={{
                     data: {
                         fillOpacity: 0.7, stroke: "black", strokeWidth: 3
@@ -24,39 +24,51 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong }: IProps) => {
                 }}
             >
                 <VictoryLine
+                    interpolation="linear"
                     animate={{
                         duration: 2000,
                         onLoad: { duration: 1000 }
                     }}
                     style={{
-                        data: {
-                            stroke: "#2563EB",
-                        },
-
+                        data: { stroke: "#2563EB" },
+                        parent: { border: "1px solid #ccc" }
                     }}
+                    // style={{
+                    //     data: {
+                    //         stroke: "#2563EB",
+                    //     },
+
+                    // }}
                     data={dataCorrect}
-                    x="soal"
+                    x={x => x.id}
                     y="totalJawaban"
-                    domain={{ y: [0, 50] }}
+                    domain={{ x: [0, 30], y: [0, 50] }}
+                    labels={({ datum }) => `${datum.totalJawaban}`}
+
 
                 />
 
                 <VictoryLine
-
+                    interpolation="linear"
                     animate={{
                         duration: 2000,
                         onLoad: { duration: 1000 }
                     }}
-                    style={{
-                        data: {
-                            stroke: "#E11D48",
-                        },
+                    // style={{
+                    //     data: {
+                    //         stroke: "#E11D48",
+                    //     },
 
+                    // }}
+                    style={{
+                        data: { stroke: "#E11D48" },
+                        parent: { border: "1px solid #ccc" }
                     }}
                     data={dataWrong}
-                    domain={{ y: [0, 50] }}
-                    x="soal"
+                    domain={{ x: [0, 30], y: [0, 50] }}
+                    x={x => x.id}
                     y="totalJawaban"
+                    labels={({ datum }) => `${datum.totalJawaban}`}
 
                 />
 

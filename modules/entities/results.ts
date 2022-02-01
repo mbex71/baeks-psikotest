@@ -1,3 +1,5 @@
+import { IUserExam } from "@modules/dto/exam"
+
 export type TParam = {
     testCode:string
 }

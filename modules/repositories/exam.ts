@@ -6,7 +6,8 @@ import { TParamDetailAccount } from '@modules/dto/account'
 
 
 type TParam = {
-  status:StatusTest
+  status:StatusTest,
+  testCode:string
 }
 
 const examList = async (params:TParam):Promise<IUserExam[]> =>{
@@ -15,6 +16,16 @@ const examList = async (params:TParam):Promise<IUserExam[]> =>{
       method:'GET',
       url:'/exam',
       params: params
+  })
+
+  return res.data
+}
+
+const startExam = async (params:TParam):Promise<void> =>{
+  const res = await fetcher({
+    method:'POST',
+    url:'/exam/start',
+    data:params
   })
 
   return res.data
@@ -90,5 +101,6 @@ export{
     fetchUserExam,
      submitJawaban,
      examResultDetails,
-     examResultList
+     examResultList,
+     startExam
 }
