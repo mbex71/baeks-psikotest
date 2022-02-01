@@ -72,6 +72,16 @@ const examResultDetails = async (params:TParamsResult):Promise<TResults> =>{
   return res.data
 }
 
+const examResultList = async ():Promise<TResults> =>{
+  const res = await fetcher({
+    method:'GET',
+    url:`/results`,
+    
+  })
+
+  return res.data
+}
+
 
 
 export{
@@ -79,5 +89,6 @@ export{
     createExam,
     fetchUserExam,
      submitJawaban,
-     examResultDetails
+     examResultDetails,
+     examResultList
 }

@@ -7,8 +7,6 @@ export interface ITest {
     tujuan: string
     registrationDate: string
     status: string
-    
-    
 }
 
 

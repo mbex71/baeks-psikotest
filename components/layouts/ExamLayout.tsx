@@ -30,7 +30,11 @@ const ExamLayout: React.FC<IProps> = (props: IProps) => {
             <div className="w-full min-h-screen bg-slate-800 h-screen">
                 <div className='flex flex-row justify-end items-center space-x-0 fixed w-full text-sm bg-slate-600  shadow z-10 h-16 px-12'>
                     <div className='flex flex-row space-x-12 justify-between items-center w-1/3'>
-                        <div className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>Exam</div>
+
+                        <Link href="/exam">
+                            <a className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>Exam</a>
+                        </Link>
+
 
                         <Link href="/exam/results">
                             <a className='text-white hover:bg-red-400 p-4 rounded text-sm font-bold w-1/3 text-center '>Results</a>

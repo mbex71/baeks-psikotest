@@ -109,7 +109,26 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
 }
 
 
+type TParamListResult = {
+    username:string
+}
+
+const resultListExam = async (params:TParamListResult) =>{
+    const data = await prisma.account.findUnique({
+        where:{
+            username:params.username
+        },
+        include:{
+            Test:true
+        }
+    })
+
+    return data
+}
+
+
 
 export{
-    resultExam
+    resultExam,
+     resultListExam
 }
