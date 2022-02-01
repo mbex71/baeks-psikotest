@@ -1,0 +1,171 @@
+const dataSoalAngka = [
+    {
+        question:'97264',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'30581',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'27514',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'62038',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'14973',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'97264',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'30581',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'27514',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'62038',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+    {
+        question:'14973',
+        listOfChoise:'abcde',
+        typeSoalId:1
+    },
+]
+
+const dataSoalHuruf = [
+    {
+        question:'BHNTZ',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'CJHPV',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'JDKQW',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'LXLFWR',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'GSMYF',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'BHNTZ',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'CJHPV',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'JDKQW',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'LXLFWR',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    {
+        question:'GSMYF',
+        listOfChoise:'abcde',
+        typeSoalId:2
+    },
+    
+]
+
+const dataSoalSymbol = [
+    {
+        question:'ABCDE',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'FCGAH',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'IGKHL',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'MDLCN',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'KMCNO',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'ABCDE',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'FCGAH',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'IGKHL',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'MDLCN',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    {
+        question:'KMCNO',
+        listOfChoise:'abcde',
+        typeSoalId:3
+    },
+    
+    
+]
+
+
+
+const data = [
+    ...dataSoalAngka,
+    ...dataSoalHuruf,
+    ...dataSoalSymbol
+]
+
+export default data

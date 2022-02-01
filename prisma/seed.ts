@@ -1,5 +1,5 @@
 import { PrismaClient, Prisma} from '@prisma/client'
-import {seedUser , seedTypeSoal, seedTimer, seedSoal, seedOptions} from '../databases/seeders/dev'
+import {seedUser , seedTypeSoal, seedTimer, seedSoal, seedOptions} from '../databases/seeders/prod'
 
 const prisma = new PrismaClient()
 
