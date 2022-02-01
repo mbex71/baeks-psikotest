@@ -3,7 +3,7 @@ import huruf from './huruf'
 
 const optoins = [ 
     ...angka, 
-    // ...huruf 
+    ...huruf 
 ]
 
 export default optoins
