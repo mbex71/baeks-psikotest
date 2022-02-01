@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 import {selectAllUserAccount} from '@services/account'
 import { getToken } from 'next-auth/jwt'
-import { updateTimer } from '@services/timer'
+import { updateTimer , getTimer} from '@services/timer'
 
 
 type TParamTimer = {
@@ -13,6 +13,8 @@ type TParamTimer = {
 type Data = {
   data?:any
   message?:string
+} | {
+  timer:number
 }
 
 export default async function handler(
@@ -25,11 +27,7 @@ export default async function handler(
 
   const params = req.body as TParamTimer
 
-  if(!params.timer){
-      return res.status(400).json({
-            message: 'Bad Request'
-      })
-  }
+  
 
   if(!token) {
     return res.status(401).json({
@@ -43,19 +41,25 @@ export default async function handler(
     })
   }
 
-  if(req.method !== 'POST') {
-    return res.status(405).json({
-        message: 'Method not allowed'
+
+  if(req.method === 'POST'){
+    if(!params.timer){
+      return res.status(400).json({
+            message: 'Bad Request'
+      })
+  }
+    const data = await updateTimer(params.timer)
+  
+    res.status(200).json({
+        data:params.timer,
+        message:'Success Update Timer'
     })
   }
 
+  if(req.method === 'GET'){
+    const data = await getTimer()
   
-
+    res.status(200).json(data)
+  }
   
-  const data = await updateTimer(params.timer)
-  
-  res.status(200).json({
-      data:params.timer,
-      message:'Success Update Timer'
-  })
 }

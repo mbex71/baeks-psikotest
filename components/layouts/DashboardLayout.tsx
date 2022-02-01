@@ -35,7 +35,7 @@ const DashboardLayout: React.FC<IProps> = (props: IProps) => {
                                 Exams & Results
                             </a>
                         </Link>
-                        <Link href="/dashboard/accounts">
+                        <Link href="/dashboard/settings">
                             <a className='text-sm'>
                                 Setting
                             </a>
