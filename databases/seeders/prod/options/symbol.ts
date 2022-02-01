@@ -954,61 +954,61 @@ const column3 = [
 
 const column4 = [
     {
-        question:'3628',
+        question:'CMDN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'2386',
+        question:'DCNM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'2603',
+        question:'DMLC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'6082',
+        question:'MLND',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'0362',
+        question:'LCMD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'3860',
+        question:'CNML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'8362',
+        question:'NCMD',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'6023',
+        question:'MLDC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'3860',
+        question:'CNML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'0826',
+        question:'LNDM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
@@ -1016,61 +1016,61 @@ const column4 = [
 
     //10
     {
-        question:'8032',
+        question:'NLDC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'3602',
+        question:'CMLD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'6238',
+        question:'MDCN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'6082',
+        question:'MLND',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'3206',
+        question:'CDLM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'6082',
+        question:'MLND',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'3820',
+        question:'CNDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'3682',
+        question:'CMND',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'2036',
+        question:'DLCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'0863',
+        question:'LNMC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
@@ -1079,61 +1079,61 @@ const column4 = [
     //20
 
     {
-        question:'6830',
+        question:'MNCL',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'0823',
+        question:'LMDC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'8206',
+        question:'NDLM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'0823',
+        question:'LNDC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'6302',
+        question:'MCLD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'8326',
+        question:'NCDM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'2308',
+        question:'DCLN',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'0682',
+        question:'LMND',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'3860',
+        question:'CNML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'0823',
+        question:'LNDC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
@@ -1142,61 +1142,61 @@ const column4 = [
     //30
 
     {
-        question:'3820',
+        question:'CNDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'0863',
+        question:'LNMC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'8063',
+        question:'NLMC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'3862',
+        question:'CNMD',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'6820',
+        question:'MNDL',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'0638',
+        question:'LMCN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'6028',
+        question:'MLDN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'3602',
+        question:'CMLD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'6823',
+        question:'MNDC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'3082',
+        question:'CLND',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
@@ -1205,61 +1205,61 @@ const column4 = [
     //40
 
     {
-        question:'2608',
+        question:'DMLN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'2306',
+        question:'DCLM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'2086',
+        question:'DLNM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:4
     },
     {
-        question:'8360',
+        question:'NCML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'3286',
+        question:'CDNM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'8302',
+        question:'MCLD',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
     },
     {
-        question:'2836',
+        question:'DNCM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:4
     },
     {
-        question:'3062',
+        question:'CLMD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:4
     },
     {
-        question:'8360',
+        question:'NCML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:4
     },
     {
-        question:'0382',
+        question:'LCMD',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:4
@@ -1270,61 +1270,61 @@ const column4 = [
 
 const column5 = [
     {
-        question:'9471',
+        question:'CMNK',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'9374',
+        question:'CONM',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'9714',
+        question:'CNKM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'1347',
+        question:'KOMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'3914',
+        question:'OCKM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'1379',
+        question:'KONC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'9134',
+        question:'CKOM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'3749',
+        question:'ONMC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'1347',
+        question:'KOMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'7319',
+        question:'NOKC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
@@ -1333,61 +1333,61 @@ const column5 = [
     //10
 
     {
-        question:'3197',
+        question:'OKCN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'7143',
+        question:'NKMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'1743',
+        question:'KNMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'3149',
+        question:'OKMC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'4197',
+        question:'MKCN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'7431',
+        question:'NMOK',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'4791',
+        question:'MNCK',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'3479',
+        question:'OMNC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'4193',
+        question:'MKCO',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'3719',
+        question:'ONKC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
@@ -1396,61 +1396,61 @@ const column5 = [
     //20
 
     {
-        question:'3491',
+        question:'OMCK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'9314',
+        question:'COKM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'9473',
+        question:'CMNO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'4719',
+        question:'MNKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'7349',
+        question:'NOMC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'3147',
+        question:'OKMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'1349',
+        question:'KOMC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'4793',
+        question:'MNCO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'3147',
+        question:'OKMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'7194',
+        question:'NKCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
@@ -1459,61 +1459,61 @@ const column5 = [
     //30
 
     {
-        question:'1739',
+        question:'KNOC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'3479',
+        question:'OMNC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'4931',
+        question:'MCOK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'4719',
+        question:'MNKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'3974',
+        question:'OCNM',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'4719',
+        question:'MNKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'3197',
+        question:'OKCN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'3419',
+        question:'OMKC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'9734',
+        question:'CNOM',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'7143',
+        question:'NKMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
@@ -1522,61 +1522,61 @@ const column5 = [
     //40
 
     {
-        question:'4137',
+        question:'MKON',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'7193',
+        question:'NKCO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'1974',
+        question:'KCNM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'7193',
+        question:'NKCO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'4379',
+        question:'MONC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:5
     },
     {
-        question:'1394',
+        question:'KOCM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:5
     },
     {
-        question:'9371',
+        question:'CONK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
     },
     {
-        question:'7419',
+        question:'NMKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:5
     },
     {
-        question:'3147',
+        question:'OKMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:5
     },
     {
-        question:'7193',
+        question:'NKCO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:5
@@ -1587,61 +1587,61 @@ const column5 = [
 
 const column6 = [
     {
-        question:'9672',
+        question:'ADBC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'2974',
+        question:'CABE',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'7946',
+        question:'BAED',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'6729',
+        question:'DBCA',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'7649',
+        question:'BDEA',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2764',
+        question:'CBDE',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'7942',
+        question:'BAEC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'2694',
+        question:'CDAE',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'4769',
+        question:'EBDA',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2976',
+        question:'CABD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
@@ -1650,61 +1650,61 @@ const column6 = [
     //10
 
     {
-        question:'6942',
+        question:'DAEC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'7926',
+        question:'BACD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'6942',
+        question:'DAEC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'9467',
+        question:'AEDB',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'6942',
+        question:'DAEC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'7264',
+        question:'BCDE',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'9247',
+        question:'ACEB',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'4269',
+        question:'ECDA',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'6794',
+        question:'DBAE',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2946',
+        question:'CAED',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
@@ -1713,61 +1713,61 @@ const column6 = [
     //20
 
     {
-        question:'6972',
+        question:'DABC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'4627',
+        question:'EDCB',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'6972',
+        question:'DABC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'2749',
+        question:'CBEA',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'4267',
+        question:'ECDB',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'4697',
+        question:'EDAB',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'9278',
+        question:'ACBD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'2497',
+        question:'CEAB',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'9264',
+        question:'ACDE',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'4927',
+        question:'EACB',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
@@ -1776,61 +1776,61 @@ const column6 = [
     //30
 
     {
-        question:'2674',
+        question:'CDBE',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'9276',
+        question:'ACBD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'6294',
+        question:'DCAE',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'9624',
+        question:'ADCE',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'4297',
+        question:'ECAB',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'4762',
+        question:'EBDC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'7694',
+        question:'BDAE',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'6274',
+        question:'DCBE',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'2976',
+        question:'CABD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'9274',
+        question:'ACBE',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
@@ -1839,61 +1839,61 @@ const column6 = [
     //40
 
     {
-        question:'7642',
+        question:'BDEC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'2976',
+        question:'CABD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:6
     },
     {
-        question:'6947',
+        question:'DAEB',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2764',
+        question:'CBDE',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'7429',
+        question:'BECA',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
     },
     {
-        question:'7694',
+        question:'BDAE',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2467',
+        question:'CEDB',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:6
     },
     {
-        question:'7694',
+        question:'BDAE',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:6
     },
     {
-        question:'2946',
+        question:'CAED',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:6
     },
     {
-        question:'2794',
+        question:'CBAE',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:6
@@ -1904,61 +1904,61 @@ const column6 = [
 
 const column7 = [
     {
-        question:'3058',
+        question:'FCGA',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'8130',
+        question:'AHFC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'0153',
+        question:'CHGF',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8305',
+        question:'AFCG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'3581',
+        question:'FGAH',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'3015',
+        question:'FCHG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8503',
+        question:'AGCF',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'3015',
+        question:'FCHG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8150',
+        question:'AHGC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'8315',
+        question:'AFHG',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
@@ -1967,61 +1967,61 @@ const column7 = [
     //10
 
     {
-        question:'8035',
+        question:'ACFG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'1830',
+        question:'HAFC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'0815',
+        question:'CAHG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'1085',
+        question:'HCAG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'5813',
+        question:'GAHF',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'5308',
+        question:'GHCA',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'3015',
+        question:'FCHG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'0835',
+        question:'CAFG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'8130',
+        question:'AHFC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'1835',
+        question:'HAFG',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
@@ -2030,61 +2030,61 @@ const column7 = [
     //20
 
     {
-        question:'1038',
+        question:'HCFA',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'8135',
+        question:'AHFG',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'3150',
+        question:'FHGC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'0381',
+        question:'CFAH',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'3051',
+        question:'FCGH',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8305',
+        question:'AFCG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'3158',
+        question:'HFGA',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'8015',
+        question:'ACHG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'5301',
+        question:'GFCH',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8130',
+        question:'AHFC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
@@ -2093,61 +2093,61 @@ const column7 = [
     //30
 
     {
-        question:'0158',
+        question:'CHGA',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'3180',
+        question:'FHAC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'0158',
+        question:'CHGA',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'1503',
+        question:'HGCF',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'0158',
+        question:'CHGA',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'3805',
+        question:'FACG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'1853',
+        question:'CAGF',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'5801',
+        question:'GACH',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'0315',
+        question:'CFHG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'8150',
+        question:'AHGC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
@@ -2156,61 +2156,61 @@ const column7 = [
     //40
 
     {
-        question:'0138',
+        question:'CHFA',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'5083',
+        question:'GCAF',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'0138',
+        question:'CHFA',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'8351',
+        question:'AFGH',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'5803',
+        question:'GACF',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:7
     },
     {
-        question:'5013',
+        question:'GCHF',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:7
     },
     {
-        question:'1830',
+        question:'HAFC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:7
     },
     {
-        question:'8513',
+        question:'AGHF',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
     },
     {
-        question:'1805',
+        question:'HACG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:7
     },
     {
-        question:'5183',
+        question:'GHAF',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:7
@@ -2221,61 +2221,61 @@ const column7 = [
 
 const column8 = [
     {
-        question:'2751',
+        question:'IGKH',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'5217',
+        question:'KIHG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'5742',
+        question:'KGLI',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'7415',
+        question:'GIHK',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'4275',
+        question:'LIGK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'2174',
+        question:'IHGL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'1275',
+        question:'HIGK',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'7452',
+        question:'GLKI',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'2174',
+        question:'IHGL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'4157',
+        question:'LHKG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
@@ -2284,61 +2284,61 @@ const column8 = [
     //10
 
     {
-        question:'1425',
+        question:'HLIK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'2745',
+        question:'IGLK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'7521',
+        question:'GKIH',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'7415',
+        question:'GLHK',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'2547',
+        question:'IKLG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'7415',
+        question:'GLHK',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'2154',
+        question:'IHKL',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'2715',
+        question:'IGHK',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'5427',
+        question:'KLIG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'4172',
+        question:'LHGI',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
@@ -2347,61 +2347,61 @@ const column8 = [
     //20
 
     {
-        question:'7124',
+        question:'GHIL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'4152',
+        question:'LHKI',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'1547',
+        question:'HKLG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'4152',
+        question:'LHKI',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'7245',
+        question:'GILK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'1257',
+        question:'HIKG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'5241',
+        question:'KILH',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'4715',
+        question:'LGHK',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'2174',
+        question:'IHGL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'2152',
+        question:'LHKI',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
@@ -2410,61 +2410,61 @@ const column8 = [
     //30
 
     {
-        question:'2154',
+        question:'IHKL',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'4172',
+        question:'LHGI',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'1472',
+        question:'HLGI',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'2175',
+        question:'IHGK',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'7154',
+        question:'GHKL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'4721',
+        question:'LGIH',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'7451',
+        question:'GLKH',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'2745',
+        question:'IGLK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'7152',
+        question:'GHKI',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'2415',
+        question:'ILHK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
@@ -2473,61 +2473,61 @@ const column8 = [
     //40
 
     {
-        question:'5741',
+        question:'KGLH',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'5247',
+        question:'KILG',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'5417',
+        question:'KLHG',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:8
     },
     {
-        question:'1274',
+        question:'HIGL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'2517',
+        question:'IKHG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'1245',
+        question:'HILK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
     },
     {
-        question:'5127',
+        question:'KHIG',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:8
     },
     {
-        question:'2475',
+        question:'ILGK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:8
     },
     {
-        question:'1274',
+        question:'HIGL',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:8
     },
     {
-        question:'4215',
+        question:'LIHK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:8
@@ -2538,61 +2538,61 @@ const column8 = [
 
 const column9 = [
     {
-        question:'6203',
+        question:'MDLC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'6802',
+        question:'MNLD',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'6032',
+        question:'MLCD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'3820',
+        question:'CNDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'8632',
+        question:'NMCD',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'3806',
+        question:'CNLM',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'6382',
+        question:'MCND',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'8026',
+        question:'NLDM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'3820',
+        question:'CNDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'0836',
+        question:'LNCM',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
@@ -2601,61 +2601,61 @@ const column9 = [
     //10
 
     {
-        question:'8360',
+        question:'NCML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'0328',
+        question:'LCDN',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'3028',
+        question:'CLDN',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'8326',
+        question:'NCDM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'2360',
+        question:'DCML',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'0283',
+        question:'LDMC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'2063',
+        question:'DLMC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'8206',
+        question:'NDLM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'2368',
+        question:'DCMN',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'8036',
+        question:'NLCM',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
@@ -2664,61 +2664,61 @@ const column9 = [
     //20
 
     {
-        question:'8263',
+        question:'NDMC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'6832',
+        question:'MNCD',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'6208',
+        question:'MDLN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'2036',
+        question:'DLCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'0826',
+        question:'LNDM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'8320',
+        question:'NCDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'3826',
+        question:'CNDM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'2068',
+        question:'DLMN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'8320',
+        question:'NCDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'0362',
+        question:'LCMD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
@@ -2727,61 +2727,61 @@ const column9 = [
     //30
 
     {
-        question:'3086',
+        question:'CLNM',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'8206',
+        question:'NDLM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'2683',
+        question:'DMNC',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'2036',
+        question:'DLCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'8602',
+        question:'NMLD',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'2036',
+        question:'DLCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'8360',
+        question:'NCML',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'8236',
+        question:'NDCM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'6082',
+        question:'MLND',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'0328',
+        question:'LCDN',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
@@ -2790,61 +2790,61 @@ const column9 = [
     //40
 
     {
-        question:'2380',
+        question:'DCNL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'0368',
+        question:'LCMN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'3602',
+        question:'CMLD',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'0368',
+        question:'LCMN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'2806',
+        question:'DNLM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:9
     },
     {
-        question:'3862',
+        question:'CNMD',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:9
     },
     {
-        question:'6803',
+        question:'MNLC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
     },
     {
-        question:'0236',
+        question:'LDCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:9
     },
     {
-        question:'8320',
+        question:'NCDL',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:9
     },
     {
-        question:'0368',
+        question:'LCMN',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:9
@@ -2855,61 +2855,61 @@ const column9 = [
 
 const column10 = [
     {
-        question:'1497',
+        question:'KMCN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'7439',
+        question:'NMOC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'4371',
+        question:'MONK',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'7439',
+        question:'NMOC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'1973',
+        question:'KCNO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'4931',
+        question:'MCOK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'3974',
+        question:'OCNM',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'7143',
+        question:'NKMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'9417',
+        question:'CMKN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'7439',
+        question:'NMOC',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
@@ -2918,61 +2918,61 @@ const column10 = [
     //10
 
     {
-        question:'4793',
+        question:'NMCO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'9173',
+        question:'CKNO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'1394',
+        question:'KOCM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'1743',
+        question:'KNMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'9371',
+        question:'CONK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'1743',
+        question:'KNMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'9437',
+        question:'CMON',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'9143',
+        question:'CKMO',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'3791',
+        question:'ONCK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'7419',
+        question:'NMKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
@@ -2981,61 +2981,61 @@ const column10 = [
     //20
 
     {
-        question:'3174',
+        question:'OKNM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'3971',
+        question:'OCNK',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'3741',
+        question:'ONMK',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'4917',
+        question:'MCKN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'9341',
+        question:'COMN',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'4973',
+        question:'MCNO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'3491',
+        question:'OMCK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'9713',
+        question:'CNKO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'4917',
+        question:'MCKN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'7943',
+        question:'NCMO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
@@ -3044,61 +3044,61 @@ const column10 = [
     //30
 
     {
-        question:'9437',
+        question:'CMON',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
     },
     {
-        question:'7419',
+        question:'NMKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'4719',
+        question:'MNKC',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'9413',
+        question:'CMKO',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'1437',
+        question:'KMON',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'7194',
+        question:'NKCM',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'1734',
+        question:'KNOM',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'9173',
+        question:'CKNO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'1439',
+        question:'KMOC',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'9743',
+        question:'CNMO',
         correctAnswer:'a',
         wrongAnswer:getWrongAnswer('a'),
         soalId:10
@@ -3107,61 +3107,61 @@ const column10 = [
     //40
 
     {
-        question:'9134',
+        question:'CKOM',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'3941',
+        question:'OCMK',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'3179',
+        question:'OKNC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'1743',
+        question:'KNMO',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
     },
     {
-        question:'7913',
+        question:'NCKO',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'9417',
+        question:'CMKN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'4913',
+        question:'MCKO',
         correctAnswer:'d',
         wrongAnswer:getWrongAnswer('d'),
         soalId:10
     },
     {
-        question:'1739',
+        question:'KNOC',
         correctAnswer:'b',
         wrongAnswer:getWrongAnswer('b'),
         soalId:10
     },
     {
-        question:'9417',
+        question:'CMKN',
         correctAnswer:'e',
         wrongAnswer:getWrongAnswer('e'),
         soalId:10
     },
     {
-        question:'7431',
+        question:'NMOK',
         correctAnswer:'c',
         wrongAnswer:getWrongAnswer('c'),
         soalId:10
