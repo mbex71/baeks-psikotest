@@ -1584,6 +1584,7 @@ const column5 = [
 
     //50
 ]
+
 const angka = [ 
   ...column1,
   ...column2,
