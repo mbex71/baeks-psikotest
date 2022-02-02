@@ -1,0 +1,120 @@
+-- CreateTable
+CREATE TABLE `Account` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(191) NOT NULL,
+    `username` VARCHAR(191) NOT NULL,
+    `password` VARCHAR(191) NOT NULL,
+    `tglLahir` DATETIME(3) NOT NULL,
+    `type` ENUM('ADMIN', 'USER') NOT NULL DEFAULT 'USER',
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    UNIQUE INDEX `Account_username_key`(`username`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Test` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `testCode` VARCHAR(191) NOT NULL,
+    `tujuan` VARCHAR(191) NOT NULL,
+    `registrationDate` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `status` ENUM('ACTIVE', 'ONGOING', 'SUCCESS', 'FAILED') NOT NULL DEFAULT 'ACTIVE',
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `accountId` INTEGER NULL,
+
+    UNIQUE INDEX `Test_testCode_key`(`testCode`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `SoalOnTest` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `timer` INTEGER NOT NULL DEFAULT 60000,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `soalId` INTEGER NULL,
+    `testId` INTEGER NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Jawaban` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `answers` VARCHAR(191) NULL,
+    `status` BOOLEAN NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `soalOnTestId` INTEGER NULL,
+    `optionsId` INTEGER NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Timer` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `value` INTEGER NOT NULL DEFAULT 60000,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Soal` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `question` VARCHAR(191) NOT NULL,
+    `listOfChoise` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `typeSoalId` INTEGER NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Options` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `question` VARCHAR(191) NOT NULL,
+    `correctAnswer` VARCHAR(191) NOT NULL,
+    `wrongAnswer` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `soalId` INTEGER NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `TypeSoal` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` ENUM('ANGKA', 'HURUF', 'SYMBOL') NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Test` ADD CONSTRAINT `Test_accountId_fkey` FOREIGN KEY (`accountId`) REFERENCES `Account`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `SoalOnTest` ADD CONSTRAINT `SoalOnTest_soalId_fkey` FOREIGN KEY (`soalId`) REFERENCES `Soal`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `SoalOnTest` ADD CONSTRAINT `SoalOnTest_testId_fkey` FOREIGN KEY (`testId`) REFERENCES `Test`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Jawaban` ADD CONSTRAINT `Jawaban_soalOnTestId_fkey` FOREIGN KEY (`soalOnTestId`) REFERENCES `SoalOnTest`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Jawaban` ADD CONSTRAINT `Jawaban_optionsId_fkey` FOREIGN KEY (`optionsId`) REFERENCES `Options`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Soal` ADD CONSTRAINT `Soal_typeSoalId_fkey` FOREIGN KEY (`typeSoalId`) REFERENCES `TypeSoal`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Options` ADD CONSTRAINT `Options_soalId_fkey` FOREIGN KEY (`soalId`) REFERENCES `Soal`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;

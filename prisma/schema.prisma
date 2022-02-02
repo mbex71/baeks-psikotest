@@ -1,0 +1,128 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum SoalType {
+  ANGKA
+  HURUF
+  SYMBOL
+}
+
+enum StatusTest {
+  ACTIVE
+  ONGOING
+  DONE
+  SUCCESS
+  FAILED
+}
+
+enum SheetStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model Account {
+  id        Int      @id @default(autoincrement())
+  name      String
+  username  String   @unique
+  password  String
+  tglLahir  DateTime
+  type      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  Test      Test[]
+}
+
+model Test {
+  id               Int          @id @default(autoincrement())
+  testCode         String       @unique
+  tujuan           String
+  registrationDate DateTime     @default(now())
+  status           StatusTest   @default(ACTIVE)
+  soalOnTest       SoalOnTest[]
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @default(now())
+  Account          Account?     @relation(fields: [accountId], references: [id])
+  accountId        Int?
+}
+
+//Soal di lembar Test
+model SoalOnTest {
+  id        Int       @id @default(autoincrement())
+  timer     Int       @default(60000)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now())
+  Soal      Soal?     @relation(fields: [soalId], references: [id])
+  soalId    Int?
+  Test      Test?     @relation(fields: [testId], references: [id])
+  testId    Int?
+  Jawaban   Jawaban[]
+}
+
+//Jawaban di lembar pekerjaan
+model Jawaban {
+  id           Int         @id @default(autoincrement())
+  answers      String?
+  status       Boolean?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @default(now())
+  SoalOnTest   SoalOnTest? @relation(fields: [soalOnTestId], references: [id])
+  soalOnTestId Int?
+  Options      Options?    @relation(fields: [optionsId], references: [id])
+  optionsId    Int?
+}
+
+model Timer {
+  id        Int      @id @default(autoincrement())
+  value     Int      @default(60000)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+// Soal dan Jawaban
+model Soal {
+  id           Int          @id @default(autoincrement())
+  question     String
+  listOfChoise String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @default(now())
+  SoalOnTest   SoalOnTest[]
+  Options      Options[]
+  TypeSoal     TypeSoal?    @relation(fields: [typeSoalId], references: [id])
+  typeSoalId   Int?
+}
+
+// Pilihan Jawaban
+model Options {
+  id            Int       @id @default(autoincrement())
+  question      String
+  correctAnswer String
+  wrongAnswer   String
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now())
+  Soal          Soal?     @relation(fields: [soalId], references: [id])
+  soalId        Int?
+  Jawaban       Jawaban[]
+}
+
+//Type Soal
+model TypeSoal {
+  id        Int      @id @default(autoincrement())
+  name      SoalType
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  Soal      Soal[]
+}
