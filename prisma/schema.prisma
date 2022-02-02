@@ -24,6 +24,7 @@ enum SoalType {
 enum StatusTest {
   ACTIVE
   ONGOING
+  DONE
   SUCCESS
   FAILED
 }

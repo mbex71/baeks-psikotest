@@ -67,8 +67,9 @@ const Exam: NextPage = () => {
                 <div className="my-2 flex justify-start w-1/2 space-x-2">
                     <button onClick={() => handleSetStatus({ status: 'ACTIVE' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "ACTIVE" ? 'bg-emerald-400' : null}`}>Active</button>
                     <button onClick={() => handleSetStatus({ status: 'ONGOING' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "ONGOING" ? 'bg-emerald-400' : null}`}>OnGoing</button>
-                    <button onClick={() => handleSetStatus({ status: 'SUCCESS' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "SUCCESS" ? 'bg-emerald-400' : null}`}>Success</button>
-                    <button onClick={() => handleSetStatus({ status: 'FAILED' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "FAILED" ? 'bg-emerald-400' : null}`}>Failed</button>
+                    <button onClick={() => handleSetStatus({ status: 'ONGOING' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "DONE" ? 'bg-emerald-400' : null}`}>Done</button>
+                    {/* <button onClick={() => handleSetStatus({ status: 'SUCCESS' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "SUCCESS" ? 'bg-emerald-400' : null}`}>Success</button> */}
+                    {/* <button onClick={() => handleSetStatus({ status: 'FAILED' })} className={`text-white p-2 rounded-lg w-1/4 ${params.status === "FAILED" ? 'bg-emerald-400' : null}`}>Failed</button> */}
                 </div>
                 <>
 
@@ -90,10 +91,12 @@ const Exam: NextPage = () => {
                                 </div>
                                 <div className="w-1/4 flex justify-center items-center h-full">
                                     {
-                                        item.status === "ACTIVE" || item.status === "ONGOING" ? <button
+                                        item.status === "ACTIVE" ? <button
                                             onClick={() => handleStartExam(item.testCode, item.status)}
-                                            className="w-full bg-emerald-400 p-4 text-white rounded font-bold tracking-wider hover:bg-emerald-500 text-sm">
-                                            START
+                                            disabled={params.status === 'DONE' || params.status === 'ONGOING'}
+                                            className={`w-full ${params.status === "ACTIVE" ? "bg-emerald-400 hover:bg-emerald-500" : "bg-yellow-400 hover:bg-yellow-500"} p-4 text-white rounded font-bold tracking-wider text-sm `}>
+                                            {params.status === "ACTIVE" ? "Mulai" : null}
+                                            {params.status === "DONE" ? "Selesai" : null}
                                         </button> : null
                                     }
 

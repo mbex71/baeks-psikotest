@@ -27,7 +27,7 @@ const Results: NextPage = () => {
     return (
         <ExamLayout>
             <h1 className="text-4xl text-white font-bold">Test Results</h1>
-            <div className="mt-12">
+            <div className="mt-12 flex flex-col space-y-4">
                 {
                     data && data.Test.map((test, index) => <Card key={index} {...test} />)
                 }

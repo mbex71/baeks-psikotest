@@ -72,6 +72,8 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 }
             }
         }
+    }).finally(async ()=>{
+        await prisma.$disconnect()
     })
 
     const soalOnTestLength = await prisma.soalOnTest.count({
@@ -80,12 +82,16 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 testCode:testCode
             }
         }
+    }).finally(async ()=>{
+        await prisma.$disconnect()
     })
 
     const optionsLength = await prisma.options.count({
         where:{
             soalId:soalId
         }
+    }).finally(async ()=>{
+        await prisma.$disconnect()
     })
     
 
@@ -201,7 +207,9 @@ const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
                 
             }
         }
-   })
+   }).finally(async ()=>{
+    await prisma.$disconnect()
+})
 
 
    const submitJawaban = await prisma.test.update({
@@ -230,7 +238,9 @@ const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
                }
            }
        }
-   })
+   }).finally(async ()=>{
+    await prisma.$disconnect()
+})
 
    const checkData = await prisma.soalOnTest.findFirst({
     where:{
@@ -279,6 +289,8 @@ const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
         data:{
             status:params.status
         }
+    }).finally(async ()=>{
+        await prisma.$disconnect()
     })
 
     return updateExamStatus

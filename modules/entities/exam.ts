@@ -1,4 +1,4 @@
-export type StatusTest = 'ACTIVE' |'ONGOING'|'SUCCESS'|'FAILED'
+export type StatusTest = 'ACTIVE' |'ONGOING'|'SUCCESS'|'FAILED' |'DONE'
 
 
 export interface ITest {
