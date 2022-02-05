@@ -1,7 +1,8 @@
-import { PrismaClient, Prisma} from '@prisma/client'
+import type { Prisma} from '@prisma/client'
+import prisma from '../configs/prisma'
 import {seedUser , seedTypeSoal, seedTimer, seedSoal, seedOptions} from '../databases/seeders/prod'
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
 
 const main = async () => {
    const user = await prisma.account.createMany({

@@ -46,21 +46,7 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
            }
        }
 
-    })
-
-    // const jumlahBenarPerColumn = await prisma.$queryRaw`SELECT s.id,s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
-    //                                     join SoalOnTest sot on s.id =sot.id 
-    //                                     join Test t on sot.testId = t.id 
-    //                                     left join Jawaban j on j.soalOnTestId = sot.id and j.status = true
-    //                                     where t.testCode = ${params.testCode}
-    //                                     group by s.id;`;
-
-    // const jumlahSalahPerColumn = await prisma.$queryRaw`SELECT s.id,s.question as 'soal' ,count(j.status) as 'totalJawaban' from  Soal s 
-    //                             join SoalOnTest sot on s.id =sot.id 
-    //                             join Test t on sot.testId = t.id 
-    //                             left join Jawaban j on j.soalOnTestId = sot.id and j.status = false
-    //                             where t.testCode = ${params.testCode}
-    //                             group by s.id;`    
+    })   
 
     const jumlahBenarPerColumn = await prisma.$queryRaw`select sot.soalId ,count(j.answers) as 'totalJawaban' from SoalOnTest sot 
                                     join Test t on t.id = sot .testId 
@@ -140,8 +126,54 @@ const resultListExam = async (params:TParamListResult) =>{
 }
 
 
+// Dashboard
+
+const resultListDashboard = async () =>{
+    const data = await prisma.test.findMany({
+        select:{
+            testCode:true,
+            tujuan:true,
+            registrationDate:true,
+            status:true,
+            Account:true
+        }
+    })
+
+    return data
+}
+
+type TParamsDetailResultDashboard = {
+    testCode:string
+}
+
+const resultDetalDashboard = async ({testCode}:TParamsDetailResultDashboard) =>{
+    const account = await prisma.test.findUnique({
+        where:{
+            testCode: testCode
+        },
+        select:{
+            registrationDate:true,
+            tujuan:true,
+            Account:true
+        }
+    })
+
+    // console.l
+    const getResult = await resultExam({testCode})
+
+    console.log('results',account)
+    
+
+    return {
+         ...getResult, ...account
+    }
+
+}
+
 
 export{
     resultExam,
-     resultListExam
+     resultListExam,
+      resultListDashboard,
+      resultDetalDashboard
 }

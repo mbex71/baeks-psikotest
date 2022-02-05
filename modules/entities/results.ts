@@ -1,3 +1,4 @@
+import { IAccount } from "@modules/dto/account"
 import { IUserExam } from "@modules/dto/exam"
 
 export type TParam = {
@@ -21,4 +22,12 @@ export type TResults = {
   wrongPerColumn:TWrongPerColumn[]
   totalDikerjakan:number
   diver:number
+}
+
+export interface IResultsDetailDashboard extends TResults{
+    testCode:string
+    tujuan: string
+    registrationDate: string
+    status: string
+    Account:IAccount
 }

@@ -1,7 +1,5 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
 import {resultListExam } from 'services/results'
-import {getSession} from 'next-auth/react'
-import { StatusTest } from '@prisma/client'
 import { getToken } from 'next-auth/jwt'
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){

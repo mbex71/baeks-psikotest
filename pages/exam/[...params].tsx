@@ -120,7 +120,7 @@ const ExamPage: NextPage = () => {
                 {/* <CountDown date={Date.now() + 120000} /> */}
 
                 <div className="border rounded w-3/6 text-center p-4 space-y-2 bg-white">
-                    <div className="text-2xl tracking-wider font-bold">Binlat sikap kerja tamtama 2021</div>
+                    <div className="text-2xl tracking-wider font-bold">Sikap Kerja</div>
 
                     <div className="text-base font-mono font-light text-black opacity-25">
                         Type Test:  {dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name}

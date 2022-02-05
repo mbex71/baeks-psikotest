@@ -1,7 +1,6 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
-import {listUserExams } from 'services/exam'
 import {getSession} from 'next-auth/react'
-import { StatusTest } from '@prisma/client'
+import { StatusTest } from '@modules/entities/exam'
 import {changeExamStatus} from '@services/exam'
 type TParam = {
     status:StatusTest

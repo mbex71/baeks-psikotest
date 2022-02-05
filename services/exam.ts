@@ -1,22 +1,22 @@
 import {StatusTest} from '@modules/entities/exam'
 import prisma from '@configs/prisma'
 import {TParamCreateTest, TPostSubmitJawaban} from '@modules/dto/exam'
-import { TParamDetailAccount } from '@modules/dto/account'
+
 
 const listUserExams = async (userId: number | undefined, status:StatusTest ) => {
-    const data = await prisma.test.findMany({
-        where: {
-            accountId: userId,
-            status:status
-        },
-        include:{
-            Account:true,
-            
-        }
-    })
-    await prisma.$disconnect()
+        const data = await prisma.test.findMany({
+            where: {
+                accountId: userId,
+                status:status
+            },
+            include:{
+                Account:true,
+                
+            }
+        })
 
-    return data
+        return data
+    
 }
 
 const userExam = async (accountId:number,testCode:string, soalId:number) =>{
@@ -72,8 +72,6 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 }
             }
         }
-    }).finally(async ()=>{
-        await prisma.$disconnect()
     })
 
     const soalOnTestLength = await prisma.soalOnTest.count({
@@ -82,22 +80,21 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                 testCode:testCode
             }
         }
-    }).finally(async ()=>{
-        await prisma.$disconnect()
     })
 
-    const optionsLength = await prisma.options.count({
-        where:{
-            soalId:soalId
-        }
-    }).finally(async ()=>{
-        await prisma.$disconnect()
-    })
+    const optionsLength = await prisma.$queryRaw`select count(*) as optionsLength from Options where soalId = ${soalId}`
+
+    // const options = await prisma.options.findMany({
+    //     where:{
+    //         soalId:soalId
+    //     }
+    // })
     
+    console.log(`optionsLength: ${soalId}`, optionsLength?.[0].optionsLength)
 
     
 
-    return {...data, testLength : soalOnTestLength, optionsLength:optionsLength}
+    return {...data, testLength : soalOnTestLength, optionsLength:optionsLength?.[0].optionsLength}
 }
 
 
@@ -125,27 +122,6 @@ const createTest = async ({username, tujuan}:TParamCreateTest) =>{
             id:true
         }
     })
-
-    // const account = await prisma.account.update({
-    //     where:{
-    //         username:username
-    //     },
-    //     data:{
-    //         Test:{
-    //             create:{
-    //                 testCode:Math.random().toString(36).substring(2, 15),
-    //                 registrationDate:new Date(),
-    //                 tujuan:tujuan,
-    //                 soalOnTest:{
-    //                     create: idSoal.map(item =>({soalId: item.id, timer:timer?.value}))
-    //                 }
-    //             },
-                
-                
-    //         },
-            
-    //     }
-    // })
 
     const createTest = await prisma.test.create({
         data:{

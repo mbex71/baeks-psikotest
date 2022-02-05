@@ -1,7 +1,7 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
 import {listUserExams, userExam } from 'services/exam'
 import {getSession} from 'next-auth/react'
-import { StatusTest } from '@prisma/client'
+
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){
     const session = await getSession({req})
