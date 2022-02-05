@@ -12,6 +12,7 @@ import { stringToArray } from '@helpers/string'
 import { getStorage, removeStorage, setStorage } from "@helpers/storage";
 import style from '../../styles/exam.module.css'
 import { useStartExam } from '@modules/hooks/exam'
+import data from "databases/seeders/dev/timer";
 
 type TParamExam = {
     testId: string,
@@ -58,9 +59,13 @@ const ExamPage: NextPage = () => {
                     // setStorage('optionId', optionId)
                 }).catch(e => alert(e))
 
-            } else {
+            } 
+            
+            else {
                 mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
+                    
                     router.push(`/exam/${testId}/${soalId + 1}`)
+                    // router.push(`/exam/results/${testId}`)
                     removeStorage('timer')
                     removeStorage('optionId')
                     setStateJwb(0)
@@ -98,8 +103,11 @@ const ExamPage: NextPage = () => {
         //     setStorage('testId', router.query.params?.[0] as string)
         //     setStorage('soalId', router.query.params?.[1] as string)
         // }
-
-    }, [router.query.params])
+        // console.log(testId)
+        if(dataUjian?.soalOnTest?.length === 0 ) {
+            router.push(`/exam/results/${testId}`)
+        }
+    }, [dataUjian])
 
     useEffect(() => {
         if (getStorage('optionId')) {
@@ -108,19 +116,16 @@ const ExamPage: NextPage = () => {
     }, [])
 
 
-    const timer = 120000
-
     return (
         <ExamLayout>
             <section className="flex flex-row justify-between">
-                {/* {handleGetTimer()} */}
-                {/* {timer && <HandleTimer timer={timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} />} */}
-                <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} />
-                {/* <Timer timer={timer} handleCompleted={handleTimerFinish} /> */}
-                {/* <CountDown date={Date.now() + 120000} /> */}
+                
+                {dataUjian?.soalOnTest?.length > 0 && <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} />}
+                
+                
 
                 <div className="border rounded w-3/6 text-center p-4 space-y-2 bg-white">
-                    <div className="text-2xl tracking-wider font-bold">Binlat sikap kerja tamtama 2021</div>
+                    <div className="text-2xl tracking-wider font-bold">Sikap Kerja</div>
 
                     <div className="text-base font-mono font-light text-black opacity-25">
                         Type Test:  {dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name}

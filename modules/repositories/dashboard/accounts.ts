@@ -1,5 +1,3 @@
-import {StatusTest} from '@modules/entities/exam'
-import {IUserExam} from '@modules/dto/exam'
 import fetcher from '@configs/fetcher'
 import { IUser } from '@modules/entities/user'
 import { IAccount, TCreateUserAccount, TParamDetailAccount } from '@modules/dto/account'

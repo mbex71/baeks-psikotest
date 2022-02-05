@@ -1,18 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import {selectAllUserAccount, createUserAccount} from '@services/account'
+import {resultListDashboard, resultDetalDashboard} from '@services/results'
 import { getToken } from 'next-auth/jwt'
-import { TCreateUserAccount } from '@modules/dto/account'
-
-import { IUser } from '@modules/entities/user'
+import { IUserExam } from '@modules/dto/exam'
 
 type Data = {
-  data?:IUser
+  data?:IUserExam[]
   message?:string
 }
-
-
 
 export default async function handler(
   req: NextApiRequest,
@@ -34,15 +30,9 @@ export default async function handler(
     })
   }
 
-  if(req.method !== 'POST') {
-    return res.status(405).json({
-        message: 'Method not allowed'
-    })
-  }
+  const {testCode} = req.query
 
-  const params = req.body as TCreateUserAccount
-
-  const data = await createUserAccount({name:params.name, tglLahir:params.tglLahir, tujuan:params.tujuan})
+  const data = await resultDetalDashboard({testCode: testCode as string})
   
   res.status(200).json({
       data:data

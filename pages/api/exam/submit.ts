@@ -1,7 +1,4 @@
 import type {NextApiRequest , NextApiResponse } from 'next'
-import {listUserExams, userExam } from 'services/exam'
-import {getSession} from 'next-auth/react'
-import { StatusTest } from '@prisma/client'
 import { getToken } from 'next-auth/jwt'
 import {submitJawaban} from '@services/exam'
 
