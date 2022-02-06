@@ -96,8 +96,6 @@ const ExamPage: NextPage = () => {
     }
 
 
-
-
     useEffect(() => {
         
         if(dataUjian?.soalOnTest?.length === 0 ) {
@@ -134,35 +132,35 @@ const ExamPage: NextPage = () => {
             <section className="flex flex-col justify-center items-center">
                 <div className="grid grid-cols-5 w-6/12 mt-12 bg-white">
                     {
-                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.question as string, ',')?.map((item, index) => <div key={index} className={`border flex justify-center items-center p-2 font-bold text-xl ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
+                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.question as string, ',')?.map((item, index) => <div key={index} className={`border flex justify-center items-center p-2 font-bold text-8xl ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
 
                     }
                 </div>
                 <div className="grid grid-cols-5 w-6/12 bg-white">
                     {
-                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.listOfChoise as string, ',')?.map((item, index) => <div key={index} className="border uppercase flex justify-center items-center p-2 font-bold">{item}</div>)
+                        stringToArray(dataUjian?.soalOnTest?.[0]?.Soal?.listOfChoise as string, ',')?.map((item, index) => <div key={index} className="border uppercase flex justify-center items-center p-2 font-bold text-2xl">{item}</div>)
                     }
                 </div>
             </section>
 
-            <section className="mt-12 flex flex-col justify-start items-start">
+            <section className="mt-12 flex flex-col justify-center items-center">
                 {
                     dataUjian?.soalOnTest?.[0]?.Soal.Options.map((item, index) => {
                         if (index === stateJwb) {
                             return (
-                                <div key={index}>
+                                <div key={index} className="w-3/4">
 
                                     <div className="grid grid-cols-4 w-12/12 mt-12 bg-white text-2xl">
                                         {
-                                            stringToArray(item?.question as string, ',')?.map((item, index) => <div key={index} className={`flex justify-center items-center p-6 font-bold ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
+                                            stringToArray(item?.question as string, ',')?.map((item, index) => <div key={index} className={`flex justify-center items-center p-6 font-bold text-8xl ${dataUjian?.soalOnTest?.[0]?.Soal?.TypeSoal.name === "SYMBOL" ? style.symbol : null}`}>{item}</div>)
                                         }
                                     </div>
-                                    <div className="grid grid-cols-5 w-12/12 gap-2 mt-2">
-                                        <button onClick={() => handleAnswer('a', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>A</button>
-                                        <button onClick={() => handleAnswer('b', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>B</button>
-                                        <button onClick={() => handleAnswer('c', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>C</button>
-                                        <button onClick={() => handleAnswer('d', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>D</button>
-                                        <button onClick={() => handleAnswer('e', item.id)} className={`bg-white border rounded-full flex justify-center items-center p-2 hover:bg-stone-800 hover:text-white hover:font-bold`}>E</button>
+                                    <div className="grid grid-cols-5 w-12/12 gap-6 mt-6 h-24">
+                                        <button onClick={() => handleAnswer('a', item.id)} className={`bg-white border rounded-full flex justify-center items-center hover:bg-stone-800 hover:text-white hover:font-bold text-2xl`}>A</button>
+                                        <button onClick={() => handleAnswer('b', item.id)} className={`bg-white border rounded-full flex justify-center items-center hover:bg-stone-800 hover:text-white hover:font-bold text-2xl`}>B</button>
+                                        <button onClick={() => handleAnswer('c', item.id)} className={`bg-white border rounded-full flex justify-center items-center hover:bg-stone-800 hover:text-white hover:font-bold text-2xl`}>C</button>
+                                        <button onClick={() => handleAnswer('d', item.id)} className={`bg-white border rounded-full flex justify-center items-center hover:bg-stone-800 hover:text-white hover:font-bold text-2xl`}>D</button>
+                                        <button onClick={() => handleAnswer('e', item.id)} className={`bg-white border rounded-full flex justify-center items-center hover:bg-stone-800 hover:text-white hover:font-bold text-2xl`}>E</button>
                                     </div>
 
                                 </div>
