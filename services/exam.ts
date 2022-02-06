@@ -82,17 +82,7 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
         }
     })
 
-    const optionsLength = await prisma.$queryRaw`select count(*) as optionsLength from Options where soalId = ${soalId}`
-
-    // const options = await prisma.options.findMany({
-    //     where:{
-    //         soalId:soalId
-    //     }
-    // })
-    
-    console.log(`optionsLength: ${soalId}`, optionsLength?.[0].optionsLength)
-
-    
+    const optionsLength:any = await prisma.$queryRaw`select count(*) as optionsLength from Options where soalId = ${soalId}`
 
     return {...data, testLength : soalOnTestLength, optionsLength:optionsLength?.[0].optionsLength}
 }
@@ -138,7 +128,7 @@ const createTest = async ({username, tujuan}:TParamCreateTest) =>{
 
    
 
-    console.log('Test: ', createTest)
+    
 
     const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
     select sot.id , o.id

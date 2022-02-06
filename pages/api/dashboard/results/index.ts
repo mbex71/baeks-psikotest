@@ -6,7 +6,7 @@ import { getToken } from 'next-auth/jwt'
 import { IUserExam } from '@modules/dto/exam'
 
 type Data = {
-  data?:IUserExam[] | undefined
+  data?:any
   message?:string
 }
 

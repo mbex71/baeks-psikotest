@@ -99,11 +99,7 @@ const ExamPage: NextPage = () => {
 
 
     useEffect(() => {
-        // if (router.query.params?.[1]) {
-        //     setStorage('testId', router.query.params?.[0] as string)
-        //     setStorage('soalId', router.query.params?.[1] as string)
-        // }
-        // console.log(testId)
+        
         if(dataUjian?.soalOnTest?.length === 0 ) {
             router.push(`/exam/results/${testId}`)
         }
@@ -120,7 +116,7 @@ const ExamPage: NextPage = () => {
         <ExamLayout>
             <section className="flex flex-row justify-between">
                 
-                {dataUjian?.soalOnTest?.length > 0 && <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} />}
+                {dataUjian?.soalOnTest && dataUjian.soalOnTest.length > 0 ? <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} /> : null}
                 
                 
 

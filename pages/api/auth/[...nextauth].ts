@@ -52,7 +52,7 @@ export default NextAuth({
         // jwt: async({ token, user, account, profile, isNewUser }) => {
             jwt: async(param) => {
             
-                // console.log('PARAM TOKEN: ',param)
+                
             if(param.user){
                 
                 param.token.id = param.user?.id
@@ -61,7 +61,7 @@ export default NextAuth({
                 param.token.type = param.user?.type
             }
 
-            // console.log('TOKEN SAya: ',token)
+            
          return param.token   
         },
         session: async ({ session,token, user}) => {

@@ -16,7 +16,7 @@ const Accounts: NextPage = () => {
     const { mutateAsync } = useUpdateTimer()
 
     const onSubmit = (data: TFormSettings) => {
-        console.log('Value : ', data)
+        
         mutateAsync({ timer: data.timer * 1000 }).then(() => {
             alert('Sukses Update')
         }).catch(e => alert(e))

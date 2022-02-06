@@ -30,9 +30,7 @@ const CreateTest: NextPage = () => {
         })
     }
 
-    // useEffect(() => {
-    //     console.log('Router :', username)
-    // }, [router.query])
+   
 
     return (
         <DashboardLayout>

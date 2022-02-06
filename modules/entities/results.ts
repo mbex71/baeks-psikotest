@@ -15,13 +15,19 @@ export type TWrongPerColumn = {
     totalJawaban?: number,
 }
 
+export type TTotalJawabPerColumn = {
+    soal?: number,
+    totalJawaban?: number,
+}
+
 export type TResults = {
   sumCorrect:number
   sumWrong:number
   correctPerColumn:TCorrectPerColumn[]
   wrongPerColumn:TWrongPerColumn[]
+  totalJawabPerColumn:TTotalJawabPerColumn[]
   totalDikerjakan:number
-  diver:number
+  devariasi:number
 }
 
 export interface IResultsDetailDashboard extends TResults{

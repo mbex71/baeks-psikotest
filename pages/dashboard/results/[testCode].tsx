@@ -46,12 +46,16 @@ const DetailResult: NextPage = () => {
                     <div className="text-sm font-light">Total Salah</div>
                     <div className="text-2xl font-bold">{data?.sumWrong}</div>
                 </div>
+                <div className="flex flex-col justify-center items-center space-y-2 bg-slate-500 w-32 h-32 rounded-full hover:bg-red-400">
+                    <div className="text-sm font-light">Devariasi</div>
+                    <div className="text-2xl font-bold">{data?.devariasi}</div>
+                </div>
             </div>
             {
                 isLoading && <div>Loading . . .</div>
             }
             {
-                data && <LineChart dataCorrect={data.correctPerColumn} dataWrong={data.wrongPerColumn} />
+                data && <LineChart dataCorrect={data.correctPerColumn} dataWrong={data.wrongPerColumn} dataJawab={data.totalJawabPerColumn} />
             }
 
 
