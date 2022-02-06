@@ -22,9 +22,9 @@ const DetailResult: NextPage = () => {
                     <div>{data?.Account.name}</div>
                 </div>
                 <div className="flex flex-row text-lg font-bold">
-                    <div className="w-1/4 flex justify-between mr-2"><span>Tanggal Lahir</span><span>:</span></div>
+                    <div className="w-1/4 flex justify-between mr-2"><span>Tanggal Ujian</span><span>:</span></div>
+                    {data?.registrationDate && <div>{format(new Date(data?.registrationDate as string), 'dd MMMM yyyy')}</div>}                    
                     
-                    {data?.Account.tglLahir && <div>{format(new Date(data?.Account.tglLahir as string), 'dd MMMM yyyy')}</div>}
                     
                 </div>
                 <div className="flex flex-row text-lg font-bold">
