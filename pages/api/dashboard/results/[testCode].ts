@@ -5,14 +5,14 @@ import {resultListDashboard, resultDetalDashboard} from '@services/results'
 import { getToken } from 'next-auth/jwt'
 import { IUserExam } from '@modules/dto/exam'
 
-type Data = {
-  data?:IUserExam[]
+type TData = {
+  data?:any,
   message?:string
 }
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<TData>
 ) {
     
     const secret = process.env.JWT_SECRET as string
@@ -35,6 +35,7 @@ export default async function handler(
   const data = await resultDetalDashboard({testCode: testCode as string})
   
   res.status(200).json({
-      data:data
+      data:data,
+      message:'Success'
   })
 }

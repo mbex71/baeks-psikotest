@@ -59,8 +59,21 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
                                     join Soal s on s.id = sot.soalId 
                                     left join Jawaban j on j.soalOnTestId  = sot.id and j.status =false
                                     where t.testCode = ${params.testCode}
-                                    GROUP by sot.soalId;`                                      
+                                    GROUP by sot.soalId;`         
     
+    const totalJawabPerColumn = await prisma.$queryRaw`select sot.soalId  ,count(*) as 'totalJawaban' from SoalOnTest sot 
+                                join Test t on t.id = sot .testId 
+                                join Soal s on s.id = sot.soalId 
+                                left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
+                                where t.testCode = 'xd7ubttmyg' 
+                                GROUP by sot.soalId;`                
+    
+    const devariasi:any = await prisma.$queryRaw`select (MAX(totalJawaban) - MIN(totalJawaban)) as 'devariasi' from (select sot.soalId as 'Soal ID' ,count(*) as 'totalJawaban' from SoalOnTest sot 
+                                join Test t on t.id = sot .testId 
+                                join Soal s on s.id = sot.soalId 
+                                left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
+                                where t.testCode = 'xd7ubttmyg' 
+                                GROUP by sot.soalId) terjawab ;`
 
  
     const jumlahBenar = getJawabanBenar?.soalOnTest.map(item =>item.Jawaban.length)
@@ -99,8 +112,9 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
         sumWrong:jumlahSalah?.reduce((a,b)=>a+b)as number,
         correctPerColumn:jumlahBenarPerColumn as TCorrectPerColumn[],
         wrongPerColumn:jumlahSalahPerColumn as TWrongPerColumn[],
+        totalJawabPerColumn:totalJawabPerColumn as TCorrectPerColumn[],
         totalDikerjakan:jumlahDikerjakan?.reduce((a,b)=>a+b)as number,
-        diver:0
+        devariasi:devariasi?.[0]?.devariasi as number
     }
      
 
@@ -158,11 +172,8 @@ const resultDetalDashboard = async ({testCode}:TParamsDetailResultDashboard) =>{
         }
     })
 
-    // console.l
-    const getResult = await resultExam({testCode})
-
-    console.log('results',account)
     
+    const getResult = await resultExam({testCode})
 
     return {
          ...getResult, ...account

@@ -16,11 +16,7 @@ type TDataTimer = {
 }
 
 const useGetTimer = ():UseQueryResult<TDataTimer, Error> =>{
-    return useQuery('getTimer', getTimer,{
-        onSuccess:(val)=>{
-            console.log('COK!! ',val)
-        }
-    });
+    return useQuery('getTimer', getTimer);
 }
 
 const useUpdateTimer = ():UseMutationResult<unknown, Error, TParamUpdateTimer> =>{
