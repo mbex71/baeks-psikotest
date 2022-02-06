@@ -65,14 +65,14 @@ const resultExam = async (params:TParam):Promise<TResults> =>{
                                 join Test t on t.id = sot .testId 
                                 join Soal s on s.id = sot.soalId 
                                 left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
-                                where t.testCode = 'xd7ubttmyg' 
+                                where t.testCode = ${params.testCode} 
                                 GROUP by sot.soalId;`                
     
     const devariasi:any = await prisma.$queryRaw`select (MAX(totalJawaban) - MIN(totalJawaban)) as 'devariasi' from (select sot.soalId as 'Soal ID' ,count(*) as 'totalJawaban' from SoalOnTest sot 
                                 join Test t on t.id = sot .testId 
                                 join Soal s on s.id = sot.soalId 
                                 left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
-                                where t.testCode = 'xd7ubttmyg' 
+                                where t.testCode =  ${params.testCode} 
                                 GROUP by sot.soalId) terjawab ;`
 
  
