@@ -68,7 +68,7 @@ const dataSoalHuruf = [
         typeSoalId:2
     },
     {
-        question:'LXLFWR',
+        question:'LXFWR',
         listOfChoise:'abcde',
         typeSoalId:2
     },
@@ -93,7 +93,7 @@ const dataSoalHuruf = [
         typeSoalId:2
     },
     {
-        question:'LXLFWR',
+        question:'LXFWR',
         listOfChoise:'abcde',
         typeSoalId:2
     },

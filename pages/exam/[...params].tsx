@@ -12,7 +12,7 @@ import { stringToArray } from '@helpers/string'
 import { getStorage, removeStorage, setStorage } from "@helpers/storage";
 import style from '../../styles/exam.module.css'
 import { useStartExam } from '@modules/hooks/exam'
-import data from "databases/seeders/dev/timer";
+
 
 type TParamExam = {
     testId: string,
@@ -40,14 +40,14 @@ const ExamPage: NextPage = () => {
     const testId = router.query.params?.[0] as string
     const soalId = parseInt(router.query.params?.[1] as string)
 
-    const { data: dataUjian, isLoading } = useUserExam({
+    const { data: dataUjian, isLoading:isLoadingDataUjian } = useUserExam({
         testId: testId,
         soalId: soalId
     })
 
-    const { mutateAsync: mutateChangeStatus } = useStartExam()
+    const { mutate: mutateChangeStatus } = useStartExam()
 
-    const { mutateAsync, mutate } = useSubmitJawaban()
+    const submitJawaban = useSubmitJawaban()
 
 
     const handleAnswer = (jwb: string, optionId: number) => {
@@ -55,7 +55,7 @@ const ExamPage: NextPage = () => {
             if (stateJwb < dataUjian?.optionsLength - 1) {
                 setStateJwb(prevState => prevState + 1)
                 setJawaban(jwb)
-                mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
+                submitJawaban.mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
                     onSuccess: () => {
                         console.log('berhasil')
                     },
@@ -63,22 +63,20 @@ const ExamPage: NextPage = () => {
                         alert(err.message)
                     }
                 })
-                // mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
-                    
-                //     // setStorage('optionId', optionId)
-                // }).catch(e => alert(e))
-
+             
             } 
             
             else {
-                mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
-                    
-                    router.push(`/exam/${testId}/${soalId + 1}`)
-                    
-                    removeStorage('timer')
-                    removeStorage('optionId')
-                    setStateJwb(0)
-                }).catch(e => alert(e))
+                submitJawaban.mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
+                    onSuccess: () => {
+                        router.push(`/exam/${testId}/${soalId + 1}`)
+                        removeStorage('timer')
+                        removeStorage('optionId')
+                        setStateJwb(0)
+                    },
+                    onError: (err) => {alert(err.message)}
+                })
+               
 
             }
         }
@@ -88,16 +86,23 @@ const ExamPage: NextPage = () => {
     const handleTimerFinish = () => {
         if (dataUjian?.testLength) {
             if (soalId < dataUjian?.testLength) {
+               
                 router.push(`/exam/${testId}/${soalId + 1}`)
-                removeStorage('timer')
-                removeStorage('optionId')
-                setStateJwb(0)
-            } else {
-                mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' }).then(() => {
-                    router.push(`/exam`)
                     removeStorage('timer')
                     removeStorage('optionId')
                     setStateJwb(0)
+                
+            } else {
+                
+
+                mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' },{
+                    onSuccess: () => {
+                        router.push(`/exam`)
+                        removeStorage('timer')
+                        removeStorage('optionId')
+                        setStateJwb(0)
+                    },
+                    onError: (err) => {alert(err.message)}
                 })
 
             }
@@ -108,7 +113,13 @@ const ExamPage: NextPage = () => {
     useEffect(() => {
         
         if(dataUjian?.soalOnTest?.length === 0 ) {
-            router.push(`/exam/results/${testId}`)
+            mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' },{
+                onSuccess: () => {
+
+                    router.push(`/exam/results/${testId}`)
+                },
+                onError: (err) => {alert(err.message)}
+            })
         }
     }, [dataUjian])
 
@@ -118,14 +129,20 @@ const ExamPage: NextPage = () => {
         }
     }, [])
 
+    if(isLoadingDataUjian) {
+        return (
+            <ExamLayout>
+                <div className="text-white text-2xl">Loading...</div>
+            </ExamLayout>
+        )
+    }
 
     return (
         <ExamLayout>
+            
             <section className="flex flex-row justify-between">
                 
                 {dataUjian?.soalOnTest && dataUjian.soalOnTest.length > 0 ? <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} /> : null}
-                
-                
 
                 <div className="border rounded w-3/6 text-center p-4 space-y-2 bg-white">
                     <div className="text-2xl tracking-wider font-bold">Sikap Kerja</div>
@@ -175,13 +192,9 @@ const ExamPage: NextPage = () => {
                                 </div>
                             )
                         }
-
-
                         return null
                     })
                 }
-
-
             </section>
         </ExamLayout >
     )
