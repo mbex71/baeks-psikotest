@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { DashboardLayout } from '@components/layouts'
 import { useForm } from 'react-hook-form'
 import { useCreateAccount } from '@modules/hooks/dashboard/accounts'
+import { RiLoader5Line } from 'react-icons/ri'
 
 type TFormData = {
     name: string,
@@ -13,7 +14,7 @@ type TFormData = {
 
 const Accounts: NextPage = () => {
     const { register, handleSubmit } = useForm<TFormData>()
-    const { mutate } = useCreateAccount()
+    const { mutate, isLoading } = useCreateAccount()
     const router = useRouter()
 
     const onSubmit = (value: TFormData) => {
@@ -46,7 +47,8 @@ const Accounts: NextPage = () => {
                         <input {...register('tujuan')} id='tujuan' className='p-2 rounded text-black text-sm outline-none' type="text" />
                     </div>
                     <div>
-                        <button className='bg-red-500 w-full p-2 text-sm rounded'>Daftar</button>
+                    
+                        <button className='bg-red-500 w-full p-2 text-sm rounded flex justify-center items-center' disabled={isLoading}>{isLoading ? <RiLoader5Line className='text-center animate-spin'/> : 'Daftar'}</button>
                     </div>
                 </form>
             </div>
