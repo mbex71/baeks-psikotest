@@ -47,17 +47,26 @@ const ExamPage: NextPage = () => {
 
     const { mutateAsync: mutateChangeStatus } = useStartExam()
 
-    const { mutateAsync } = useSubmitJawaban()
+    const { mutateAsync, mutate } = useSubmitJawaban()
 
 
     const handleAnswer = (jwb: string, optionId: number) => {
         if (dataUjian?.optionsLength) {
             if (stateJwb < dataUjian?.optionsLength - 1) {
-                mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
-                    setStateJwb(prevState => prevState + 1)
-                    setJawaban(jwb)
-                    // setStorage('optionId', optionId)
-                }).catch(e => alert(e))
+                setStateJwb(prevState => prevState + 1)
+                setJawaban(jwb)
+                mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
+                    onSuccess: () => {
+                        console.log('berhasil')
+                    },
+                    onError: (err) => {
+                        alert(err.message)
+                    }
+                })
+                // mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
+                    
+                //     // setStorage('optionId', optionId)
+                // }).catch(e => alert(e))
 
             } 
             
@@ -65,7 +74,7 @@ const ExamPage: NextPage = () => {
                 mutateAsync({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string }).then(() => {
                     
                     router.push(`/exam/${testId}/${soalId + 1}`)
-                    // router.push(`/exam/results/${testId}`)
+                    
                     removeStorage('timer')
                     removeStorage('optionId')
                     setStateJwb(0)
