@@ -148,93 +148,89 @@ const createTest = async ({username, tujuan}:TParamCreateTest) =>{
 const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
 
    const soalOnTest = await prisma.soalOnTest.findFirst({
-        where:{
-            Test:{
-                testCode: params.testCode
-            },
-            soalId:params.soaldId,
-            
-            
-        },
-        include:{
-            Soal:{
-                include:{
-                    Options:{
-                        where:{
-                            id:params.optionId
+                    where:{
+                        Test:{
+                            testCode: params.testCode
+                        },
+                        soalId:params.soaldId,
+                        
+                        
+                    },
+                    include:{
+                        Soal:{
+                            include:{
+                                Options:{
+                                    where:{
+                                        id:params.optionId
+                                    }
+                                }
+                            }
+                        },
+                        Jawaban:{
+                            where:{
+                                optionsId:params.optionId
+                            },
+                            
                         }
                     }
-                }
-            },
-            Jawaban:{
-                where:{
-                    optionsId:params.optionId
-                },
-                
-            }
-        }
-   }).finally(async ()=>{
-    await prisma.$disconnect()
-})
+            })
 
 
    const submitJawaban = await prisma.test.update({
-       where:{
-           testCode: params.testCode
-       },
-       data:{
-           soalOnTest:{
-               update:{
-                   where:{
-                       id:soalOnTest?.id
-                   },
-                   data:{
-                       Jawaban:{
-                            update:{
-                                where:{
-                                    id:soalOnTest?.Jawaban?.[0].id
-                                },
-                                data:{
-                                    answers:params.answer,
-                                    status: soalOnTest?.Soal?.Options.find(item => item.id === params.optionId)?.correctAnswer === params.answer ? true : false
+                        where:{
+                            testCode: params.testCode
+                        },
+                        data:{
+                            soalOnTest:{
+                                update:{
+                                    where:{
+                                        id:soalOnTest?.id
+                                    },
+                                    data:{
+                                        Jawaban:{
+                                                update:{
+                                                    where:{
+                                                        id:soalOnTest?.Jawaban?.[0].id
+                                                    },
+                                                    data:{
+                                                        answers:params.answer,
+                                                        status: soalOnTest?.Soal?.Options.find(item => item.id === params.optionId)?.correctAnswer === params.answer ? true : false
+                                                    }
+                                                }
+                                        }
+                                    }
                                 }
                             }
-                       }
-                   }
-               }
-           }
-       }
-   }).finally(async ()=>{
-    await prisma.$disconnect()
-})
+                        }
+                    })
 
    const checkData = await prisma.soalOnTest.findFirst({
-    where:{
-        Test:{
-            testCode: params.testCode
-        },
-        soalId:params.soaldId,
-        
-        
-    },
-    include:{
-        Soal:{
-            include:{
-                Options:{
-                    where:{
-                        id:params.optionId
-                    }
-                }
-            }
-        },
-        Jawaban:{
-            where:{
-                optionsId:params.optionId
-            },
-            
-        }
-    }
-})
+                        where:{
+                            Test:{
+                                testCode: params.testCode
+                            },
+                            soalId:params.soaldId,
+                            
+                            
+                        },
+                        include:{
+                            Soal:{
+                                include:{
+                                    Options:{
+                                        where:{
+                                            id:params.optionId
+                                        }
+                                    }
+                                }
+                            },
+                            Jawaban:{
+                                where:{
+                                    optionsId:params.optionId
+                                },
+                                
+                            }
+                        }
+                    })
 
   
 
@@ -255,8 +251,6 @@ const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
         data:{
             status:params.status
         }
-    }).finally(async ()=>{
-        await prisma.$disconnect()
     })
 
     return updateExamStatus
