@@ -109,22 +109,25 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<any> => {
             id: account.id
         },
         include:{
-            Test:{
-                include:{
-                    soalOnTest:{
-                        include:{
-                            Soal:{
-                                include:{
-                                    Options:true
-                                }
-                            },
-                            Jawaban:true
-                        },
-                        
-                    }
-                }
-            }
+            Test:true
         }
+        // include:{
+        //     Test:{
+        //         include:{
+        //             soalOnTest:{
+        //                 include:{
+        //                     Soal:{
+        //                         include:{
+        //                             Options:true
+        //                         }
+        //                     },
+        //                     Jawaban:true
+        //                 },
+                        
+        //             }
+        //         }
+        //     }
+        // }
     })
 
     return test
