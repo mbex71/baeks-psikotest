@@ -56,41 +56,45 @@ const createUserAccount = async (data: TCreateUserAccount):Promise<any> => {
             }
         },
         select:{
-            username:true,
-            name:true,
-            password:true,
-            tglLahir:true,
-            id :true,
-            type:true,
-            Test:{
-                where:{
-                    status:'ACTIVE'
-                },
-                select:{
-                    accountId:true,
-                    status:true,
-                    soalOnTest:{
-                        select:{
-                            id:true,
-                            Soal:{
-                                select:{
-                                    Options:{
-                                        select:{
-                                            id:true,
-                                            question:true,
-                                            correctAnswer:true,
-                                        }
-                                    }
-                                }
-                            },
-                            Jawaban:true
-                        }
-                    }
-                }
-            }
+            id:true,
         }
+        // select:{
+        //     username:true,
+        //     name:true,
+        //     password:true,
+        //     tglLahir:true,
+        //     id :true,
+        //     type:true,
+        //     Test:{
+        //         where:{
+        //             status:'ACTIVE'
+        //         },
+        //         select:{
+        //             accountId:true,
+        //             status:true,
+        //             soalOnTest:{
+        //                 select:{
+        //                     id:true,
+        //                     Soal:{
+        //                         select:{
+        //                             Options:{
+        //                                 select:{
+        //                                     id:true,
+        //                                     question:true,
+        //                                     correctAnswer:true,
+        //                                 }
+        //                             }
+        //                         }
+        //                     },
+        //                     Jawaban:true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
        
     })
+
 
 
     const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
