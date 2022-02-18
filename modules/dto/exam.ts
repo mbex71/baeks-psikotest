@@ -9,6 +9,7 @@ interface ISoalExam extends ISoal {
 }
 
 interface ISoalExamOnTest {
+    id:number
     timer:number
     Soal:ISoalExam
 }
@@ -19,11 +20,22 @@ export interface IUserExam extends ITest{
     optionsLength?:number
 }
 
-export type TPostSubmitJawaban = {
-    testCode:string,
-    soaldId:number,
+// export type TPostSubmitJawaban = {
+//     testCode:string,
+//     soaldId:number,
+//     optionId:number,
+//     answer:string
+// }
+
+type TJawaban = {
+    // soaldId:number,
+    soalOnTestId:number
     optionId:number,
     answer:string
+}
+export type TPostSubmitJawaban = {
+    testCode:string,
+    jawaban:TJawaban[]
 }
 
 

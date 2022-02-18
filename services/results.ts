@@ -2,119 +2,71 @@ import prisma from "@configs/prisma";
 import {TCorrectPerColumn, TResults,TWrongPerColumn,TParam } from '@modules/entities/results'
 
 const resultExam = async (params:TParam):Promise<TResults> =>{
-    const getJawabanBenar = await prisma.test.findUnique({
-        where:{
-            testCode: params.testCode,
+  
 
-        },
-       select:{
-           soalOnTest:{
-               select:{
-                   Jawaban:{
-                       where:{
-                           status:true
-                       },
-                       select:{
-                           status:true
-                       }
-                       
-                   }
-               }
-           }
-       }
 
-    })
+    const jumlahBenar:any = await prisma.$queryRaw`select count(j.answers) as 'total_benar'
+    from Test t 
+    join SoalOnTest sot on sot.testId = t.id 
+    join Jawaban j on j.soalOnTestId = sot.id 
+    join Options o on o.id = j.optionsId 
+    WHERE  t.testCode = ${params.testCode} and j.answers = o.correctAnswer;`
 
-    const getJawabanSalah = await prisma.test.findUnique({
-        where:{
-            testCode: params.testCode,
+    const jumlahSalah:any = await prisma.$queryRaw`select count(j.answers) as 'total_salah'
+    from Test t 
+    join SoalOnTest sot on sot.testId = t.id 
+    join Jawaban j on j.soalOnTestId = sot.id 
+    join Options o on o.id = j.optionsId 
+    WHERE  t.testCode = ${params.testCode} and j.answers != o.correctAnswer;`
 
-        },
-       select:{
-           soalOnTest:{
-               select:{
-                   Jawaban:{
-                       where:{
-                           status:false
-                       },
-                       select:{
-                           status:true
-                       }
-                       
-                   }
-               }
-           }
-       }
+    const jumlahDikerjakan:any = await prisma.$queryRaw`select count(j.answers) as 'totalJawaban' from SoalOnTest sot 
+    join Test t on t.id = sot .testId 
+    join Soal s on s.id = sot.soalId 
+    left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
+    where t.testCode = ${params.testCode};`
 
-    })   
+    const jumlahBenarPerColumn = await prisma.$queryRaw`select o.soalId ,count(j.answers) as 'totalJawaban'
+    from Test t 
+    join SoalOnTest sot on sot.testId = t.id 
+    join Jawaban j on j.soalOnTestId = sot.id 
+    join Options o on o.id = j.optionsId 
+    WHERE  t.testCode = ${params.testCode} and j.answers = o.correctAnswer group by o.soalId;` 
 
-    const jumlahBenarPerColumn = await prisma.$queryRaw`select sot.soalId ,count(j.answers) as 'totalJawaban' from SoalOnTest sot 
-                                    join Test t on t.id = sot .testId 
-                                    join Soal s on s.id = sot.soalId 
-                                    left join Jawaban j on j.soalOnTestId  = sot.id and j.status =true
-                                    where t.testCode = ${params.testCode}
-                                    GROUP by sot.soalId;` 
-    const jumlahSalahPerColumn = await prisma.$queryRaw`select sot.soalId ,count(j.answers) as 'totalJawaban' from SoalOnTest sot 
-                                    join Test t on t.id = sot .testId 
-                                    join Soal s on s.id = sot.soalId 
-                                    left join Jawaban j on j.soalOnTestId  = sot.id and j.status =false
-                                    where t.testCode = ${params.testCode}
-                                    GROUP by sot.soalId;`         
+
+    const jumlahSalahPerColumn = await prisma.$queryRaw`select o.soalId,count(j.answers) as 'totalJawaban'
+    from Test t 
+    join SoalOnTest sot on sot.testId = t.id 
+    join Jawaban j on j.soalOnTestId = sot.id 
+    join Options o on o.id = j.optionsId 
+    WHERE  t.testCode = ${params.testCode} and j.answers != o.correctAnswer group by o.soalId;` 
+
+const totalJawabPerColumn = await prisma.$queryRaw`select sot.soalId  ,count(j.answers) as 'totalJawaban' from SoalOnTest sot 
+    join Test t on t.id = sot .testId 
+    join Soal s on s.id = sot.soalId 
+    left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
+    where t.testCode = ${params.testCode} 
+    GROUP by sot.soalId;`                
+
+const devariasi:any = await prisma.$queryRaw`select (MAX(totalJawab) - MIN(totalJawab)) as 'Devariasi' 
+from (select COUNT(j.answers) as 'totalJawab'  from Jawaban j 
+join Options o on o.id = j.optionsId 
+join SoalOnTest sot on sot.id = j.soalOnTestId 
+join Test t on t.id = sot.testId 
+where t.testCode = ${params.testCode}
+GROUP by o.soalId 
+) devariasi;`
+
     
-    const totalJawabPerColumn = await prisma.$queryRaw`select sot.soalId  ,count(*) as 'totalJawaban' from SoalOnTest sot 
-                                join Test t on t.id = sot .testId 
-                                join Soal s on s.id = sot.soalId 
-                                left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
-                                where t.testCode = ${params.testCode} 
-                                GROUP by sot.soalId;`                
-    
-    const devariasi:any = await prisma.$queryRaw`select (MAX(totalJawaban) - MIN(totalJawaban)) as 'devariasi' from (select sot.soalId as 'Soal ID' ,count(*) as 'totalJawaban' from SoalOnTest sot 
-                                join Test t on t.id = sot .testId 
-                                join Soal s on s.id = sot.soalId 
-                                left join Jawaban j on j.soalOnTestId  = sot.id and j.answers is not null
-                                where t.testCode =  ${params.testCode} 
-                                GROUP by sot.soalId) terjawab ;`
-
- 
-    const jumlahBenar = getJawabanBenar?.soalOnTest.map(item =>item.Jawaban.length)
-    const jumlahSalah = getJawabanSalah?.soalOnTest.map(item =>item.Jawaban.length)
-
-    const getTotalDikerjakan = await prisma.test.findUnique({
-        where:{
-            testCode: params.testCode,
-
-        },
-       select:{
-           soalOnTest:{
-               select:{
-                   Jawaban:{
-                       where:{
-                           status:{
-                               not:null
-                           },
-                       },
-                       select:{
-                           answers:true
-                       }
-
-                   }
-               }
-           }
-       }
-
-    })
-
-    const jumlahDikerjakan = getTotalDikerjakan?.soalOnTest.map(item =>item.Jawaban.length)
-
     
     const data ={
-        sumCorrect:jumlahBenar?.reduce((a,b)=>a+b)as number,
-        sumWrong:jumlahSalah?.reduce((a,b)=>a+b)as number,
-        correctPerColumn:jumlahBenarPerColumn as TCorrectPerColumn[],
-        wrongPerColumn:jumlahSalahPerColumn as TWrongPerColumn[],
-        totalJawabPerColumn:totalJawabPerColumn as TCorrectPerColumn[],
-        totalDikerjakan:jumlahDikerjakan?.reduce((a,b)=>a+b)as number,
-        devariasi:devariasi?.[0]?.devariasi as number
+        
+        sumCorrect:jumlahBenar?.[0].total_benar as number, // done
+        sumWrong:jumlahSalah?.[0].total_salah as number, //done
+        correctPerColumn:jumlahBenarPerColumn as TCorrectPerColumn[], // done
+        wrongPerColumn:jumlahSalahPerColumn as TWrongPerColumn[], // done
+        totalJawabPerColumn:totalJawabPerColumn as TCorrectPerColumn[], // done
+        totalDikerjakan:jumlahDikerjakan?.[0].totalJawaban as number, // done
+        devariasi:devariasi?.[0]?.Devariasi as number
     }
      
 

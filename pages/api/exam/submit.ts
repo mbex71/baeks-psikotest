@@ -2,11 +2,16 @@ import type {NextApiRequest , NextApiResponse } from 'next'
 import { getToken } from 'next-auth/jwt'
 import {submitJawaban} from '@services/exam'
 
-export type TPostSubmitJawaban = {
-    testCode:string,
-    soaldId:number,
+
+type TJawaban = {
+    // soaldId:number,
+    soalOnTestId:number
     optionId:number,
     answer:string
+}
+export type TPostSubmitJawaban = {
+    testCode:string,
+    jawaban:TJawaban[]
 }
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse){

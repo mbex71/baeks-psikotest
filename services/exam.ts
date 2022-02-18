@@ -1,6 +1,7 @@
 import {StatusTest} from '@modules/entities/exam'
 import prisma from '@configs/prisma'
 import {TParamCreateTest, TPostSubmitJawaban} from '@modules/dto/exam'
+import type { Options } from '@prisma/client'
 
 
 const listUserExams = async (userId: number | undefined, status:StatusTest ) => {
@@ -45,7 +46,7 @@ const userExam = async (accountId:number,testCode:string, soalId:number) =>{
                     soalId:soalId
                 },
                 select:{
-                    
+                    id:true,
                     timer:true,
                     Soal:{
                         
@@ -145,96 +146,34 @@ const createTest = async ({username, tujuan}:TParamCreateTest) =>{
 }
 
 
+const getOption = async (id:number):Promise<Options | null> => {
+    const option = await prisma.options.findUnique({
+        where:{
+            id: id
+        }
+    })
+
+    return option
+}
+
 const submitJawaban = async (params:TPostSubmitJawaban):Promise<any> =>{
 
-   const soalOnTest = await prisma.soalOnTest.findFirst({
-                    where:{
-                        Test:{
-                            testCode: params.testCode
-                        },
-                        soalId:params.soaldId,
-                        
-                        
-                    },
-                    include:{
-                        Soal:{
-                            include:{
-                                Options:{
-                                    where:{
-                                        id:params.optionId
-                                    }
-                                }
-                            }
-                        },
-                        Jawaban:{
-                            where:{
-                                optionsId:params.optionId
-                            },
-                            
-                        }
-                    }
-            })
+    // const soalonTestID = params.jawaban[0].soalOnTestId
+    // const answer = params.jawaban[0].answer
+    // const optionsId = params.jawaban[0].optionId
 
+    
+    const data = params.jawaban.map(item =>({answers:item.answer, optionsId:item.optionId, soalOnTestId:item.soalOnTestId, status: false }))
 
-   const submitJawaban = await prisma.test.update({
-                        where:{
-                            testCode: params.testCode
-                        },
-                        data:{
-                            soalOnTest:{
-                                update:{
-                                    where:{
-                                        id:soalOnTest?.id
-                                    },
-                                    data:{
-                                        Jawaban:{
-                                                update:{
-                                                    where:{
-                                                        id:soalOnTest?.Jawaban?.[0].id
-                                                    },
-                                                    data:{
-                                                        answers:params.answer,
-                                                        status: soalOnTest?.Soal?.Options.find(item => item.id === params.optionId)?.correctAnswer === params.answer ? true : false
-                                                    }
-                                                }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    })
+   const insertjawaban = await prisma.jawaban.createMany({
+       data:data,
+       skipDuplicates:true,
+   })
 
-   const checkData = await prisma.soalOnTest.findFirst({
-                        where:{
-                            Test:{
-                                testCode: params.testCode
-                            },
-                            soalId:params.soaldId,
-                            
-                            
-                        },
-                        include:{
-                            Soal:{
-                                include:{
-                                    Options:{
-                                        where:{
-                                            id:params.optionId
-                                        }
-                                    }
-                                }
-                            },
-                            Jawaban:{
-                                where:{
-                                    optionsId:params.optionId
-                                },
-                                
-                            }
-                        }
-                    })
 
   
-
-    return checkData
+return insertjawaban
+    
 }
 
 
