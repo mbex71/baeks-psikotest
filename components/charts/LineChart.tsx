@@ -9,8 +9,25 @@ interface IProps {
 
 
 const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IProps) => {
-    console.log('data:', dataJawab)
-    console.log('data:', dataCorrect)
+
+    const adjDataWrong = dataJawab.map(item => {
+        const wrongResult = dataWrong.find(itemWrong => itemWrong.soalId === item.soalId)
+        if (wrongResult) {
+            return wrongResult
+        }
+        return item
+    })
+
+
+    const adjDataCorrect = dataJawab.map(item => {
+        const correctResult = dataCorrect.find(itemCorrect => itemCorrect.soalId === item.soalId)
+        if (correctResult) {
+            return correctResult
+        }
+        return item
+    })
+
+
     return (
         <div className='bg-white mt-12 p-24'>
             <VictoryChart
@@ -39,7 +56,7 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IPro
                             parent: { border: "1px solid #ccc" }
                         }}
 
-                        data={dataCorrect}
+                        data={adjDataCorrect}
                         x={x => x.soalId}
                         y="totalJawaban"
                         labels={({ datum }) => `${datum.totalJawaban}`}
@@ -56,7 +73,7 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IPro
                             data: { stroke: "#E11D48" },
                             parent: { border: "1px solid #ccc" }
                         }}
-                        data={dataWrong}
+                        data={adjDataWrong}
                         x={x => x.soalId}
                         y="totalJawaban"
                         labels={({ datum }) => `${datum.totalJawaban}`}
