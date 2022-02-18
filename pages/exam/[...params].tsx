@@ -14,9 +14,15 @@ import style from '../../styles/exam.module.css'
 import { useStartExam } from '@modules/hooks/exam'
 
 
-type TParamExam = {
-    testId: string,
-    soalId: number
+type TJawaban = {
+    // soaldId:number,
+    soalOnTestId:number
+    optionId:number
+    answer:string
+}
+export type TPostSubmitJawaban = {
+    testCode:string,
+    jawaban:TJawaban[]
 }
 
 type THandleTimer = {
@@ -49,36 +55,49 @@ const ExamPage: NextPage = () => {
 
     const submitJawaban = useSubmitJawaban()
 
+    const [answers, setAnswers] = useState<TPostSubmitJawaban>({
+        testCode:'',
+        jawaban:[]
+        
+    })
+
+    useEffect(()=>{
+        if(stateJwb === dataUjian?.optionsLength){
+            submitJawaban.mutate(answers,{
+                onSuccess: () => {
+                    setAnswers(prevState => ({...prevState, jawaban:[]}))
+                    router.push(`/exam/${testId}/${soalId + 1}`)
+                    // removeStorage('timer')
+                    // removeStorage('optionId')
+                    setStateJwb(0)
+                },
+                onError: (err) => {alert(err.message)}
+            })
+        }
+        console.log('Data Ujian: ',dataUjian?.soalOnTest?.[0]?.id)
+        console.log('answers', answers)
+    },[stateJwb, answers, dataUjian])
+
 
     const handleAnswer = (jwb: string, optionId: number) => {
         if (dataUjian?.optionsLength) {
-            if (stateJwb < dataUjian?.optionsLength - 1) {
+            if (stateJwb < dataUjian?.optionsLength) {
+                //Change Sequence
                 setStateJwb(prevState => prevState + 1)
-                setJawaban(jwb)
-                submitJawaban.mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
-                    onSuccess: () => {
-                        console.log('berhasil')
-                    },
-                    onError: (err) => {
-                        alert(err.message)
-                    }
-                })
+                
+
+                setAnswers(prevState => ({...prevState, 
+                    testCode: dataUjian?.testCode, 
+                    jawaban:[...prevState.jawaban, 
+                        {
+                            answer:jwb, 
+                            optionId:optionId, 
+                            soalOnTestId:dataUjian?.soalOnTest?.[0]?.id as number}
+                    ]}))
              
             } 
             
-            else {
-                submitJawaban.mutate({ answer: jwb, optionId: optionId, soaldId: soalId, testCode: dataUjian?.testCode as string },{
-                    onSuccess: () => {
-                        router.push(`/exam/${testId}/${soalId + 1}`)
-                        removeStorage('timer')
-                        removeStorage('optionId')
-                        setStateJwb(0)
-                    },
-                    onError: (err) => {alert(err.message)}
-                })
-               
-
-            }
+           
         }
 
     }
@@ -86,15 +105,18 @@ const ExamPage: NextPage = () => {
     const handleTimerFinish = () => {
         if (dataUjian?.testLength) {
             if (soalId < dataUjian?.testLength) {
+                submitJawaban.mutate(answers,{
+                    onSuccess:()=>{
+                        setAnswers(prevState => ({...prevState, jawaban:[]}))
+                        router.push(`/exam/${testId}/${soalId + 1}`)
+                        setStateJwb(0)
+                    },
+                    onError: (err) => {alert(err.message)}
+                })
                
-                router.push(`/exam/${testId}/${soalId + 1}`)
-                    removeStorage('timer')
-                    removeStorage('optionId')
-                    setStateJwb(0)
+                
                 
             } else {
-                
-
                 mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' },{
                     onSuccess: () => {
                         router.push(`/exam`)
