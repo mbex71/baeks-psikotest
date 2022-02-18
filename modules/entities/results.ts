@@ -6,17 +6,17 @@ export type TParam = {
 }
 
 export type TCorrectPerColumn = {
-    soal?: number,
+    soalId?: number,
     totalJawaban?: number,
 }
 
 export type TWrongPerColumn = {
-    soal?: number,
+    soalId?: number,
     totalJawaban?: number,
 }
 
 export type TTotalJawabPerColumn = {
-    soal?: number,
+    soalId?: number,
     totalJawaban?: number,
 }
 
