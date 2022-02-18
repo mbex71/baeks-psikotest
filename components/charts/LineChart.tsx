@@ -25,7 +25,7 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IPro
                             fillOpacity: 0.5, stroke: "black", strokeWidth: 5
                         }
                     }}
-                    domain={{ x: [0, dataJawab.length - 1], y: [0, 100] }}
+                    domain={{ x: [0, dataJawab.length], y: [0, 100] }}
                 >
                     <VictoryLine
                         interpolation="linear"
