@@ -13,9 +13,10 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IPro
     const adjDataWrong = dataJawab.map(item => {
         const wrongResult = dataWrong.find(itemWrong => itemWrong.soalId === item.soalId)
         if (wrongResult) {
+
             return wrongResult
         }
-        return item
+        return { ...item, totalJawaban: 0 }
     })
 
 
@@ -42,7 +43,7 @@ const LineChart: React.FC<IProps> = ({ dataCorrect, dataWrong, dataJawab }: IPro
                             fillOpacity: 0.5, stroke: "black", strokeWidth: 5
                         }
                     }}
-                    domain={{ x: [0, dataJawab.length], y: [0, 100] }}
+                    domain={{ x: [0, dataJawab.length], y: [0, 50] }}
                 >
                     <VictoryLine
                         interpolation="linear"
