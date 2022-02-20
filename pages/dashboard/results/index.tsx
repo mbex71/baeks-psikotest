@@ -23,7 +23,7 @@ const Accounts: NextPage = () => {
             {
                 Header: 'Tanggal Pendaftaran',
                 accessor: 'registrationDate',
-                Cell:(row:any) => <div>{format(new Date(row.value), 'dd MMMM yyyy')}</div>
+                Cell: (row: any) => <div>{format(new Date(row.value), 'dd MMMM yyyy')}</div>
             },
             {
                 Header: 'Name',
@@ -38,7 +38,7 @@ const Accounts: NextPage = () => {
             {
                 Header: 'Tanggal Lahir',
                 accessor: 'Account.tglLahir',
-                Cell:(row:any) => <div>{format(new Date(row.value), 'dd MMMM yyyy')}</div>
+                Cell: (row: any) => <div>{format(new Date(row.value), 'dd MMMM yyyy')}</div>
 
 
             }, {
@@ -47,7 +47,9 @@ const Accounts: NextPage = () => {
 
                     return (
                         <div className='flex flex-row space-x-4 justify-center items-center'>
-                            {row.cell.row.values.type !== 'ADMIN' ? <Link href={`/dashboard/results/${row?.cell.row.values.testCode}`}><a className='text-blue-500'>Detail</a></Link> : null}
+                            {row.cell.row.values.type !== 'ADMIN' ? <Link href={`/dashboard/results/${row?.cell.row.values.testCode}`}>
+                                <a className='text-white hover:bg-blue-500 px-6 py-2 rounded bg-blue-400 '>Detail</a>
+                            </Link> : null}
                         </div>
                     )
                 }
@@ -75,18 +77,13 @@ const Accounts: NextPage = () => {
         <DashboardLayout>
             <h1 className="text-2xl font-bold">Hasil Ujian</h1>
             <div className='mt-12 flex justify-between items-center'>
-                {/* <div className='flex flex-row space-x-4'>
-                    <Link href='/dashboard/accounts/create'>
-                        <a className='bg-blue-400 p-4 rounded text-sm w-32 text-center'>Pendaftaran</a>
-                    </Link>
-                </div> */}
                 <input
                     value={search}
                     onChange={(e) => handleSearch(e.target.value)}
                     type="text"
                     id="password"
                     placeholder='Cari Peserta'
-                    className='border text-black border-gray-400 p-4 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600'
+                    className='border text-black border-gray-400 py-2 px-4 h-12 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-blue-400'
                 />
             </div>
             <div className="mt-6 h-full">
