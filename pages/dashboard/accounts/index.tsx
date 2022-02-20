@@ -6,7 +6,7 @@ import { DashboardTables } from "@components/tables";
 import { useAccountList } from '@modules/hooks/dashboard/accounts'
 import { IUser } from '@modules/entities/user';
 import { format } from 'date-fns'
-import { RiLoader5Line } from 'react-icons/ri'
+import { RiLoader5Line, RiAddFill } from 'react-icons/ri'
 
 
 
@@ -44,9 +44,11 @@ const Accounts: NextPage = () => {
 
                     return (
                         <div className='flex flex-row space-x-4 justify-center items-center'>
-                            {row.cell.row.values.type !== 'ADMIN' ? <Link href={`/dashboard/accounts/${row?.cell.row.values.username}`}><a className='text-blue-500'>Detail</a></Link> : null}
+                            {row.cell.row.values.type !== 'ADMIN' ? <Link href={`/dashboard/accounts/${row?.cell.row.values.username}`}>
+                                <a className='text-white hover:bg-blue-500 px-6 py-2 rounded bg-blue-400 '>Detail</a>
+                            </Link> : null}
 
-                            {/* <Link href={`/dashboard/accounts/edit/${row.value}`}><a className='text-blue-500'>Edit</a></Link> */}
+
                         </div>
                     )
                 }
@@ -76,8 +78,11 @@ const Accounts: NextPage = () => {
             <div className='mt-12 flex justify-between items-center'>
                 <div className='flex flex-row space-x-4'>
                     <Link href='/dashboard/accounts/create'>
-                        <a className='bg-blue-400 p-4 rounded text-sm w-32 text-center'>Pendaftaran</a>
+                        <a className='bg-blue-400 py-2 px-6 hover:bg-blue-500 rounded text-sm w-40 text-center h-12 flex items-center justify-center space-x-2'>
+                            <RiAddFill className='text-white font-bold' /> <span>Pendaftaran</span>
+                        </a>
                     </Link>
+
                 </div>
                 <input
                     value={search}
@@ -85,7 +90,7 @@ const Accounts: NextPage = () => {
                     type="text"
                     id="password"
                     placeholder='Cari Peserta'
-                    className='border text-black border-gray-400 p-4 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-gray-600'
+                    className='border text-black border-gray-400 py-2 px-4 h-12 rounded text-sm focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-blue-400'
                 />
             </div>
             <div className="mt-6 h-full">

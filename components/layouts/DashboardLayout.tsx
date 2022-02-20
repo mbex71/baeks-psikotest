@@ -22,7 +22,10 @@ const DashboardLayout: React.FC<IProps> = (props: IProps) => {
                 <div className='print:hidden fixed w-2/12 min-h-screen bg-slate-800 text-white border-r border-slate-400 border-opacity-10'>
                     <div className='flex flex-col px-6 py-12 space-y-12 w-full'>
                         <div>
-                            <h1 className="text-2xl font-bold">BAEKS Psikotest</h1>
+                            <Link href='/dashboard'>
+
+                                <a className="text-2xl font-bold">BAEKS Psikotest</a>
+                            </Link>
                         </div>
                         <Link href="/dashboard/accounts">
                             <a className='text-sm'>
