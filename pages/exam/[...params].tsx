@@ -16,13 +16,13 @@ import { useStartExam } from '@modules/hooks/exam'
 
 type TJawaban = {
     // soaldId:number,
-    soalOnTestId:number
-    optionId:number
-    answer:string
+    soalOnTestId: number
+    optionId: number
+    answer: string
 }
 export type TPostSubmitJawaban = {
-    testCode:string,
-    jawaban:TJawaban[]
+    testCode: string,
+    jawaban: TJawaban[]
 }
 
 type THandleTimer = {
@@ -46,7 +46,7 @@ const ExamPage: NextPage = () => {
     const testId = router.query.params?.[0] as string
     const soalId = parseInt(router.query.params?.[1] as string)
 
-    const { data: dataUjian, isLoading:isLoadingDataUjian } = useUserExam({
+    const { data: dataUjian, isLoading: isLoadingDataUjian } = useUserExam({
         testId: testId,
         soalId: soalId
     })
@@ -56,27 +56,27 @@ const ExamPage: NextPage = () => {
     const submitJawaban = useSubmitJawaban()
 
     const [answers, setAnswers] = useState<TPostSubmitJawaban>({
-        testCode:'',
-        jawaban:[]
-        
+        testCode: '',
+        jawaban: []
+
     })
 
-    useEffect(()=>{
-        if(stateJwb === dataUjian?.optionsLength){
-            submitJawaban.mutate(answers,{
+    useEffect(() => {
+        if (stateJwb === dataUjian?.optionsLength) {
+            submitJawaban.mutate(answers, {
                 onSuccess: () => {
-                    setAnswers(prevState => ({...prevState, jawaban:[]}))
+                    setAnswers(prevState => ({ ...prevState, jawaban: [] }))
                     router.push(`/exam/${testId}/${soalId + 1}`)
                     // removeStorage('timer')
                     // removeStorage('optionId')
                     setStateJwb(0)
                 },
-                onError: (err) => {alert(err.message)}
+                onError: (err) => { alert(err.message) }
             })
         }
-        console.log('Data Ujian: ',dataUjian?.soalOnTest?.[0]?.id)
+        console.log('Data Ujian: ', dataUjian?.soalOnTest?.[0]?.id)
         console.log('answers', answers)
-    },[stateJwb, answers, dataUjian])
+    }, [stateJwb, answers, dataUjian])
 
 
     const handleAnswer = (jwb: string, optionId: number) => {
@@ -84,20 +84,23 @@ const ExamPage: NextPage = () => {
             if (stateJwb < dataUjian?.optionsLength) {
                 //Change Sequence
                 setStateJwb(prevState => prevState + 1)
-                
 
-                setAnswers(prevState => ({...prevState, 
-                    testCode: dataUjian?.testCode, 
-                    jawaban:[...prevState.jawaban, 
-                        {
-                            answer:jwb, 
-                            optionId:optionId, 
-                            soalOnTestId:dataUjian?.soalOnTest?.[0]?.id as number}
-                    ]}))
-             
-            } 
-            
-           
+
+                setAnswers(prevState => ({
+                    ...prevState,
+                    testCode: dataUjian?.testCode,
+                    jawaban: [...prevState.jawaban,
+                    {
+                        answer: jwb,
+                        optionId: optionId,
+                        soalOnTestId: dataUjian?.soalOnTest?.[0]?.id as number
+                    }
+                    ]
+                }))
+
+            }
+
+
         }
 
     }
@@ -105,26 +108,35 @@ const ExamPage: NextPage = () => {
     const handleTimerFinish = () => {
         if (dataUjian?.testLength) {
             if (soalId < dataUjian?.testLength) {
-                submitJawaban.mutate(answers,{
-                    onSuccess:()=>{
-                        setAnswers(prevState => ({...prevState, jawaban:[]}))
+                submitJawaban.mutate(answers, {
+                    onSuccess: () => {
+                        setAnswers(prevState => ({ ...prevState, jawaban: [] }))
                         router.push(`/exam/${testId}/${soalId + 1}`)
                         setStateJwb(0)
                     },
-                    onError: (err) => {alert(err.message)}
+                    onError: (err) => { alert(err.message) }
                 })
-               
-                
-                
+
+
+
             } else {
-                mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' },{
+
+                submitJawaban.mutate(answers, {
+                    onSuccess: () => {
+                        setAnswers(prevState => ({ ...prevState, jawaban: [] }))
+                        // router.push(`/exam/${testId}/${soalId + 1}`)
+                        setStateJwb(0)
+                    },
+                    onError: (err) => { alert(err.message) }
+                })
+                mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' }, {
                     onSuccess: () => {
                         router.push(`/exam`)
                         removeStorage('timer')
                         removeStorage('optionId')
                         setStateJwb(0)
                     },
-                    onError: (err) => {alert(err.message)}
+                    onError: (err) => { alert(err.message) }
                 })
 
             }
@@ -133,14 +145,14 @@ const ExamPage: NextPage = () => {
 
 
     useEffect(() => {
-        
-        if(dataUjian?.soalOnTest?.length === 0 ) {
-            mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' },{
+
+        if (dataUjian?.soalOnTest?.length === 0) {
+            mutateChangeStatus({ testCode: dataUjian?.testCode as string, status: 'DONE' }, {
                 onSuccess: () => {
 
                     router.push(`/exam/results/${testId}`)
                 },
-                onError: (err) => {alert(err.message)}
+                onError: (err) => { alert(err.message) }
             })
         }
     }, [dataUjian])
@@ -151,7 +163,7 @@ const ExamPage: NextPage = () => {
         }
     }, [])
 
-    if(isLoadingDataUjian) {
+    if (isLoadingDataUjian) {
         return (
             <ExamLayout>
                 <div className="text-white text-2xl">Loading...</div>
@@ -161,9 +173,9 @@ const ExamPage: NextPage = () => {
 
     return (
         <ExamLayout>
-            
+
             <section className="flex flex-row justify-between">
-                
+
                 {dataUjian?.soalOnTest && dataUjian.soalOnTest.length > 0 ? <HandleTimer timer={dataUjian?.soalOnTest?.[0].timer as number} dataUjian={dataUjian} soalId={soalId} handleTimerFinish={handleTimerFinish} /> : null}
 
                 <div className="border rounded w-3/6 text-center p-4 space-y-2 bg-white">
