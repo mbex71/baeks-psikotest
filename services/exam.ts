@@ -131,15 +131,15 @@ const createTest = async ({username, tujuan}:TParamCreateTest) =>{
 
     
 
-    const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
-    select sot.id , o.id
-    from Account a 
-    join Test t on t.accountId = a.id 
-    join SoalOnTest sot on sot.testId = t.id 
-    join Soal s on s.id = sot.soalId 
-    join Options o on o.soalId = s.id
-    left JOIN  Jawaban j on j.optionsId = o.id 
-    where a.id = ${account?.id} and sot.testId = ${createTest?.id};`
+    // const createJawaban = await prisma.$executeRaw`INSERT  into Jawaban (soalOnTestId, optionsId)
+    // select sot.id , o.id
+    // from Account a 
+    // join Test t on t.accountId = a.id 
+    // join SoalOnTest sot on sot.testId = t.id 
+    // join Soal s on s.id = sot.soalId 
+    // join Options o on o.soalId = s.id
+    // left JOIN  Jawaban j on j.optionsId = o.id 
+    // where a.id = ${account?.id} and sot.testId = ${createTest?.id};`
 
 
     return createTest
